@@ -4,21 +4,26 @@
    ═══════════════════════════════════════════════════════════════ */
 
 /* ── Reset mínimo ──────────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 1;
 }
 
 /* ── Base fullscreen ───────────────────────────────────────────── */
-html, body {
+html,
+body {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;               /* Sin scroll — cada vista llena la pantalla */
+  overflow: hidden;
+  /* Sin scroll — cada vista llena la pantalla */
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-primary);
-  font-size: 16px;                /* Base para cálculo rem */
+  font-size: 16px;
+  /* Base para cálculo rem */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -36,7 +41,8 @@ html, body {
    ══════════════════════════════════════════════════════════════════ */
 .view {
   position: absolute;
-  inset: 0;                       /* top/right/bottom/left: 0 */
+  inset: 0;
+  /* top/right/bottom/left: 0 */
   width: 100%;
   height: 100%;
   display: flex;
@@ -56,17 +62,48 @@ html, body {
 }
 
 /* ── Tipografía general ───────────────────────────────────────── */
-h1 { font-size: var(--text-2xl); letter-spacing: 0.04em; text-transform: uppercase; }
-h2 { font-size: var(--text-xl);  letter-spacing: 0.03em; }
-h3 { font-size: var(--text-lg);  }
-p, li { font-size: var(--text-base); line-height: 1.4; }
+h1 {
+  font-size: var(--text-2xl);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: var(--text-xl);
+  letter-spacing: 0.03em;
+}
+
+h3 {
+  font-size: var(--text-lg);
+}
+
+p,
+li {
+  font-size: var(--text-base);
+  line-height: 1.4;
+}
 
 /* ── Utilidades ───────────────────────────────────────────────── */
-.text-primary  { color: var(--color-primary); }
-.text-accent   { color: var(--color-accent); }
-.text-muted    { color: var(--color-text-muted); }
-.text-center   { text-align: center; }
-.text-hero     { font-size: var(--text-hero); font-weight: 900; }
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-hero {
+  font-size: var(--text-hero);
+  font-weight: 900;
+}
 
 /* ── Nav de desarrollo ────────────────────────────────────────── */
 /* Barra de navegación temporal para switching manual durante desarrollo.
