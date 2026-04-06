@@ -1,0 +1,106 @@
+/* ═══════════════════════════════════════════════════════════════
+   main.css — Estilos globales y sistema de vistas
+   Requiere variables.css cargado antes en el HTML.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Reset mínimo ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base fullscreen ───────────────────────────────────────────── */
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;               /* Sin scroll — cada vista llena la pantalla */
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: 16px;                /* Base para cálculo rem */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Contenedor principal ─────────────────────────────────────── */
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SISTEMA DE VISTAS
+   .view    → pantalla completa, oculta por defecto
+   .active  → pantalla visible (solo una a la vez)
+   ══════════════════════════════════════════════════════════════════ */
+.view {
+  position: absolute;
+  inset: 0;                       /* top/right/bottom/left: 0 */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+  overflow: hidden;
+}
+
+.view.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Tipografía general ───────────────────────────────────────── */
+h1 { font-size: var(--text-2xl); letter-spacing: 0.04em; text-transform: uppercase; }
+h2 { font-size: var(--text-xl);  letter-spacing: 0.03em; }
+h3 { font-size: var(--text-lg);  }
+p, li { font-size: var(--text-base); line-height: 1.4; }
+
+/* ── Utilidades ───────────────────────────────────────────────── */
+.text-primary  { color: var(--color-primary); }
+.text-accent   { color: var(--color-accent); }
+.text-muted    { color: var(--color-text-muted); }
+.text-center   { text-align: center; }
+.text-hero     { font-size: var(--text-hero); font-weight: 900; }
+
+/* ── Nav de desarrollo ────────────────────────────────────────── */
+/* Barra de navegación temporal para switching manual durante desarrollo.
+   Comentar o eliminar en producción. */
+#dev-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+#dev-nav button {
+  padding: var(--space-xs) var(--space-md);
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+#dev-nav button:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+}

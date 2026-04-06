@@ -1,0 +1,93 @@
+<!--
+  sorteo.html — Markup de referencia para la vista Sorteo
+  ─────────────────────────────────────────────────────────
+  NOTA: Este archivo es la referencia visual del markup
+  que genera sorteo.js dinámicamente en <section id="sorteo">.
+  Desarrollador asignado: Dev 2
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vista: Sorteo</title>
+  <link rel="stylesheet" href="../../src/styles/variables.css" />
+  <link rel="stylesheet" href="../../src/styles/main.css" />
+  <style>
+    /* ── Estilos específicos de la vista Sorteo ──────────────── */
+    body { display: flex; align-items: center; justify-content: center; }
+
+    .sorteo-lista {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      justify-content: center;
+      margin: var(--space-lg) 0;
+    }
+
+    .sorteo-participante {
+      padding: var(--space-sm) var(--space-lg);
+      background: var(--color-bg-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+    }
+
+    .btn-principal {
+      padding: var(--space-md) var(--space-xl);
+      background: var(--color-primary);
+      color: var(--color-bg);
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: var(--font-primary);
+      font-size: var(--text-base);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+
+    .btn-principal:hover { background: var(--color-primary-dim); }
+
+    .sorteo-resultado {
+      margin-top: var(--space-xl);
+      text-align: center;
+      opacity: 0;
+      transition: opacity var(--transition-normal);
+    }
+
+    .sorteo-resultado--visible { opacity: 1; }
+
+    .sorteo-vs {
+      font-size: var(--text-2xl);
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+    }
+  </style>
+</head>
+<body>
+  <!-- Preview estático — espejo del markup generado por sorteo.js -->
+  <section class="view active" style="position:relative;">
+    <h1 class="text-primary">Sorteo de Combates</h1>
+    <p class="text-muted">6 participantes registrados</p>
+
+    <ul class="sorteo-lista">
+      <li class="sorteo-participante">Carlos Ríos <span class="text-muted">(Colombia)</span></li>
+      <li class="sorteo-participante">Miguel Torres <span class="text-muted">(Perú)</span></li>
+      <li class="sorteo-participante">Andrés Morales <span class="text-muted">(Ecuador)</span></li>
+    </ul>
+
+    <button class="btn-principal">Realizar Sorteo</button>
+
+    <div class="sorteo-resultado sorteo-resultado--visible">
+      <p class="text-muted">Enfrentamiento sorteado</p>
+      <p class="text-accent sorteo-vs">
+        Carlos Ríos <span class="text-muted">vs</span> Miguel Torres
+      </p>
+    </div>
+  </section>
+</body>
+</html>

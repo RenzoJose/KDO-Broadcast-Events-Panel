@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KDO Broadcast Events Panel</title>
+
+  <!-- Estilos globales: variables primero, luego main -->
+  <link rel="stylesheet" href="src/styles/variables.css" />
+  <link rel="stylesheet" href="src/styles/main.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       NAV DE DESARROLLO (ocultar en producción)
+       ══════════════════════════════════════════ -->
+  <nav id="dev-nav">
+    <button onclick="cambiarVista('agenda')">Agenda</button>
+    <button onclick="cambiarVista('sorteo')">Sorteo</button>
+    <button onclick="cambiarVista('contador')">Contador</button>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       CONTENEDOR PRINCIPAL DE VISTAS
+       Cada .view es una "pantalla" completa.
+       Solo la que tiene .active es visible.
+       ══════════════════════════════════════════ -->
+  <main id="app">
+
+    <!-- Vista: Agenda -->
+    <section id="agenda" class="view">
+      <!-- Contenido inyectado por agenda.js -->
+    </section>
+
+    <!-- Vista: Sorteo -->
+    <section id="sorteo" class="view">
+      <!-- Contenido inyectado por sorteo.js -->
+    </section>
+
+    <!-- Vista: Contador -->
+    <section id="contador" class="view">
+      <!-- Contenido inyectado por contador.js -->
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       PUNTO DE ENTRADA PRINCIPAL
+       app.js inicializa todos los módulos y el router
+       ══════════════════════════════════════════ -->
+  <script type="module" src="src/js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!--
+  agenda.html — Markup de referencia para la vista Agenda
+  ──────────────────────────────────────────────────────
+  NOTA: Este archivo sirve como referencia visual del markup
+  que genera agenda.js dinámicamente en el <section id="agenda">.
+  No se carga directamente; el contenido lo inyecta renderAgenda().
+
+  Para editar el diseño:
+    1. Modifica el template literal en agenda.js → renderAgenda()
+    2. Usa este archivo para previsualizar la estructura sin JS
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vista: Agenda</title>
+  <link rel="stylesheet" href="../../src/styles/variables.css" />
+  <link rel="stylesheet" href="../../src/styles/main.css" />
+  <style>
+    /* ── Estilos específicos de la vista Agenda ─────────────────
+       Mover a main.css cuando el diseño esté estabilizado.      */
+    body { display: flex; align-items: center; justify-content: center; }
+
+    .agenda-lista {
+      list-style: none;
+      width: 100%;
+      max-width: 1400px;
+      margin-top: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .agenda-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      padding: var(--space-md) var(--space-lg);
+      background: var(--color-bg-surface);
+      border-left: 6px solid var(--color-border);
+      border-radius: var(--radius-md);
+      transition: border-color var(--transition-fast);
+    }
+
+    .agenda-item--activo {
+      border-left-color: var(--color-primary);
+      background: var(--color-bg-elevated);
+    }
+
+    .agenda-hora {
+      font-size: var(--text-lg);
+      font-weight: 900;
+      color: var(--color-primary);
+      min-width: 120px;
+    }
+
+    .agenda-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .agenda-info strong { font-size: var(--text-base); }
+    .agenda-info span   { font-size: var(--text-sm); }
+  </style>
+</head>
+<body>
+  <!-- Preview estático — espejo del markup generado por agenda.js -->
+  <section class="view active" style="position:relative;">
+    <h1 class="text-primary">Programa del Evento</h1>
+    <ul class="agenda-lista">
+      <li class="agenda-item agenda-item--activo">
+        <span class="agenda-hora">09:00</span>
+        <div class="agenda-info">
+          <strong>Poomsae Infantil</strong>
+          <span class="text-muted">Categoría Sub-12 (Cinturones de Color)</span>
+        </div>
+      </li>
+      <li class="agenda-item">
+        <span class="agenda-hora">10:30</span>
+        <div class="agenda-info">
+          <strong>Combate Cadetes</strong>
+          <span class="text-muted">Categoría 45-48 kg (Varones)</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+</body>
+</html>

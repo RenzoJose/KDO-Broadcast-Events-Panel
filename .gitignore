@@ -1,0 +1,31 @@
+# ── Sistema operativo ──────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editores ───────────────────────────────────────────────────
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Dependencias (si se añaden herramientas de build en el futuro) ──
+node_modules/
+package-lock.json
+yarn.lock
+
+# ── Salida de build ────────────────────────────────────────────
+dist/
+build/
+out/
+
+# ── Variables de entorno ───────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Logs ───────────────────────────────────────────────────────
+*.log
+npm-debug.log*

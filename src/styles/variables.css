@@ -1,0 +1,56 @@
+/* ═══════════════════════════════════════════════════════════════
+   variables.css — Tokens de diseño globales
+   Modifica este archivo para cambiar la paleta completa de la app.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Colores ─────────────────────────────────────────────── */
+  --color-bg:           #0a0a0f;       /* Fondo principal (negro azulado) */
+  --color-bg-surface:   #13131c;       /* Superficies / tarjetas */
+  --color-bg-elevated:  #1e1e2e;       /* Elementos elevados */
+
+  --color-primary:      #e8b800;       /* Amarillo dorado — color identitario */
+  --color-primary-dim:  #a07e00;       /* Versión atenuada del primario */
+  --color-accent:       #e63946;       /* Rojo — acción, alerta, marcador */
+
+  --color-text:         #f0f0f0;       /* Texto principal */
+  --color-text-muted:   #8888a8;       /* Texto secundario / etiquetas */
+  --color-border:       #2a2a3e;       /* Bordes y separadores */
+
+  /* ── Tipografía ──────────────────────────────────────────── */
+  /* Fuente principal: system-ui como fallback seguro.
+     Reemplazar por fuente local en public/assets/fonts/ cuando esté lista. */
+  --font-primary:  'Arial Black', 'Arial Bold', system-ui, sans-serif;
+  --font-mono:     'Courier New', Courier, monospace;
+
+  /* Escala tipográfica — pensada para pantalla gigante (≥ 80") */
+  --text-xs:    1.2rem;
+  --text-sm:    1.8rem;
+  --text-base:  2.4rem;
+  --text-lg:    3.6rem;
+  --text-xl:    5.6rem;
+  --text-2xl:   8rem;
+  --text-hero:  12rem;
+
+  /* ── Espaciado ───────────────────────────────────────────── */
+  --space-xs:   0.4rem;
+  --space-sm:   0.8rem;
+  --space-md:   1.6rem;
+  --space-lg:   3.2rem;
+  --space-xl:   6.4rem;
+
+  /* ── Bordes y radios ─────────────────────────────────────── */
+  --radius-sm:  0.4rem;
+  --radius-md:  0.8rem;
+  --radius-lg:  1.6rem;
+
+  /* ── Transiciones ────────────────────────────────────────── */
+  --transition-fast:   0.15s ease;
+  --transition-normal: 0.3s ease;
+
+  /* ── Z-index layers ──────────────────────────────────────── */
+  --z-base:    0;
+  --z-overlay: 100;
+  --z-nav:     200;
+  --z-modal:   300;
+}

@@ -1,0 +1,162 @@
+<!--
+  contador.html — Markup de referencia para la vista Contador
+  ─────────────────────────────────────────────────────────────
+  NOTA: Este archivo es la referencia visual del markup
+  que genera contador.js dinámicamente en <section id="contador">.
+  Desarrollador asignado: Dev 1
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vista: Contador</title>
+  <link rel="stylesheet" href="../../src/styles/variables.css" />
+  <link rel="stylesheet" href="../../src/styles/main.css" />
+  <style>
+    /* ── Estilos específicos de la vista Contador ────────────── */
+    body { display: flex; align-items: center; justify-content: center; }
+
+    .marcador {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xl);
+      width: 100%;
+    }
+
+    /* Lado rojo / azul */
+    .marcador-lado {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+      flex: 1;
+    }
+
+    .marcador-puntos {
+      font-size: var(--text-hero);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .marcador-rojo .marcador-puntos { color: var(--color-accent); }
+    .marcador-azul .marcador-puntos { color: #4fc3f7; }
+
+    .marcador-label {
+      font-size: var(--text-lg);
+      font-weight: 900;
+      letter-spacing: 0.1em;
+    }
+
+    .marcador-rojo .marcador-label { color: var(--color-accent); }
+    .marcador-azul .marcador-label { color: #4fc3f7; }
+
+    .marcador-controles {
+      display: flex;
+      gap: var(--space-sm);
+    }
+
+    .btn-punto {
+      width: 80px;
+      height: 80px;
+      font-size: var(--text-xl);
+      font-weight: 900;
+      background: var(--color-bg-elevated);
+      color: var(--color-text);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+
+    .btn-punto:hover { background: var(--color-bg-surface); border-color: var(--color-primary); }
+
+    /* Tiempo central */
+    .marcador-tiempo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+      min-width: 400px;
+    }
+
+    .tiempo-display {
+      font-size: var(--text-hero);
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      color: var(--color-text);
+      transition: color var(--transition-fast);
+    }
+
+    /* Parpadeo cuando quedan ≤ 30 segundos */
+    .tiempo-critico {
+      color: var(--color-accent);
+      animation: parpadeo 1s step-start infinite;
+    }
+
+    @keyframes parpadeo {
+      50% { opacity: 0.4; }
+    }
+
+    .tiempo-controles {
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    .tiempo-controles button {
+      padding: var(--space-sm) var(--space-lg);
+      background: var(--color-bg-elevated);
+      color: var(--color-text);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-family: var(--font-primary);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: background var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .tiempo-controles button:hover {
+      background: var(--color-primary);
+      color: var(--color-bg);
+      border-color: var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Preview estático — espejo del markup generado por contador.js -->
+  <section class="view active" style="position:relative;">
+    <div class="marcador">
+      <!-- Lado Rojo -->
+      <div class="marcador-lado marcador-rojo">
+        <span class="marcador-puntos">0</span>
+        <span class="marcador-label">ROJO</span>
+        <div class="marcador-controles">
+          <button class="btn-punto">+</button>
+          <button class="btn-punto">−</button>
+        </div>
+      </div>
+
+      <!-- Tiempo central -->
+      <div class="marcador-tiempo">
+        <span class="tiempo-display">02:00</span>
+        <div class="tiempo-controles">
+          <button>INICIAR</button>
+          <button>RESET</button>
+        </div>
+      </div>
+
+      <!-- Lado Azul -->
+      <div class="marcador-lado marcador-azul">
+        <span class="marcador-puntos">0</span>
+        <span class="marcador-label">AZUL</span>
+        <div class="marcador-controles">
+          <button class="btn-punto">+</button>
+          <button class="btn-punto">−</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
