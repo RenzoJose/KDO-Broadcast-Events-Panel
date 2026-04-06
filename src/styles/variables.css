@@ -4,53 +4,98 @@
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
-  /* ── Colores ─────────────────────────────────────────────── */
-  --color-bg:           #0a0a0f;       /* Fondo principal (negro azulado) */
-  --color-bg-surface:   #13131c;       /* Superficies / tarjetas */
-  --color-bg-elevated:  #1e1e2e;       /* Elementos elevados */
+   /* ── Brand Colors ────────────────────────────────────────── */
+   --color-primary: #0047a0;
+   /* Azul KDO principal */
+   --color-primary-dark: #003380;
+   /* Azul oscuro hover */
+   --color-navy: #243d5b;
+   /* Azul marino — texto principal */
+   --color-electric: #170fdd;
+   /* Azul eléctrico — acentos fuertes */
+   --color-accent: #c62c55;
+   /* Rojo — acción, alerta, Live */
+   --color-accent-dark: #a02040;
+   /* Rojo oscuro hover */
+   --color-gray: #c6c6c6;
+   /* Gris — bordes suaves, disabled */
 
-  --color-primary:      #e8b800;       /* Amarillo dorado — color identitario */
-  --color-primary-dim:  #a07e00;       /* Versión atenuada del primario */
-  --color-accent:       #e63946;       /* Rojo — acción, alerta, marcador */
+   /* ── Dashboard — tema claro ──────────────────────────────── */
+   --color-bg: #f4f7fc;
+   /* Fondo general */
+   --color-surface: #ffffff;
+   /* Superficies / sidebar */
+   --color-border: #e2e8f0;
+   /* Bordes y separadores */
+   --color-text: #243d5b;
+   /* Texto principal */
+   --color-text-muted: #7890aa;
+   /* Texto secundario */
 
-  --color-text:         #f0f0f0;       /* Texto principal */
-  --color-text-muted:   #8888a8;       /* Texto secundario / etiquetas */
-  --color-border:       #2a2a3e;       /* Bordes y separadores */
+   /* ── Sidebar ─────────────────────────────────────────────── */
+   --sidebar-width: 10rem;
+   /* ~158px @ 16px base, escala con font-size */
 
-  /* ── Tipografía ──────────────────────────────────────────── */
-  /* Fuente principal: system-ui como fallback seguro.
-     Reemplazar por fuente local en public/assets/fonts/ cuando esté lista. */
-  --font-primary:  'Arial Black', 'Arial Bold', system-ui, sans-serif;
-  --font-mono:     'Courier New', Courier, monospace;
+   /* ── Tipografía ──────────────────────────────────────────── */
+   --font-primary: 'Arial Black', 'Arial Bold', system-ui, sans-serif;
+   --font-mono: 'Courier New', Courier, monospace;
 
-  /* Escala tipográfica — pensada para pantalla gigante (≥ 80") */
-  --text-xs:    1.2rem;
-  --text-sm:    1.8rem;
-  --text-base:  2.4rem;
-  --text-lg:    3.6rem;
-  --text-xl:    5.6rem;
-  --text-2xl:   8rem;
-  --text-hero:  12rem;
+   /* Escala broadcast — para vistas en pantalla gigante (≥ 80") */
+   --text-xs: 1.2rem;
+   --text-sm: 1.8rem;
+   --text-base: 2.4rem;
+   --text-lg: 3.6rem;
+   --text-xl: 5.6rem;
+   --text-2xl: 8rem;
+   --text-hero: 12rem;
 
-  /* ── Espaciado ───────────────────────────────────────────── */
-  --space-xs:   0.4rem;
-  --space-sm:   0.8rem;
-  --space-md:   1.6rem;
-  --space-lg:   3.2rem;
-  --space-xl:   6.4rem;
+   /* ── Espaciado ───────────────────────────────────────────── */
+   --space-xs: 0.4rem;
+   --space-sm: 0.8rem;
+   --space-md: 1.6rem;
+   --space-lg: 3.2rem;
+   --space-xl: 6.4rem;
 
-  /* ── Bordes y radios ─────────────────────────────────────── */
-  --radius-sm:  0.4rem;
-  --radius-md:  0.8rem;
-  --radius-lg:  1.6rem;
+   /* ── Radios ──────────────────────────────────────────────── */
+   --radius-sm: 4px;
+   --radius-md: 10px;
+   --radius-lg: 16px;
+   --radius-full: 9999px;
 
-  /* ── Transiciones ────────────────────────────────────────── */
-  --transition-fast:   0.15s ease;
-  --transition-normal: 0.3s ease;
+   /* ── Transiciones ────────────────────────────────────────── */
+   --transition-fast: 0.15s ease;
+   --transition-normal: 0.3s ease;
 
-  /* ── Z-index layers ──────────────────────────────────────── */
-  --z-base:    0;
-  --z-overlay: 100;
-  --z-nav:     200;
-  --z-modal:   300;
+   /* ── Z-index layers ──────────────────────────────────────── */
+   --z-base: 0;
+   --z-overlay: 100;
+   --z-nav: 200;
+   --z-modal: 300;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   ESCALA ADAPTATIVA — Pantallas de gran formato
+   Una pantalla de 3×2 m suele correr a 1080p, 1440p o 4K.
+   Subimos la base rem para que todos los tokens escalen solos.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* 1440p / QHD (2560×1440) — pantallas de sala, videowall */
+@media (min-width: 2560px) {
+   :root {
+      font-size: 20px;
+   }
+}
+
+/* 4K / UHD (3840×2160) — proyección 3×2 m de alta resolución */
+@media (min-width: 3840px) {
+   :root {
+      font-size: 28px;
+   }
+}
+
+/* 8K / resoluciones extremas */
+@media (min-width: 7680px) {
+   :root {
+      font-size: 48px;
+   }
 }

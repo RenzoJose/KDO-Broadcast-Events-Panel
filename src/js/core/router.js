@@ -28,6 +28,11 @@ export function cambiarVista(vistaId) {
   // Mostrar la vista destino
   destino.classList.add('active');
 
+  // Sincronizar estado activo en los botones de navegación
+  document.querySelectorAll('.nav-btn').forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.view === vistaId);
+  });
+
   // Persistir la vista activa en el estado global
   setState({ vistaActual: vistaId });
 

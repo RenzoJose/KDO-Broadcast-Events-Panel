@@ -1,54 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KDO Broadcast Events Panel</title>
-
-  <!-- Estilos globales: variables primero, luego main -->
   <link rel="stylesheet" href="src/styles/variables.css" />
   <link rel="stylesheet" href="src/styles/main.css" />
 </head>
+
 <body>
 
-  <!-- ══════════════════════════════════════════
-       NAV DE DESARROLLO (ocultar en producción)
-       ══════════════════════════════════════════ -->
-  <nav id="dev-nav">
-    <button onclick="cambiarVista('agenda')">Agenda</button>
-    <button onclick="cambiarVista('sorteo')">Sorteo</button>
-    <button onclick="cambiarVista('contador')">Contador</button>
-  </nav>
+  <div class="dashboard">
 
-  <!-- ══════════════════════════════════════════
-       CONTENEDOR PRINCIPAL DE VISTAS
-       Cada .view es una "pantalla" completa.
-       Solo la que tiene .active es visible.
-       ══════════════════════════════════════════ -->
-  <main id="app">
+    <!-- ══════════════════════════════════════════
+         SIDEBAR
+         ══════════════════════════════════════════ -->
+    <aside class="sidebar">
 
-    <!-- Vista: Agenda -->
-    <section id="agenda" class="view">
-      <!-- Contenido inyectado por agenda.js -->
-    </section>
+      <!-- Logo -->
+      <div class="sidebar-logo">
+        <img src="src/logo/KDO-08.png" alt="KDO Logo" />
+      </div>
 
-    <!-- Vista: Sorteo -->
-    <section id="sorteo" class="view">
-      <!-- Contenido inyectado por sorteo.js -->
-    </section>
+      <!-- Navegación principal -->
+      <nav class="sidebar-nav">
+        <ul>
 
-    <!-- Vista: Contador -->
-    <section id="contador" class="view">
-      <!-- Contenido inyectado por contador.js -->
-    </section>
+          <li>
+            <button class="nav-btn" data-view="sorteo" onclick="window.cambiarVista('sorteo')">
+              <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="2" width="9" height="9" rx="2" />
+                  <rect x="13" y="2" width="9" height="9" rx="2" />
+                  <rect x="2" y="13" width="9" height="9" rx="2" />
+                  <rect x="13" y="13" width="9" height="9" rx="2" />
+                </svg>
+              </span>
+              <span class="nav-label">Sorteo</span>
+            </button>
+          </li>
 
-  </main>
+          <li>
+            <button class="nav-btn" data-view="resultados" onclick="window.cambiarVista('resultados')">
+              <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M6 9H3V4h3M18 9h3V4h-3" />
+                  <path d="M12 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10z" />
+                  <path d="M12 15v5M8 20h8" />
+                </svg>
+              </span>
+              <span class="nav-label">Resultados</span>
+            </button>
+          </li>
 
-  <!-- ══════════════════════════════════════════
-       PUNTO DE ENTRADA PRINCIPAL
-       app.js inicializa todos los módulos y el router
-       ══════════════════════════════════════════ -->
+          <li>
+            <button class="nav-btn" data-view="agenda" onclick="window.cambiarVista('agenda')">
+              <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+              </span>
+              <span class="nav-label">Agenda</span>
+            </button>
+          </li>
+
+          <li>
+            <button class="nav-btn" data-view="contador" onclick="window.cambiarVista('contador')">
+              <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 3" />
+                </svg>
+              </span>
+              <span class="nav-label">Contador</span>
+            </button>
+          </li>
+
+        </ul>
+      </nav>
+
+    </aside>
+
+    <!-- ══════════════════════════════════════════
+         PANEL PRINCIPAL
+         ══════════════════════════════════════════ -->
+    <div class="panel-main">
+
+      <!-- Contenedor de vistas -->
+      <div id="app">
+        <section id="sorteo" class="view"><!-- sorteo.js --></section>
+        <section id="resultados" class="view"><!-- resultados.js --></section>
+        <section id="agenda" class="view"><!-- agenda.js --></section>
+        <section id="contador" class="view"><!-- contador.js --></section>
+      </div>
+
+    </div>
+
+  </div>
+
   <script type="module" src="src/js/app.js"></script>
 
 </body>
+
 </html>
