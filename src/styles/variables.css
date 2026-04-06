@@ -33,7 +33,8 @@
    /* Texto secundario */
 
    /* ── Sidebar ─────────────────────────────────────────────── */
-   --sidebar-width: 158px;
+   --sidebar-width: 10rem;
+   /* ~158px @ 16px base, escala con font-size */
 
    /* ── Tipografía ──────────────────────────────────────────── */
    --font-primary: 'Arial Black', 'Arial Bold', system-ui, sans-serif;
@@ -70,4 +71,31 @@
    --z-overlay: 100;
    --z-nav: 200;
    --z-modal: 300;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   ESCALA ADAPTATIVA — Pantallas de gran formato
+   Una pantalla de 3×2 m suele correr a 1080p, 1440p o 4K.
+   Subimos la base rem para que todos los tokens escalen solos.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* 1440p / QHD (2560×1440) — pantallas de sala, videowall */
+@media (min-width: 2560px) {
+   :root {
+      font-size: 20px;
+   }
+}
+
+/* 4K / UHD (3840×2160) — proyección 3×2 m de alta resolución */
+@media (min-width: 3840px) {
+   :root {
+      font-size: 28px;
+   }
+}
+
+/* 8K / resoluciones extremas */
+@media (min-width: 7680px) {
+   :root {
+      font-size: 48px;
+   }
 }

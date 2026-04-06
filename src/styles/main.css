@@ -19,7 +19,7 @@ body {
   height: 100vh;
   overflow: hidden;
   font-family: var(--font-primary);
-  font-size: 16px;
+  font-size: clamp(16px, 1.2vw, 32px);
   background: var(--color-bg);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
@@ -81,6 +81,11 @@ body {
   flex: 1;
   padding: 10px 8px;
   overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .sidebar-nav ul {
@@ -146,36 +151,6 @@ body {
       #f0f5fc 42%,
       #f7ecf1 100%);
   overflow: hidden;
-}
-
-/* Topbar — icono perfil esquina superior derecha */
-.panel-topbar {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  z-index: 5;
-}
-
-.topbar-profile {
-  width: 36px;
-  height: 36px;
-  background: var(--color-surface);
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  color: var(--color-text-muted);
-  transition:
-    box-shadow var(--transition-fast),
-    color var(--transition-fast);
-}
-
-.topbar-profile:hover {
-  box-shadow: 0 4px 18px rgba(0, 71, 160, 0.22);
-  color: var(--color-primary);
 }
 
 /* ══════════════════════════════════════════════════════════════════
