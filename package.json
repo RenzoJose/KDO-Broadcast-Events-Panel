@@ -1,0 +1,14 @@
+{
+    "name": "kdo-broadcast-events-panel",
+    "version": "1.0.0",
+    "scripts": {
+        "mock": "json-server db.json --port 3001 --watch",
+        "serve": "http-server . -p 5500 -c-1 --cors -o",
+        "dev": "concurrently \"npm run mock\" \"npm run serve\""
+    },
+    "devDependencies": {
+        "json-server": "^1.0.0-beta.3",
+        "http-server": "^14.1.1",
+        "concurrently": "^9.1.2"
+    }
+}
