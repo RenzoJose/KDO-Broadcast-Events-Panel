@@ -1,162 +1,78 @@
 <!--
-  contador.html — Markup de referencia para la vista Contador
+  contador.html — Vista Broadcast: Contador Regresivo
   ─────────────────────────────────────────────────────────────
-  NOTA: Este archivo es la referencia visual del markup
-  que genera contador.js dinámicamente en <section id="contador">.
-  Desarrollador asignado: Dev 1
+  Archivo autocontenido. Puede abrirse directamente en el navegador.
+  Optimizado para pantalla LED 1920×1080 (3×2 m).
 -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Vista: Contador</title>
-  <link rel="stylesheet" href="../../src/styles/variables.css" />
-  <link rel="stylesheet" href="../../src/styles/main.css" />
-  <style>
-    /* ── Estilos específicos de la vista Contador ────────────── */
-    body { display: flex; align-items: center; justify-content: center; }
+  <meta name="viewport" content="width=1920" />
+  <title>KDO OPEN — Contador Regresivo</title>
 
-    .marcador {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-xl);
-      width: 100%;
-    }
-
-    /* Lado rojo / azul */
-    .marcador-lado {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-md);
-      flex: 1;
-    }
-
-    .marcador-puntos {
-      font-size: var(--text-hero);
-      font-weight: 900;
-      line-height: 1;
-    }
-
-    .marcador-rojo .marcador-puntos { color: var(--color-accent); }
-    .marcador-azul .marcador-puntos { color: #4fc3f7; }
-
-    .marcador-label {
-      font-size: var(--text-lg);
-      font-weight: 900;
-      letter-spacing: 0.1em;
-    }
-
-    .marcador-rojo .marcador-label { color: var(--color-accent); }
-    .marcador-azul .marcador-label { color: #4fc3f7; }
-
-    .marcador-controles {
-      display: flex;
-      gap: var(--space-sm);
-    }
-
-    .btn-punto {
-      width: 80px;
-      height: 80px;
-      font-size: var(--text-xl);
-      font-weight: 900;
-      background: var(--color-bg-elevated);
-      color: var(--color-text);
-      border: 2px solid var(--color-border);
-      border-radius: var(--radius-md);
-      cursor: pointer;
-      transition: background var(--transition-fast);
-    }
-
-    .btn-punto:hover { background: var(--color-bg-surface); border-color: var(--color-primary); }
-
-    /* Tiempo central */
-    .marcador-tiempo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-md);
-      min-width: 400px;
-    }
-
-    .tiempo-display {
-      font-size: var(--text-hero);
-      font-weight: 900;
-      font-variant-numeric: tabular-nums;
-      color: var(--color-text);
-      transition: color var(--transition-fast);
-    }
-
-    /* Parpadeo cuando quedan ≤ 30 segundos */
-    .tiempo-critico {
-      color: var(--color-accent);
-      animation: parpadeo 1s step-start infinite;
-    }
-
-    @keyframes parpadeo {
-      50% { opacity: 0.4; }
-    }
-
-    .tiempo-controles {
-      display: flex;
-      gap: var(--space-md);
-    }
-
-    .tiempo-controles button {
-      padding: var(--space-sm) var(--space-lg);
-      background: var(--color-bg-elevated);
-      color: var(--color-text);
-      border: 2px solid var(--color-border);
-      border-radius: var(--radius-md);
-      font-family: var(--font-primary);
-      font-size: var(--text-sm);
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      cursor: pointer;
-      transition: background var(--transition-fast), border-color var(--transition-fast);
-    }
-
-    .tiempo-controles button:hover {
-      background: var(--color-primary);
-      color: var(--color-bg);
-      border-color: var(--color-primary);
-    }
-  </style>
+  <!-- Poppins: fuente principal del broadcast -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/contador.css" />
 </head>
 <body>
-  <!-- Preview estático — espejo del markup generado por contador.js -->
-  <section class="view active" style="position:relative;">
-    <div class="marcador">
-      <!-- Lado Rojo -->
-      <div class="marcador-lado marcador-rojo">
-        <span class="marcador-puntos">0</span>
-        <span class="marcador-label">ROJO</span>
-        <div class="marcador-controles">
-          <button class="btn-punto">+</button>
-          <button class="btn-punto">−</button>
-        </div>
-      </div>
 
-      <!-- Tiempo central -->
-      <div class="marcador-tiempo">
-        <span class="tiempo-display">02:00</span>
-        <div class="tiempo-controles">
-          <button>INICIAR</button>
-          <button>RESET</button>
-        </div>
-      </div>
+<div class="ct-wrapper" id="ct-wrapper">
 
-      <!-- Lado Azul -->
-      <div class="marcador-lado marcador-azul">
-        <span class="marcador-puntos">0</span>
-        <span class="marcador-label">AZUL</span>
-        <div class="marcador-controles">
-          <button class="btn-punto">+</button>
-          <button class="btn-punto">−</button>
-        </div>
-      </div>
+  <!-- Badge de estado -->
+  <div class="ct-badge" id="ct-badge">LISTO</div>
+
+  <!-- Display principal del tiempo -->
+  <div class="ct-display">
+    <div class="ct-time" id="ct-time">05:00</div>
+  </div>
+
+  <!-- Configuración (solo visible en estado LISTO) -->
+  <div class="ct-config" id="ct-config">
+    <label for="ct-input" class="ct-config-label">Duración</label>
+    <div class="ct-config-row">
+      <input
+        type="number"
+        id="ct-input"
+        class="ct-input"
+        min="1"
+        max="99"
+        value="5"
+        aria-label="Duración en minutos"
+      />
+      <span class="ct-input-unit">min</span>
     </div>
-  </section>
+  </div>
+
+  <!-- Controles -->
+  <div class="ct-controls">
+    <button class="ct-btn ct-btn--primary" id="btn-iniciar">
+      <span class="ct-btn-icon" aria-hidden="true">▶</span>
+      INICIAR
+    </button>
+    <button class="ct-btn ct-btn--secondary" id="btn-pausar" disabled>
+      <span class="ct-btn-icon" aria-hidden="true">⏸</span>
+      PAUSAR
+    </button>
+    <button class="ct-btn ct-btn--ghost" id="btn-reiniciar">
+      <span class="ct-btn-icon" aria-hidden="true">↺</span>
+      REINICIAR
+    </button>
+  </div>
+
+  <!-- Atajos de teclado -->
+  <div class="ct-hints" aria-hidden="true">
+    <span>Enter → Iniciar</span>
+    <span class="ct-hints-sep">·</span>
+    <span>Espacio → Pausar</span>
+    <span class="ct-hints-sep">·</span>
+    <span>R → Reiniciar</span>
+  </div>
+
+</div>
+
+<script src="../js/contador-view.js"></script>
 </body>
 </html>
