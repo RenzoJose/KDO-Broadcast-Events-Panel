@@ -22,38 +22,27 @@ const BADGE_LABEL = {
 
 let _intervalo    = null;
 let _currentState = STATE.LISTO;
-let _audioCtx     = null;
 
-function getAudioCtx() {
-  if (!_audioCtx) {
-    _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  }
-  return _audioCtx;
+// ── Audio MP3 ────────────────────────────────────────────────────
+// El MP3 dura ~28 seg. La voz arranca en el segundo ~4.
+// Lo disparamos en remaining === 14 → voz cae exactamente en remaining === 10.
+const _sndCountdown = new Audio('../../public/assets/sounds/Countdown Timer 10 sec with Sound effects and Voice HD.mp3');
+_sndCountdown.preload = 'auto';
+
+function startCountdownAudio() {
+  _sndCountdown.currentTime = 0;
+  _sndCountdown.play().catch(() => {});
 }
 
-function playTick() {
-  const ctx  = getAudioCtx();
-  const osc  = ctx.createOscillator();
-  const gain = ctx.createGain();
-  osc.connect(gain); gain.connect(ctx.destination);
-  osc.type = 'sine'; osc.frequency.value = 880;
-  gain.gain.setValueAtTime(0.2, ctx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.09);
-  osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 0.09);
+function resumeCountdownAudio(remaining) {
+  // El MP3 se disparó en remaining=15, ya pasaron (15 - remaining) segundos
+  _sndCountdown.currentTime = Math.max(0, 15 - remaining);
+  _sndCountdown.play().catch(() => {});
 }
 
-function playFinal() {
-  const ctx = getAudioCtx();
-  [{ delay: 0, freq: 660 }, { delay: 0.32, freq: 550 }, { delay: 0.64, freq: 440 }]
-    .forEach(({ delay, freq }) => {
-      const osc  = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain); gain.connect(ctx.destination);
-      osc.type = 'square'; osc.frequency.value = freq;
-      gain.gain.setValueAtTime(0.35, ctx.currentTime + delay);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + delay + 0.45);
-      osc.start(ctx.currentTime + delay); osc.stop(ctx.currentTime + delay + 0.45);
-    });
+function stopCountdownAudio() {
+  _sndCountdown.pause();
+  _sndCountdown.currentTime = 0;
 }
 
 function formatTime(secs) {
@@ -75,6 +64,8 @@ export function renderContador() {
 
   contenedor.innerHTML = `
     <div class="ct-wrapper" id="ct-wrapper">
+      <div class="ct-bg-overlay" aria-hidden="true"></div>
+      <div class="ct-particles" id="ct-particles" aria-hidden="true"></div>
       <div class="ct-badge" id="ct-badge">LISTO</div>
       <div class="ct-display">
         <div class="ct-time" id="ct-time">${formatTime(tiempo)}</div>
@@ -129,9 +120,37 @@ function bindControls() {
     return Math.max(1, Math.min(99, parseInt(inputEl.value, 10) || 1)) * 60;
   }
 
+  function triggerSlam() {
+    wrapper.classList.remove('is-slam');
+    void wrapper.offsetWidth;
+    wrapper.classList.add('is-slam');
+    setTimeout(() => wrapper.classList.remove('is-slam'), 500);
+  }
+
+  function spawnParticles() {
+    const container = document.getElementById('ct-particles');
+    if (!container) return;
+    container.innerHTML = '';
+    const colors = ['#ff3b3b', '#ff9e55', '#ffffff', '#ffdd57', '#ff6b6b', '#ff8c42'];
+    for (let i = 0; i < 60; i++) {
+      const p = document.createElement('div');
+      p.className = 'ct-particle';
+      const angle = Math.random() * 2 * Math.PI;
+      const dist  = 180 + Math.random() * 380;
+      p.style.setProperty('--dx',       `${Math.cos(angle) * dist}px`);
+      p.style.setProperty('--dy',       `${Math.sin(angle) * dist}px`);
+      p.style.setProperty('--size',     `${6 + Math.random() * 14}px`);
+      p.style.setProperty('--color',    colors[Math.floor(Math.random() * colors.length)]);
+      p.style.setProperty('--duration', `${0.9 + Math.random() * 0.8}s`);
+      p.style.setProperty('--delay',    `${Math.random() * 0.35}s`);
+      container.appendChild(p);
+    }
+    setTimeout(() => { container.innerHTML = ''; }, 2200);
+  }
+
   function applyState(state) {
     _currentState = state;
-    wrapper.classList.remove('is-running', 'is-paused', 'is-done', 'is-critical');
+    wrapper.classList.remove('is-running', 'is-paused', 'is-done', 'is-critical', 'is-warning');
     if (state === STATE.RUNNING) wrapper.classList.add('is-running');
     if (state === STATE.PAUSED)  wrapper.classList.add('is-paused');
     if (state === STATE.DONE)    wrapper.classList.add('is-done');
@@ -161,22 +180,28 @@ function bindControls() {
     setState({ contador: { ...getState().contador, tiempo: next } });
     timeEl.textContent = formatTime(next);
 
+    if (next <= 30 && next > 0) {
+      wrapper.classList.add('is-warning');
+    }
+    // Arrancar MP3 en remaining=15 → voz dice "10" cuando remaining llega a 10
+    if (next === 15) {
+      startCountdownAudio();
+    }
     if (next <= 10 && next > 0) {
       wrapper.classList.add('is-critical');
-      playTick();
+      triggerSlam();
     }
     if (next <= 0) {
       clearInterval(_intervalo); _intervalo = null;
       wrapper.classList.remove('is-critical');
       applyState(STATE.DONE);
-      playFinal();
+      spawnParticles();
       wrapper.classList.add('is-flash');
       wrapper.addEventListener('animationend', () => wrapper.classList.remove('is-flash'), { once: true });
     }
   }
 
   function iniciar() {
-    getAudioCtx().resume();
     const secs = getConfigSecs();
     setState({ contador: { ...getState().contador, tiempo: secs, corriendo: true } });
     timeEl.textContent = formatTime(secs);
@@ -185,21 +210,25 @@ function bindControls() {
   }
 
   function reanudar() {
-    getAudioCtx().resume();
     setState({ contador: { ...getState().contador, corriendo: true } });
     applyState(STATE.RUNNING);
-    if (getState().contador.tiempo <= 10) wrapper.classList.add('is-critical');
+    const t = getState().contador.tiempo;
+    if (t <= 30) wrapper.classList.add('is-warning');
+    if (t <= 10) wrapper.classList.add('is-critical');
+    if (t <= 15 && t > 0) resumeCountdownAudio(t);
     _intervalo = setInterval(tick, 1000);
   }
 
   function pausar() {
     clearInterval(_intervalo); _intervalo = null;
+    _sndCountdown.pause();
     setState({ contador: { ...getState().contador, corriendo: false } });
     applyState(STATE.PAUSED);
   }
 
   function reiniciar() {
     clearInterval(_intervalo); _intervalo = null;
+    stopCountdownAudio();
     const secs = getConfigSecs();
     setState({ contador: { tiempo: secs, corriendo: false, puntos: { rojo: 0, azul: 0 } } });
     timeEl.textContent = formatTime(secs);

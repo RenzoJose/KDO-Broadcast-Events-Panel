@@ -59,46 +59,73 @@ function getAudioCtx() {
   return audioCtx;
 }
 
-function playTick() {
+function playSaberSwing() {
   const ctx  = getAudioCtx();
+  const now  = ctx.currentTime;
   const osc  = ctx.createOscillator();
+  const filt = ctx.createBiquadFilter();
   const gain = ctx.createGain();
 
-  osc.connect(gain);
+  osc.type = 'sawtooth';
+  osc.frequency.setValueAtTime(1000, now);
+  osc.frequency.exponentialRampToValueAtTime(180, now + 0.32);
+
+  filt.type        = 'bandpass';
+  filt.frequency.value = 600;
+  filt.Q.value     = 3;
+
+  gain.gain.setValueAtTime(0.45, now);
+  gain.gain.exponentialRampToValueAtTime(0.001, now + 0.38);
+
+  osc.connect(filt);
+  filt.connect(gain);
   gain.connect(ctx.destination);
 
-  osc.type            = 'sine';
-  osc.frequency.value = 880;
-  gain.gain.setValueAtTime(0.2, ctx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.09);
-
-  osc.start(ctx.currentTime);
-  osc.stop(ctx.currentTime + 0.09);
+  osc.start(now);
+  osc.stop(now + 0.38);
 }
 
 function playFinal() {
   const ctx = getAudioCtx();
+  const now = ctx.currentTime;
 
-  // Triple beep descendente — sonido de final de tiempo
-  [
-    { delay: 0,    freq: 660 },
-    { delay: 0.32, freq: 550 },
-    { delay: 0.64, freq: 440 },
-  ].forEach(({ delay, freq }) => {
-    const osc  = ctx.createOscillator();
-    const gain = ctx.createGain();
+  // Sable apagándose — sweep descendente principal
+  const osc1  = ctx.createOscillator();
+  const gain1 = ctx.createGain();
+  osc1.type = 'sawtooth';
+  osc1.frequency.setValueAtTime(700, now);
+  osc1.frequency.exponentialRampToValueAtTime(40, now + 2.0);
+  gain1.gain.setValueAtTime(0.55, now);
+  gain1.gain.exponentialRampToValueAtTime(0.001, now + 2.0);
+  osc1.connect(gain1);
+  gain1.connect(ctx.destination);
+  osc1.start(now);
+  osc1.stop(now + 2.0);
 
-    osc.connect(gain);
-    gain.connect(ctx.destination);
+  // Sub-armónico para cuerpo
+  const osc2  = ctx.createOscillator();
+  const gain2 = ctx.createGain();
+  osc2.type = 'square';
+  osc2.frequency.setValueAtTime(350, now);
+  osc2.frequency.exponentialRampToValueAtTime(20, now + 1.6);
+  gain2.gain.setValueAtTime(0.3, now);
+  gain2.gain.exponentialRampToValueAtTime(0.001, now + 1.6);
+  osc2.connect(gain2);
+  gain2.connect(ctx.destination);
+  osc2.start(now);
+  osc2.stop(now + 1.6);
 
-    osc.type            = 'square';
-    osc.frequency.value = freq;
-    gain.gain.setValueAtTime(0.35, ctx.currentTime + delay);
-    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + delay + 0.45);
-
-    osc.start(ctx.currentTime + delay);
-    osc.stop(ctx.currentTime + delay + 0.45);
-  });
+  // Impacto inicial
+  const osc3  = ctx.createOscillator();
+  const gain3 = ctx.createGain();
+  osc3.type = 'sine';
+  osc3.frequency.setValueAtTime(260, now);
+  gain3.gain.setValueAtTime(0.7, now);
+  gain3.gain.exponentialRampToValueAtTime(0.001, now + 0.28);
+  osc3.connect(gain3);
+  gain3.connect(ctx.destination);
+  osc3.start(now);
+  osc3.stop(now + 0.28);
 }
 
 /* ── Utilidades ─────────────────────────────────────────────────── */
@@ -119,8 +146,8 @@ function getConfiguredSeconds() {
 function applyState(state) {
   currentState = state;
 
-  // Limpia todas las clases de estado (is-critical se gestiona por separado)
-  wrapper.classList.remove('is-running', 'is-paused', 'is-done', 'is-critical');
+  // Limpia todas las clases de estado
+  wrapper.classList.remove('is-running', 'is-paused', 'is-done', 'is-critical', 'is-warning');
 
   const cls = STATE_CLASS[state];
   if (cls) wrapper.classList.add(cls);
@@ -166,11 +193,56 @@ function updateButtons(state) {
 
 /* ── Flash visual al finalizar ──────────────────────────────────── */
 
+function triggerSlam() {
+  wrapper.classList.remove('is-slam');
+  void wrapper.offsetWidth; // fuerza reflow para reiniciar la animación cada segundo
+  wrapper.classList.add('is-slam');
+  setTimeout(() => wrapper.classList.remove('is-slam'), 500);
+}
+
 function triggerFlash() {
   wrapper.classList.add('is-flash');
   wrapper.addEventListener('animationend', () => {
     wrapper.classList.remove('is-flash');
   }, { once: true });
+}
+
+function speakNumber(n) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt  = new SpeechSynthesisUtterance(String(n));
+  utt.lang   = 'es-ES';
+  utt.volume = 1;
+  utt.rate   = 1.1;
+  utt.pitch  = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+
+function spawnParticles() {
+  const container = document.getElementById('ct-particles');
+  container.innerHTML = '';
+  const colors = ['#ff3b3b', '#ff9e55', '#ffffff', '#ffdd57', '#ff6b6b', '#ff8c42'];
+  const count  = 60;
+
+  for (let i = 0; i < count; i++) {
+    const p        = document.createElement('div');
+    p.className    = 'ct-particle';
+    const angle    = Math.random() * 2 * Math.PI;
+    const distance = 280 + Math.random() * 520;
+    const dx       = Math.cos(angle) * distance;
+    const dy       = Math.sin(angle) * distance;
+    const size     = 6 + Math.random() * 16;
+    const duration = 0.9 + Math.random() * 0.8;
+    const delay    = Math.random() * 0.35;
+    p.style.setProperty('--dx',       `${dx}px`);
+    p.style.setProperty('--dy',       `${dy}px`);
+    p.style.setProperty('--size',     `${size}px`);
+    p.style.setProperty('--color',    colors[Math.floor(Math.random() * colors.length)]);
+    p.style.setProperty('--duration', `${duration}s`);
+    p.style.setProperty('--delay',    `${delay}s`);
+    container.appendChild(p);
+  }
+  setTimeout(() => { container.innerHTML = ''; }, 2200);
 }
 
 /* ── Lógica del countdown ───────────────────────────────────────── */
@@ -179,10 +251,17 @@ function tick() {
   remaining--;
   timeEl.textContent = formatTime(remaining);
 
+  // Zona de advertencia: últimos 30 segundos
+  if (remaining <= 30 && remaining > 0) {
+    wrapper.classList.add('is-warning');
+  }
+
   // Zona crítica: últimos 10 segundos
   if (remaining <= 10 && remaining > 0) {
     wrapper.classList.add('is-critical');
-    playTick();
+    playSaberSwing();
+    speakNumber(remaining);
+    triggerSlam();
   }
 
   // Tiempo terminado
@@ -193,6 +272,7 @@ function tick() {
     applyState(STATE.DONE);
     playFinal();
     triggerFlash();
+    spawnParticles();
   }
 }
 
@@ -213,10 +293,9 @@ function reanudar() {
   getAudioCtx().resume();
   applyState(STATE.RUNNING);
 
-  // Reactivar critical si el tiempo restante sigue en zona crítica
-  if (remaining <= 10) {
-    wrapper.classList.add('is-critical');
-  }
+  // Reactivar clases de zona según tiempo restante
+  if (remaining <= 30) wrapper.classList.add('is-warning');
+  if (remaining <= 10) wrapper.classList.add('is-critical');
 
   intervalId = setInterval(tick, 1000);
 }
