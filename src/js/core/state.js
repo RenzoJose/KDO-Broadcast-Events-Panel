@@ -19,8 +19,9 @@ let _state = {
 
   // ── Sorteo ────────────────────────────────────────────────────
   sorteo: {
-    participantes: [],      // Array de { nombre, categoria, pais }
+    participantes: [],      // Array de { id, name, school, logo }
     resultado: null,
+    ultimoGanador: null,
   },
 
   // ── Contador ──────────────────────────────────────────────────
@@ -57,8 +58,8 @@ export function setState(parcial) {
 export function resetState() {
   _state = {
     vistaActual: 'agenda',
-    agenda:  { eventos: [], eventoActual: null },
-    sorteo:  { participantes: [], resultado: null },
+    agenda: { eventos: [], eventoActual: null },
+    sorteo: { participantes: [], resultado: null },
     contador: { tiempo: 120, corriendo: false, puntos: { rojo: 0, azul: 0 } },
   };
 }
