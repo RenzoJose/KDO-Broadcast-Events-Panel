@@ -20,16 +20,16 @@
    --color-gray: #c6c6c6;
    /* Gris — bordes suaves, disabled */
 
-   /* ── Dashboard — tema claro ──────────────────────────────── */
-   --color-bg: #f4f7fc;
+   /* ── Dashboard — tema oscuro broadcast ────────────────── */
+   --color-bg: #0e1c2e;
    /* Fondo general */
-   --color-surface: #ffffff;
+   --color-surface: #16273d;
    /* Superficies / sidebar */
-   --color-border: #e2e8f0;
+   --color-border: rgba(255, 255, 255, 0.08);
    /* Bordes y separadores */
-   --color-text: #243d5b;
+   --color-text: #e8f0fa;
    /* Texto principal */
-   --color-text-muted: #7890aa;
+   --color-text-muted: #7a9bbf;
    /* Texto secundario */
 
    /* ── Sidebar ─────────────────────────────────────────────── */
