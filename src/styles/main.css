@@ -19,7 +19,7 @@ body {
   height: 100vh;
   overflow: hidden;
   font-family: var(--font-primary);
-  font-size: clamp(16px, 1.2vw, 32px);
+  font-size: clamp(16px, 1.5vw, 48px);
   background: var(--color-bg);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
@@ -250,11 +250,138 @@ li {
   height: 100%;
   padding: 2rem;
   overflow: hidden;
+  background: var(--color-bg);
+}
+
+/* Fullscreen broadcast — pantalla 3×2m */
+.st-stage:fullscreen,
+.st-stage:-webkit-full-screen {
+  background: var(--color-bg);
+  gap: 3.5rem;
+}
+
+.st-stage:fullscreen .st-kdo-logo,
+.st-stage:-webkit-full-screen .st-kdo-logo {
+  height: 80px;
+}
+
+.st-stage:fullscreen .st-title,
+.st-stage:-webkit-full-screen .st-title {
+  font-size: 2.8rem;
+}
+
+.st-stage:fullscreen .st-slot-wrap,
+.st-stage:-webkit-full-screen .st-slot-wrap {
+  width: min(900px, 72vw);
+}
+
+.st-stage:fullscreen .st-card,
+.st-stage:-webkit-full-screen .st-card {
+  padding: 2.8rem 3.2rem;
+  gap: 2.2rem;
+}
+
+.st-stage:fullscreen .st-card__logo-box,
+.st-stage:-webkit-full-screen .st-card__logo-box {
+  width: 130px;
+  height: 130px;
+  border-radius: 20px;
+}
+
+.st-stage:fullscreen .st-card__name,
+.st-stage:-webkit-full-screen .st-card__name {
+  font-size: 2.8rem;
+}
+
+.st-stage:fullscreen .st-card__school,
+.st-stage:-webkit-full-screen .st-card__school {
+  font-size: 1.4rem;
+}
+
+.st-stage:fullscreen .st-btn,
+.st-stage:-webkit-full-screen .st-btn {
+  font-size: 1.4rem;
+  padding: 1em 4.5em;
+}
+
+.st-stage:fullscreen .st-meta,
+.st-stage:-webkit-full-screen .st-meta {
+  font-size: 1.1rem;
+}
+
+.st-stage:fullscreen .st-winner__card,
+.st-stage:-webkit-full-screen .st-winner__card {
+  padding: 4rem 5.5rem;
+  gap: 1.8rem;
+}
+
+.st-stage:fullscreen .st-winner__logo-box,
+.st-stage:-webkit-full-screen .st-winner__logo-box {
+  width: 200px;
+  height: 200px;
+  border-radius: 28px;
+}
+
+.st-stage:fullscreen .st-winner__name,
+.st-stage:-webkit-full-screen .st-winner__name {
+  font-size: 3.6rem;
+}
+
+.st-stage:fullscreen .st-winner__school,
+.st-stage:-webkit-full-screen .st-winner__school {
+  font-size: 1.5rem;
+}
+
+.st-stage:fullscreen .st-winner__badge,
+.st-stage:-webkit-full-screen .st-winner__badge {
+  font-size: 1rem;
+  padding: 0.5em 2.2em;
+  letter-spacing: 0.4em;
+}
+
+/* ── Switch Atletas / Escuelas ───────────────────────────────── */
+.st-switch {
+  display: flex;
+  background: #e8eef8;
+  border-radius: 999px;
+  padding: 4px;
+  gap: 2px;
+}
+
+.st-switch__btn {
+  padding: 0.45em 1.8em;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-primary);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  color: #7890aa;
+  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.st-switch__btn--active {
+  background: #fff;
+  color: #0047a0;
+  box-shadow: 0 2px 10px rgba(0, 71, 160, 0.14);
+}
+
+.st-switch__btn:not(.st-switch__btn--active):hover {
+  color: #0047a0;
+}
+
+/* Fullscreen: switch más grande */
+.st-stage:fullscreen .st-switch,
+.st-stage:-webkit-full-screen .st-switch {
+  transform: scale(1.35);
+  transform-origin: center;
 }
 
 /* ── Encabezado ──────────────────────────────────────────────── */
 .st-header {
-  display: flex;
   align-items: center;
   gap: 1rem;
 }
@@ -571,4 +698,397 @@ li {
 
 .st-btn-accent:hover {
   background: #a02040;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   RESULTADOS — Vista de ganadores del sorteo
+   ══════════════════════════════════════════════════════════════════ */
+
+#resultados.view {
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0;
+  overflow: hidden;
+}
+
+.rsl-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.rsl-stage.rsl-loading {
+  align-items: center;
+  justify-content: center;
+}
+
+.rsl-spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #0047a0;
+  border-radius: 50%;
+  animation: rsl-spin 0.7s linear infinite;
+}
+
+@keyframes rsl-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.rsl-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.rsl-main-title {
+  font-size: clamp(1.4rem, 3vw, 6rem);
+  font-weight: 900;
+  color: #0047a0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.rsl-subtitle {
+  font-size: 0.82rem;
+  color: #7890aa;
+  margin-top: 0.35rem;
+  letter-spacing: 0.03em;
+}
+
+/* ── Stats ───────────────────────────────────────────────────── */
+.rsl-stats {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.rsl-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.55rem 1.2rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  min-width: 76px;
+}
+
+.rsl-stat__num {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #0047a0;
+  line-height: 1;
+}
+
+.rsl-stat__label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #7890aa;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* ── Podio ───────────────────────────────────────────────────── */
+.rsl-podium {
+  display: flex;
+  align-items: flex-end;
+  justify-content: stretch;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.rsl-podium__gap {
+  flex: 1;
+}
+
+.rsl-podium__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.6rem 1rem 1rem;
+  border-radius: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* 1° — Campeón */
+.rsl-podium__card--1 {
+  background: linear-gradient(150deg, #0047a0 0%, #170fdd 100%);
+  box-shadow: 0 12px 40px rgba(0, 71, 160, 0.32);
+  color: #fff;
+  padding: 2rem 1.2rem 1.4rem;
+  z-index: 2;
+}
+
+/* 2° — Plata */
+.rsl-podium__card--2 {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* 3° — Bronce */
+.rsl-podium__card--3 {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* Badge posición */
+.rsl-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.35em 1.4em;
+  white-space: nowrap;
+}
+
+.rsl-badge--1 {
+  background: #c62c55;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.rsl-badge--2 {
+  background: #b8c9d8;
+  color: #243d5b;
+}
+
+.rsl-badge--3 {
+  background: #c88b3a;
+  color: #fff;
+}
+
+/* Avatar */
+.rsl-podium__avatar {
+  margin-bottom: 0.3rem;
+}
+
+.rsl-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  object-fit: cover;
+  font-weight: 900;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.rsl-avatar--lg {
+  width: clamp(80px, 9vw, 180px);
+  height: clamp(80px, 9vw, 180px);
+  font-size: clamp(1.6rem, 2.5vw, 4rem);
+  border: 3px solid rgba(255, 255, 255, 0.45);
+}
+
+.rsl-avatar--md {
+  width: clamp(60px, 7vw, 140px);
+  height: clamp(60px, 7vw, 140px);
+  font-size: 1.3rem;
+  border: 2px solid #e2e8f0;
+}
+
+.rsl-avatar--sm {
+  width: clamp(36px, 4vw, 80px);
+  height: clamp(36px, 4vw, 80px);
+  font-size: clamp(0.8rem, 1.2vw, 1.8rem);
+  border: 2px solid #e2e8f0;
+}
+
+.rsl-avatar--text {
+  background: linear-gradient(135deg, #e8f0fe, #c7d9ff);
+  color: #0047a0;
+}
+
+.rsl-podium__card--1 .rsl-avatar--text {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Nombre y escuela */
+.rsl-podium__name {
+  font-size: clamp(1rem, 1.8vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.rsl-podium__card--1 .rsl-podium__name {
+  color: #fff;
+  font-size: clamp(1.2rem, 2.2vw, 4.5rem);
+}
+
+.rsl-podium__card--2 .rsl-podium__name,
+.rsl-podium__card--3 .rsl-podium__name {
+  color: #243d5b;
+}
+
+.rsl-podium__school {
+  font-size: clamp(0.75rem, 1.1vw, 2rem);
+  text-align: center;
+}
+
+.rsl-podium__card--1 .rsl-podium__school {
+  color: rgba(255, 255, 255, 0.80);
+}
+
+.rsl-podium__card--2 .rsl-podium__school,
+.rsl-podium__card--3 .rsl-podium__school {
+  color: #7890aa;
+}
+
+.rsl-podium__time {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  opacity: 0.50;
+  margin-top: 2px;
+}
+
+/* ── Lista 4°+ ───────────────────────────────────────────────── */
+.rsl-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.rsl-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.rsl-row__pos {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #7890aa;
+  width: 1.6rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.rsl-row__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.rsl-row__name {
+  font-weight: 900;
+  font-size: clamp(0.9rem, 1.4vw, 2.5rem);
+  color: #243d5b;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rsl-row__school {
+  font-size: clamp(0.7rem, 1vw, 1.8rem);
+  color: #7890aa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rsl-row__time {
+  font-size: 0.7rem;
+  color: #7890aa;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+/* ── Estado vacío ────────────────────────────────────────────── */
+.rsl-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  flex: 1;
+  opacity: 0.55;
+}
+
+.rsl-empty__icon {
+  font-size: 3.5rem;
+}
+
+.rsl-empty__text {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #243d5b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.rsl-empty__sub {
+  font-size: 0.82rem;
+  color: #7890aa;
+}
+
+/* ── Tabs Atletas / Escuelas ─────────────────────────────────── */
+.rsl-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 9999px;
+  padding: 4px;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.rsl-tab {
+  padding: 0.45rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: #243d5b;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.rsl-tab:hover:not(.rsl-tab--active) {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.rsl-tab--active {
+  background: var(--color-primary, #0047a0);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 71, 160, 0.35);
 }

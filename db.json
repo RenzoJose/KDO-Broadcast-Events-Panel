@@ -1,167 +1,245 @@
 {
-    "participants": [
-        {
-            "id": "1",
-            "name": "Kim Jae-won",
-            "school": "Dojang Seoul",
-            "logo": "https://ui-avatars.com/api/?name=Kim+Jae-won&background=0047a0&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "2",
-            "name": "Silva Rodrigo",
-            "school": "Academia SP",
-            "logo": "https://ui-avatars.com/api/?name=Silva+Rodrigo&background=c62c55&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "3",
-            "name": "Park Min-su",
-            "school": "Busan Tigers",
-            "logo": "https://ui-avatars.com/api/?name=Park+Min-su&background=170fdd&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "4",
-            "name": "García Luis",
-            "school": "Club Olimpia",
-            "logo": "https://ui-avatars.com/api/?name=Garcia+Luis&background=243d5b&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "5",
-            "name": "Tanaka Yuki",
-            "school": "Tokyo Taekwondo",
-            "logo": "https://ui-avatars.com/api/?name=Tanaka+Yuki&background=0047a0&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "6",
-            "name": "Okafor Emeka",
-            "school": "Lagos Warriors",
-            "logo": "https://ui-avatars.com/api/?name=Okafor+Emeka&background=c62c55&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "7",
-            "name": "Fernández Ana",
-            "school": "Escuela Madrid",
-            "logo": "https://ui-avatars.com/api/?name=Fernandez+Ana&background=170fdd&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "8",
-            "name": "Chen Wei",
-            "school": "Beijing Academy",
-            "logo": "https://ui-avatars.com/api/?name=Chen+Wei&background=243d5b&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "9",
-            "name": "Müller Hans",
-            "school": "Berlin Dojo",
-            "logo": "https://ui-avatars.com/api/?name=Muller+Hans&background=0047a0&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "10",
-            "name": "Patel Arjun",
-            "school": "Mumbai Kicks",
-            "logo": "https://ui-avatars.com/api/?name=Patel+Arjun&background=c62c55&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "11",
-            "name": "Santos Diego",
-            "school": "Copa Brasil TKD",
-            "logo": "https://ui-avatars.com/api/?name=Santos+Diego&background=170fdd&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "12",
-            "name": "Nguyen Minh",
-            "school": "Saigon Tigers",
-            "logo": "https://ui-avatars.com/api/?name=Nguyen+Minh&background=243d5b&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "13",
-            "name": "Ivanov Alexei",
-            "school": "Moscow Dojang",
-            "logo": "https://ui-avatars.com/api/?name=Ivanov+Alexei&background=0047a0&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "14",
-            "name": "Osei Kwame",
-            "school": "Accra Elite",
-            "logo": "https://ui-avatars.com/api/?name=Osei+Kwame&background=c62c55&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "15",
-            "name": "López Camila",
-            "school": "Tegucigalpa TKD",
-            "logo": "https://ui-avatars.com/api/?name=Lopez+Camila&background=170fdd&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "16",
-            "name": "Rashid Omar",
-            "school": "Cairo Warriors",
-            "logo": "https://ui-avatars.com/api/?name=Rashid+Omar&background=243d5b&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "17",
-            "name": "Park Ji-yeon",
-            "school": "Incheon United",
-            "logo": "https://ui-avatars.com/api/?name=Park+Ji-yeon&background=0047a0&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "18",
-            "name": "Martínez Javier",
-            "school": "Medellín TKD",
-            "logo": "https://ui-avatars.com/api/?name=Martinez+Javier&background=c62c55&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "19",
-            "name": "Johansson Erik",
-            "school": "Stockholm Kicks",
-            "logo": "https://ui-avatars.com/api/?name=Johansson+Erik&background=170fdd&color=fff&size=128&bold=true"
-        },
-        {
-            "id": "20",
-            "name": "Abubakar Fatima",
-            "school": "Abuja Academy",
-            "logo": "https://ui-avatars.com/api/?name=Abubakar+Fatima&background=243d5b&color=fff&size=128&bold=true"
-        }
-    ],
-    "winners": [
-        {
-            "participantId": "10",
-            "name": "Patel Arjun",
-            "school": "Mumbai Kicks",
-            "logo": "https://ui-avatars.com/api/?name=Patel+Arjun&background=c62c55&color=fff&size=128&bold=true",
-            "wonAt": "2026-04-06T21:06:46.333Z",
-            "id": "ob7DF-xvJJ0"
-        },
-        {
-            "participantId": "14",
-            "name": "Osei Kwame",
-            "school": "Accra Elite",
-            "logo": "https://ui-avatars.com/api/?name=Osei+Kwame&background=c62c55&color=fff&size=128&bold=true",
-            "wonAt": "2026-04-06T21:07:16.015Z",
-            "id": "irt8YG9vYoE"
-        },
-        {
-            "participantId": "4",
-            "name": "García Luis",
-            "school": "Club Olimpia",
-            "logo": "https://ui-avatars.com/api/?name=Garcia+Luis&background=243d5b&color=fff&size=128&bold=true",
-            "wonAt": "2026-04-06T21:07:38.389Z",
-            "id": "kt_qkl95XCE"
-        },
-        {
-            "participantId": "18",
-            "name": "Martínez Javier",
-            "school": "Medellín TKD",
-            "logo": "https://ui-avatars.com/api/?name=Martinez+Javier&background=c62c55&color=fff&size=128&bold=true",
-            "wonAt": "2026-04-06T21:09:37.001Z",
-            "id": "xKIzPrlobLM"
-        },
-        {
-            "participantId": "17",
-            "name": "Park Ji-yeon",
-            "school": "Incheon United",
-            "logo": "https://ui-avatars.com/api/?name=Park+Ji-yeon&background=0047a0&color=fff&size=128&bold=true",
-            "wonAt": "2026-04-06T21:17:12.721Z",
-            "id": "BBrhtf-sSRI"
-        }
-    ],
-    "$schema": "./node_modules/json-server/schema.json"
+  "athletes": [
+    {
+      "id": "1",
+      "name": "Kim Jae-won",
+      "school": "Dojang Seoul",
+      "logo": "https://ui-avatars.com/api/?name=Kim+Jae-won&background=0047a0&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "2",
+      "name": "Silva Rodrigo",
+      "school": "Academia SP",
+      "logo": "https://ui-avatars.com/api/?name=Silva+Rodrigo&background=c62c55&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "3",
+      "name": "Park Min-su",
+      "school": "Busan Tigers",
+      "logo": "https://ui-avatars.com/api/?name=Park+Min-su&background=170fdd&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "4",
+      "name": "Garcia Luis",
+      "school": "Club Olimpia",
+      "logo": "https://ui-avatars.com/api/?name=Garcia+Luis&background=243d5b&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "5",
+      "name": "Tanaka Yuki",
+      "school": "Tokyo Taekwondo",
+      "logo": "https://ui-avatars.com/api/?name=Tanaka+Yuki&background=0047a0&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "6",
+      "name": "Okafor Emeka",
+      "school": "Lagos Warriors",
+      "logo": "https://ui-avatars.com/api/?name=Okafor+Emeka&background=c62c55&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "7",
+      "name": "Fernandez Ana",
+      "school": "Escuela Madrid",
+      "logo": "https://ui-avatars.com/api/?name=Fernandez+Ana&background=170fdd&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "8",
+      "name": "Chen Wei",
+      "school": "Beijing Academy",
+      "logo": "https://ui-avatars.com/api/?name=Chen+Wei&background=243d5b&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "9",
+      "name": "Muller Hans",
+      "school": "Berlin Dojo",
+      "logo": "https://ui-avatars.com/api/?name=Muller+Hans&background=0047a0&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "10",
+      "name": "Patel Arjun",
+      "school": "Mumbai Kicks",
+      "logo": "https://ui-avatars.com/api/?name=Patel+Arjun&background=c62c55&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "11",
+      "name": "Santos Diego",
+      "school": "Copa Brasil TKD",
+      "logo": "https://ui-avatars.com/api/?name=Santos+Diego&background=170fdd&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "12",
+      "name": "Nguyen Minh",
+      "school": "Saigon Tigers",
+      "logo": "https://ui-avatars.com/api/?name=Nguyen+Minh&background=243d5b&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "13",
+      "name": "Ivanov Alexei",
+      "school": "Moscow Dojang",
+      "logo": "https://ui-avatars.com/api/?name=Ivanov+Alexei&background=0047a0&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "14",
+      "name": "Osei Kwame",
+      "school": "Accra Elite",
+      "logo": "https://ui-avatars.com/api/?name=Osei+Kwame&background=c62c55&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "15",
+      "name": "Lopez Camila",
+      "school": "Tegucigalpa TKD",
+      "logo": "https://ui-avatars.com/api/?name=Lopez+Camila&background=170fdd&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "16",
+      "name": "Rashid Omar",
+      "school": "Cairo Warriors",
+      "logo": "https://ui-avatars.com/api/?name=Rashid+Omar&background=243d5b&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "17",
+      "name": "Park Ji-yeon",
+      "school": "Incheon United",
+      "logo": "https://ui-avatars.com/api/?name=Park+Ji-yeon&background=0047a0&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "18",
+      "name": "Martinez Javier",
+      "school": "Medellin TKD",
+      "logo": "https://ui-avatars.com/api/?name=Martinez+Javier&background=c62c55&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "19",
+      "name": "Johansson Erik",
+      "school": "Stockholm Kicks",
+      "logo": "https://ui-avatars.com/api/?name=Johansson+Erik&background=170fdd&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "20",
+      "name": "Abubakar Fatima",
+      "school": "Abuja Academy",
+      "logo": "https://ui-avatars.com/api/?name=Abubakar+Fatima&background=243d5b&color=fff&size=128&bold=true"
+    }
+  ],
+  "schools": [
+    {
+      "id": "sc1",
+      "name": "Dojang Seoul",
+      "city": "Seoul, Corea",
+      "logo": "https://ui-avatars.com/api/?name=DS&background=0047a0&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "sc2",
+      "name": "Academia SP",
+      "city": "Sao Paulo, Brasil",
+      "logo": "https://ui-avatars.com/api/?name=AS&background=c62c55&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "sc3",
+      "name": "Busan Tigers",
+      "city": "Busan, Corea",
+      "logo": "https://ui-avatars.com/api/?name=BT&background=170fdd&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "sc4",
+      "name": "Club Olimpia",
+      "city": "Ciudad de Mexico",
+      "logo": "https://ui-avatars.com/api/?name=CO&background=243d5b&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "sc5",
+      "name": "Tokyo Taekwondo",
+      "city": "Tokio, Japon",
+      "logo": "https://ui-avatars.com/api/?name=TT&background=0047a0&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "sc6",
+      "name": "Lagos Warriors",
+      "city": "Lagos, Nigeria",
+      "logo": "https://ui-avatars.com/api/?name=LW&background=c62c55&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "sc7",
+      "name": "Escuela Madrid",
+      "city": "Madrid, Espana",
+      "logo": "https://ui-avatars.com/api/?name=EM&background=170fdd&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "sc8",
+      "name": "Beijing Academy",
+      "city": "Pekin, China",
+      "logo": "https://ui-avatars.com/api/?name=BA&background=243d5b&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "sc9",
+      "name": "Berlin Dojo",
+      "city": "Berlin, Alemania",
+      "logo": "https://ui-avatars.com/api/?name=BD&background=0047a0&color=fff&size=128&bold=true"
+    },
+    {
+      "id": "sc10",
+      "name": "Mumbai Kicks",
+      "city": "Mumbai, India",
+      "logo": "https://ui-avatars.com/api/?name=MK&background=c62c55&color=fff&size=128&bold=true"
+    }
+  ],
+  "athleteWinners": [
+    {
+      "participantId": "12",
+      "name": "Nguyen Minh",
+      "subtitle": "Saigon Tigers",
+      "logo": "https://ui-avatars.com/api/?name=Nguyen+Minh&background=243d5b&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-07T18:55:27.159Z",
+      "id": "pRNqDSGFm0s"
+    },
+    {
+      "participantId": "7",
+      "name": "Fernandez Ana",
+      "subtitle": "Escuela Madrid",
+      "logo": "https://ui-avatars.com/api/?name=Fernandez+Ana&background=170fdd&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-07T19:19:33.325Z",
+      "id": "Q-1aL2EF5wI"
+    },
+    {
+      "participantId": "15",
+      "name": "Lopez Camila",
+      "subtitle": "Tegucigalpa TKD",
+      "logo": "https://ui-avatars.com/api/?name=Lopez+Camila&background=170fdd&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-07T19:21:57.269Z",
+      "id": "pHaDl5rfIh8"
+    },
+    {
+      "participantId": "5",
+      "name": "Tanaka Yuki",
+      "subtitle": "Tokyo Taekwondo",
+      "logo": "https://ui-avatars.com/api/?name=Tanaka+Yuki&background=0047a0&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-07T19:22:16.797Z",
+      "id": "XZsag5aBPNs"
+    }
+  ],
+  "schoolWinners": [
+    {
+      "participantId": "sc3",
+      "name": "Busan Tigers",
+      "subtitle": "Busan, Corea",
+      "logo": "https://ui-avatars.com/api/?name=BT&background=170fdd&color=fff&size=128&bold=true",
+      "type": "schools",
+      "wonAt": "2026-04-07T18:55:47.931Z",
+      "id": "amVi7Gd3wJg"
+    },
+    {
+      "participantId": "sc8",
+      "name": "Beijing Academy",
+      "subtitle": "Pekin, China",
+      "logo": "https://ui-avatars.com/api/?name=BA&background=243d5b&color=fff&size=128&bold=true",
+      "type": "schools",
+      "wonAt": "2026-04-07T19:08:12.926Z",
+      "id": "AfYBL0RgE4E"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

@@ -5,9 +5,10 @@
    ═══════════════════════════════════════════════════════════════ */
 
 import { initRouter } from './core/router.js';
-import { initAgenda }   from './modules/agenda.js';
-import { initSorteo }   from './modules/sorteo.js';
+import { initAgenda } from './modules/agenda.js';
+import { initSorteo } from './modules/sorteo.js';
 import { initContador } from './modules/contador.js';
+import { initResultados, renderResultados } from './modules/resultados.js';
 
 /**
  * Función principal. Se ejecuta cuando el DOM está listo.
@@ -24,14 +25,19 @@ function init() {
   // Dev 2: sorteo
   initSorteo();
 
+  // Dev 3: resultados
+  initResultados();
+
   // ── Inicializar router ───────────────────────────────────────
   // Activa la vista por defecto ('agenda') al cargar
   initRouter('agenda');
 
   // ── Exponer cambiarVista globalmente ─────────────────────────
-  // Permite llamar cambiarVista() desde atributos onclick en el HTML
-  // (útil en botones de control remoto / teclado)
-  window.cambiarVista = (id) => import('./core/router.js').then(m => m.cambiarVista(id));
+  // Re-renderiza resultados al navegar para mostrar ganadores nuevos
+  window.cambiarVista = (id) => {
+    import('./core/router.js').then(m => m.cambiarVista(id));
+    if (id === 'resultados') renderResultados();
+  };
 
   console.log('[app] KDO Broadcast Panel iniciado correctamente.');
 }

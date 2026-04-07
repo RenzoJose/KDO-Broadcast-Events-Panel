@@ -1,15 +1,36 @@
-/* ═══════════════════════════════════════════════════════════════
-   sorteo.js — Vista Sorteo con animación slot-machine (10 s)
-   Mock:  GET  http://localhost:3001/participants  → { id, name, school, logo }
-   Prod:  cambiar API_BASE a la URL del endpoint real
-   Regla: un participante no puede ganar dos veces (validado por id)
-   ═══════════════════════════════════════════════════════════════ */
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   sorteo.js â€” Vista Sorteo con animaciÃ³n slot-machine (10 s)
+   Modos: 'athletes' (GET /athletes) | 'schools' (GET /schools)
+   Winners: /athleteWinners  |  /schoolWinners
+   Regla:  un item no puede ganar dos veces por modo (validado por id)
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 import { getState, setState } from '../core/state.js';
 
 const API_BASE = 'http://localhost:3001';
 
-// ── Easing cuadrático: ticks de 50 ms → 800 ms en ~10 s ─────────
+// â”€â”€ ConfiguraciÃ³n por modo â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+const ENDPOINTS = {
+  athletes: { data: 'athletes', winners: 'athleteWinners' },
+  schools: { data: 'schools', winners: 'schoolWinners' },
+};
+
+const MODE_CFG = {
+  athletes: {
+    title: 'Sorteo de Atletas',
+    singular: 'atleta',
+    plural: 'atletas',
+    subtitle: p => p.school || '',
+  },
+  schools: {
+    title: 'Sorteo de Escuelas',
+    singular: 'escuela',
+    plural: 'escuelas',
+    subtitle: p => p.city || '',
+  },
+};
+
+// â”€â”€ Easing cuadrÃ¡tico: ticks de 50 ms â†’ 800 ms en ~10 s â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function buildDelays() {
   const delays = [];
   let elapsed = 0;
@@ -23,89 +44,100 @@ function buildDelays() {
   return delays;
 }
 
-// ── Helpers fetch ────────────────────────────────────────────────
-async function fetchParticipants() {
-  const r = await fetch(`${API_BASE}/participants`);
-  if (!r.ok) throw new Error('json-server offline — ejecuta: npm run mock');
+// â”€â”€ Helpers fetch â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+async function fetchData(mode) {
+  const r = await fetch(`${API_BASE}/${ENDPOINTS[mode].data}`);
+  if (!r.ok) throw new Error('json-server offline â€” ejecuta: npm run mock');
   return r.json();
 }
 
-async function fetchWinners() {
+async function fetchWinners(mode) {
   try {
-    const r = await fetch(`${API_BASE}/winners`);
+    const r = await fetch(`${API_BASE}/${ENDPOINTS[mode].winners}`);
     return r.ok ? r.json() : [];
   } catch { return []; }
 }
 
-async function postWinner(p) {
-  await fetch(`${API_BASE}/winners`, {
+async function postWinner(p, mode) {
+  await fetch(`${API_BASE}/${ENDPOINTS[mode].winners}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       participantId: p.id,
       name: p.name,
-      school: p.school,
+      subtitle: p.subtitle,
       logo: p.logo,
+      type: mode,
       wonAt: new Date().toISOString(),
     }),
   });
 }
 
-async function clearWinners() {
-  const list = await fetchWinners();
+async function clearWinners(mode) {
+  const list = await fetchWinners(mode);
   await Promise.all(
-    list.map(w => fetch(`${API_BASE}/winners/${w.id}`, { method: 'DELETE' }))
+    list.map(w => fetch(`${API_BASE}/${ENDPOINTS[mode].winners}/${w.id}`, { method: 'DELETE' }))
   );
 }
 
-// ── Estado local ─────────────────────────────────────────────────
+// â”€â”€ Estado local â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 let _busy = false;
+let _mode = 'athletes'; // 'athletes' | 'schools'
 
-// ── Entrada pública ──────────────────────────────────────────────
+// â”€â”€ Entrada pÃºblica â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export function initSorteo() {
   renderSorteo();
   console.log('[sorteo] listo');
 }
 
-// ── Render del stage ─────────────────────────────────────────────
+// â”€â”€ Render del stage â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export function renderSorteo() {
   const root = document.getElementById('sorteo');
   if (!root) return;
   _busy = false;
 
   root.innerHTML = `
-    <div class="st-stage">
+    <div class="st-stage" id="st-stage">
 
       <!-- Encabezado -->
       <div class="st-header">
         <img class="st-kdo-logo" src="src/logo/KDO-08.png" alt="KDO">
         <div class="st-titles">
-          <span class="st-eyebrow">KINETIC ARENA</span>
-          <span class="st-title">Sorteo de Participantes</span>
+          <span class="st-title" id="st-title">${MODE_CFG[_mode].title}</span>
         </div>
+      </div>
+
+      <!-- Switch de modo -->
+      <div class="st-switch" id="st-switch">
+        <button class="st-switch__btn ${_mode === 'athletes' ? 'st-switch__btn--active' : ''}" data-mode="athletes">
+          Atletas
+        </button>
+        <button class="st-switch__btn ${_mode === 'schools' ? 'st-switch__btn--active' : ''}" data-mode="schools">
+          Escuelas
+        </button>
       </div>
 
       <!-- Tarjeta animada (slot) -->
       <div class="st-slot-wrap">
         <div class="st-card" id="st-card">
           <div class="st-card__logo-box" id="st-logo-box">
-            <span class="st-card__initials" id="st-initials">KDO</span>
+            <span class="st-card__initials">KDO</span>
           </div>
           <div class="st-card__body">
-            <span class="st-card__name"   id="st-name">—</span>
-            <span class="st-card__school" id="st-school">Cargando participantes…</span>
+            <span class="st-card__name"   id="st-name">â€”</span>
+            <span class="st-card__school" id="st-school">Cargandoâ€¦</span>
           </div>
         </div>
         <div class="st-line st-line--l"></div>
         <div class="st-line st-line--r"></div>
       </div>
 
-      <!-- Info de participantes -->
+      <!-- Info -->
       <p class="st-meta" id="st-meta"></p>
 
-      <!-- Botón -->
+      <!-- BotÃ³n -->
       <button class="st-btn" id="st-btn" disabled>
-        <span>▶&nbsp; Iniciar Sorteo</span>
+        <span>Iniciar Sorteo</span>
       </button>
 
       <!-- Overlay ganador -->
@@ -117,7 +149,7 @@ export function renderSorteo() {
           <span class="st-winner__school" id="st-w-school"></span>
           <div class="st-winner__actions">
             <button class="st-btn-outline" id="st-btn-nuevo">Nuevo Sorteo</button>
-            <button class="st-btn-accent"  onclick="window.cambiarVista('resultados')">Ver Resultados</button>
+            <button class="st-btn-accent"  id="st-btn-resultados">Ver Resultados</button>
           </div>
         </div>
       </div>
@@ -125,71 +157,106 @@ export function renderSorteo() {
     </div>
   `;
 
+  // Bind switch
+  document.querySelectorAll('#st-switch .st-switch__btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.mode === _mode || _busy) return;
+      _mode = btn.dataset.mode;
+
+      document.querySelectorAll('#st-switch .st-switch__btn').forEach(b =>
+        b.classList.toggle('st-switch__btn--active', b.dataset.mode === _mode)
+      );
+      document.getElementById('st-title').textContent = MODE_CFG[_mode].title;
+
+      // Reset UI y recargar datos
+      _setCard({ name: 'â€”', subtitle: 'Cargandoâ€¦', logo: '' });
+      const meta = document.getElementById('st-meta');
+      if (meta) meta.textContent = '';
+      const btn2 = document.getElementById('st-btn');
+      if (btn2) { btn2.disabled = true; btn2.innerHTML = '<span>Iniciar Sorteo</span>'; }
+
+      _load();
+    });
+  });
+
   _load();
 }
 
-// ── Carga datos y activa el botón ────────────────────────────────
+// â”€â”€ Carga datos y activa el botÃ³n â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function _load() {
   const btn = document.getElementById('st-btn');
   const meta = document.getElementById('st-meta');
+  const mode = _mode; // captura el modo actual (evita race conditions)
+  const cfg = MODE_CFG[mode];
 
   try {
-    const [all, winners] = await Promise.all([fetchParticipants(), fetchWinners()]);
+    const [all, winners] = await Promise.all([fetchData(mode), fetchWinners(mode)]);
+
+    // Si el modo cambiÃ³ mientras cargaba, ignorar
+    if (_mode !== mode) return;
+
     const wonIds = new Set(winners.map(w => w.participantId));
-    const eligible = all.filter(p => !wonIds.has(p.id));
+    const eligible = all
+      .filter(p => !wonIds.has(p.id))
+      .map(p => ({ ...p, subtitle: cfg.subtitle(p) }));
 
     // Caso: todos ya ganaron
     if (eligible.length === 0) {
-      _setCard({ name: 'Torneo Completo', school: `${winners.length} ganadores registrados`, logo: '' });
-      if (meta) meta.textContent = 'Todos los participantes ya participaron';
+      _setCard({ name: `${cfg.title} Completo`, subtitle: `${winners.length} ganadores registrados`, logo: '' });
+      if (meta) meta.textContent = `Todos los ${cfg.plural} ya participaron`;
       if (btn) {
-        btn.innerHTML = '<span>↺&nbsp; Reiniciar Torneo</span>';
+        btn.innerHTML = '<span>Reiniciar</span>';
         btn.disabled = false;
-        btn.addEventListener('click', async () => {
+        btn.onclick = async () => {
           btn.disabled = true;
-          await clearWinners();
-          renderSorteo();
-        });
+          await clearWinners(mode);
+          _setCard({ name: 'â€”', subtitle: 'Cargandoâ€¦', logo: '' });
+          if (meta) meta.textContent = '';
+          _load();
+        };
       }
       return;
     }
 
-    // Preview aleatorio en la tarjeta
+    // Preview aleatorio
     _setCard(eligible[Math.floor(Math.random() * eligible.length)]);
 
     if (meta) {
-      meta.textContent = `${eligible.length} participante${eligible.length !== 1 ? 's' : ''} disponibles` +
-        (winners.length ? ` · ${winners.length} ya ganaron` : '');
+      meta.textContent =
+        `${eligible.length} ${eligible.length !== 1 ? cfg.plural : cfg.singular} disponibles` +
+        (winners.length ? ` Â· ${winners.length} ya ganaron` : '');
     }
 
     if (btn) {
       btn.disabled = false;
-      btn.addEventListener('click', () => _spin(eligible));
+      btn.innerHTML = '<span>Iniciar Sorteo</span>';
+      btn.onclick = () => _spin(eligible, mode);
     }
 
   } catch (err) {
-    _setCard({ name: 'Sin conexión', school: 'Ejecuta: npm run mock', logo: '' });
-    if (meta) meta.textContent = '⚠ No se pudo conectar a json-server (:3001)';
+    if (_mode !== mode) return;
+    _setCard({ name: 'Sin conexiÃ³n', subtitle: 'Ejecuta: npm run mock', logo: '' });
+    if (meta) meta.textContent = 'âš  No se pudo conectar a json-server (:3001)';
     console.error('[sorteo]', err);
   }
 }
 
-// ── Actualiza la tarjeta central ─────────────────────────────────
-function _setCard(p) {
+// â”€â”€ Actualiza la tarjeta central â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function _setCard(item) {
   const nameEl = document.getElementById('st-name');
   const schoolEl = document.getElementById('st-school');
   const logoBox = document.getElementById('st-logo-box');
   if (!logoBox) return;
 
-  if (nameEl) nameEl.textContent = p.name;
-  if (schoolEl) schoolEl.textContent = p.school;
+  if (nameEl) nameEl.textContent = item.name;
+  if (schoolEl) schoolEl.textContent = item.subtitle;
 
-  const initials = (p.name || '?')
+  const initials = (item.name || '?')
     .split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
 
-  if (p.logo) {
+  if (item.logo) {
     logoBox.innerHTML = `
-      <img class="st-card__logo-img" src="${p.logo}" alt="${p.name}"
+      <img class="st-card__logo-img" src="${item.logo}" alt="${item.name}"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <span class="st-card__initials" style="display:none">${initials}</span>`;
   } else {
@@ -197,15 +264,14 @@ function _setCard(p) {
   }
 }
 
-// ── Animación slot-machine ───────────────────────────────────────
-function _spin(eligible) {
+// â”€â”€ AnimaciÃ³n slot-machine â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function _spin(eligible, mode) {
   if (_busy) return;
   _busy = true;
 
   const btn = document.getElementById('st-btn');
   if (btn) btn.disabled = true;
 
-  // Ganador pre-calculado ANTES de animar — garantiza que el frame final sea correcto
   const winner = eligible[Math.floor(Math.random() * eligible.length)];
   const pool = eligible.filter(p => p.id !== winner.id);
   const rotPool = pool.length ? pool : eligible;
@@ -224,16 +290,16 @@ function _spin(eligible) {
       setTimeout(tick, delays[i++]);
     } else {
       _setCard(winner);
-      setTimeout(() => _revealWinner(winner), 700);
+      setTimeout(() => _revealWinner(winner, mode), 700);
     }
   })();
 }
 
-// ── Revela al ganador ────────────────────────────────────────────
-async function _revealWinner(winner) {
+// â”€â”€ Revela al ganador â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+async function _revealWinner(winner, mode) {
   _busy = false;
 
-  try { await postWinner(winner); } catch { /* no bloquea la UI */ }
+  try { await postWinner(winner, mode); } catch { /* no bloquea la UI */ }
 
   setState({ sorteo: { ...getState().sorteo, ultimoGanador: winner } });
 
@@ -244,7 +310,7 @@ async function _revealWinner(winner) {
   if (!overlay) return;
 
   nameEl.textContent = winner.name;
-  schEl.textContent = winner.school;
+  schEl.textContent = winner.subtitle;
 
   const initials = winner.name.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
   logoBox.innerHTML = winner.logo
@@ -258,5 +324,8 @@ async function _revealWinner(winner) {
     overlay.classList.remove('st-winner--show');
     renderSorteo();
   });
-}
 
+  document.getElementById('st-btn-resultados')?.addEventListener('click', () => {
+    window.cambiarVista('resultados');
+  });
+}
