@@ -245,6 +245,14 @@ function spawnParticles() {
   setTimeout(() => { container.innerHTML = ''; }, 2200);
 }
 
+function triggerLogoCrash() {
+  const el = document.createElement('div');
+  el.className = 'ct-logo-crash';
+  el.innerHTML = '<img src="../logo/KDO-08.png" alt="KDO" />';
+  wrapper.appendChild(el);
+  setTimeout(() => el.remove(), 3300);
+}
+
 /* ── Lógica del countdown ───────────────────────────────────────── */
 
 function tick() {
@@ -273,6 +281,7 @@ function tick() {
     playFinal();
     triggerFlash();
     spawnParticles();
+    triggerLogoCrash();
   }
 }
 

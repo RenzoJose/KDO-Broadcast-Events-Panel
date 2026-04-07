@@ -150,13 +150,11 @@ html, body {
   50%       { transform: scale(1.05); }
 }
 
-/* ── Estado terminado: naranja + parpadeo ── */
+/* ── Estado terminado: desaparece para dar paso al logo ── */
 .ct-wrapper.is-done .ct-time {
-  color: var(--ct-done);
-  text-shadow:
-    0 0 60px var(--ct-done-glow),
-    0 0 140px rgba(255, 158, 85, 0.18);
-  animation: ct-blink 0.55s step-start infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: none;
 }
 
 @keyframes ct-blink {
@@ -430,4 +428,34 @@ html, body {
   0%   { transform: translate(-50%, -50%) scale(0); opacity: 1; }
   30%  { opacity: 1; }
   100% { transform: translate(calc(-50% + var(--dx, 0px)), calc(-50% + var(--dy, 0px))) scale(0.3); opacity: 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   LOGO CRASH — Aparece al finalizar, vuela hacia la cámara y explota
+   ══════════════════════════════════════════════════════════════════ */
+
+.ct-logo-crash {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 200;
+}
+
+.ct-logo-crash img {
+  width: clamp(200px, 28vw, 480px);
+  animation: ct-logo-crash 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes ct-logo-crash {
+  0%   { transform: scale(0.03); opacity: 0;   filter: brightness(4); }
+  10%  { opacity: 1; }
+  55%  { transform: scale(1.08); opacity: 1;   filter: brightness(1.6); }
+  68%  { transform: scale(0.97); }
+  78%  { transform: scale(1.03); }
+  86%  { transform: scale(1.0);  opacity: 1;   filter: brightness(1); }
+  92%  { transform: scale(1.0);  opacity: 1;   filter: brightness(3); }
+  100% { transform: scale(12);   opacity: 0;   filter: brightness(5); }
 }

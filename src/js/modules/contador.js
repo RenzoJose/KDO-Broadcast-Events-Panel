@@ -148,6 +148,14 @@ function bindControls() {
     setTimeout(() => { container.innerHTML = ''; }, 2200);
   }
 
+  function triggerLogoCrash() {
+    const el = document.createElement('div');
+    el.className = 'ct-logo-crash';
+    el.innerHTML = '<img src="src/logo/KDO-08.png" alt="KDO" />';
+    wrapper.appendChild(el);
+    setTimeout(() => el.remove(), 3300);
+  }
+
   function applyState(state) {
     _currentState = state;
     wrapper.classList.remove('is-running', 'is-paused', 'is-done', 'is-critical', 'is-warning');
@@ -196,6 +204,7 @@ function bindControls() {
       wrapper.classList.remove('is-critical');
       applyState(STATE.DONE);
       spawnParticles();
+      triggerLogoCrash();
       wrapper.classList.add('is-flash');
       wrapper.addEventListener('animationend', () => wrapper.classList.remove('is-flash'), { once: true });
     }
