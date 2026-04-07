@@ -52,6 +52,16 @@ let intervalId   = null;
 
 let audioCtx = null;
 
+/* ── Audio: Sonido de combate (MP3) ─────────────────────────────── */
+
+const _fightAudio = new Audio('../../public/assets/sounds/Fight - Mortal Kombat Efecto de Sonido.mp3');
+_fightAudio.preload = 'auto';
+
+function playFightSound() {
+  _fightAudio.currentTime = 0;
+  _fightAudio.play().catch(() => {});
+}
+
 function getAudioCtx() {
   if (!audioCtx) {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -250,7 +260,36 @@ function triggerLogoCrash() {
   el.className = 'ct-logo-crash';
   el.innerHTML = '<img src="../logo/KDO-08.png" alt="KDO" />';
   wrapper.appendChild(el);
-  setTimeout(() => el.remove(), 3300);
+  setTimeout(() => el.remove(), 8300);
+}
+
+/* ── Fight Sequence ─────────────────────────────────────────────── */
+
+const _fightScene  = document.getElementById('fight-scene');
+let   _fightTimers = [];
+
+function resetFightScene() {
+  _fightTimers.forEach(id => clearTimeout(id));
+  _fightTimers = [];
+  _fightScene.classList.remove('is-active', 'is-impact', 'is-fadeout');
+  // Fuerza reflow para que las animaciones CSS se reinicien correctamente
+  void _fightScene.offsetWidth;
+}
+
+function startFightSequence() {
+  resetFightScene();
+
+  // Fase 1: puños entran desde los extremos
+  _fightScene.classList.add('is-active');
+
+  // Fase 2: impacto a los 820ms (el tiempo de la animación de entrada)
+  const t1 = setTimeout(() => {
+    _fightScene.classList.add('is-impact');
+    playFightSound();
+  }, 820);
+  _fightTimers.push(t1);
+
+  // Puños y ¡COMBATE! permanecen en pantalla hasta que se reinicia
 }
 
 /* ── Lógica del countdown ───────────────────────────────────────── */
@@ -282,6 +321,8 @@ function tick() {
     triggerFlash();
     spawnParticles();
     triggerLogoCrash();
+    // Fists travel 820ms → start at (logoDuration - 820ms) so they ARRIVE exactly when logo explodes
+    _fightTimers.push(setTimeout(() => startFightSequence(), 7380));
   }
 }
 
@@ -320,6 +361,7 @@ function reiniciar() {
   intervalId = null;
   remaining  = 0;
 
+  resetFightScene();
   applyState(STATE.LISTO);
   timeEl.textContent = formatTime(getConfiguredSeconds());
 }

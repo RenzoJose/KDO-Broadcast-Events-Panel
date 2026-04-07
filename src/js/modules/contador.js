@@ -24,10 +24,19 @@ let _intervalo    = null;
 let _currentState = STATE.LISTO;
 
 // ── Audio MP3 ────────────────────────────────────────────────────
-// El MP3 dura ~28 seg. La voz arranca en el segundo ~4.
-// Lo disparamos en remaining === 14 → voz cae exactamente en remaining === 10.
 const _sndCountdown = new Audio('../../public/assets/sounds/Countdown Timer 10 sec with Sound effects and Voice HD.mp3');
 _sndCountdown.preload = 'auto';
+
+const _sndFight = new Audio('../../public/assets/sounds/Fight - Mortal Kombat Efecto de Sonido.mp3');
+_sndFight.preload = 'auto';
+
+function playFightSound() {
+  _sndFight.currentTime = 0;
+  _sndFight.play().catch(() => {});
+}
+
+// _fightScheduled evita disparos dobles si reiniciar() se llama durante la secuencia
+let _fightScheduled = false;
 
 function startCountdownAudio() {
   _sndCountdown.currentTime = 0;
@@ -100,6 +109,12 @@ export function renderContador() {
         <span class="ct-hints-sep">·</span>
         <span>R → Reiniciar</span>
       </div>
+      <div class="fight-scene" id="fight-scene" aria-hidden="true">
+        <div class="fist fist--left" aria-hidden="true">🤜</div>
+        <div class="fist fist--right" aria-hidden="true">🤛</div>
+        <div class="fight-flash"></div>
+        <div class="fight-text">¡COMBATE!</div>
+      </div>
     </div>
   `;
 
@@ -153,7 +168,31 @@ function bindControls() {
     el.className = 'ct-logo-crash';
     el.innerHTML = '<img src="src/logo/KDO-08.png" alt="KDO" />';
     wrapper.appendChild(el);
-    setTimeout(() => el.remove(), 3300);
+    setTimeout(() => el.remove(), 8300);
+  }
+
+  // ── Fight Sequence ────────────────────────────────────────────
+  const fightScene = document.getElementById('fight-scene');
+  let fightTimers  = [];
+
+  function resetFightScene() {
+    fightTimers.forEach(id => clearTimeout(id));
+    fightTimers = [];
+    fightScene.classList.remove('is-active', 'is-impact', 'is-fadeout');
+    void fightScene.offsetWidth;
+  }
+
+  function startFightSequence() {
+    resetFightScene();
+    fightScene.classList.add('is-active');
+
+    const t1 = setTimeout(() => {
+      fightScene.classList.add('is-impact');
+      playFightSound();
+    }, 820);
+    fightTimers.push(t1);
+
+    // Puños y ¡COMBATE! permanecen en pantalla hasta que se reinicia
   }
 
   function applyState(state) {
@@ -207,6 +246,8 @@ function bindControls() {
       triggerLogoCrash();
       wrapper.classList.add('is-flash');
       wrapper.addEventListener('animationend', () => wrapper.classList.remove('is-flash'), { once: true });
+      // Fists travel 820ms → start at (logoDuration - 820ms) so they ARRIVE exactly when logo explodes
+      fightTimers.push(setTimeout(() => startFightSequence(), 7380));
     }
   }
 
@@ -238,6 +279,8 @@ function bindControls() {
   function reiniciar() {
     clearInterval(_intervalo); _intervalo = null;
     stopCountdownAudio();
+    _fightScheduled = false;
+    resetFightScene();
     const secs = getConfigSecs();
     setState({ contador: { tiempo: secs, corriendo: false, puntos: { rojo: 0, azul: 0 } } });
     timeEl.textContent = formatTime(secs);
