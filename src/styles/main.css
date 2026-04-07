@@ -1091,9 +1091,10 @@ li {
   color: #fff;
   box-shadow: 0 2px 8px rgba(0, 71, 160, 0.35);
 }
-   /* AGENDA BROADCAST — estilos .ag-*
+/* ══════════════════════════════════════════════════════════════════
+   AGENDA BROADCAST — estilos .ag-*
    Aplicados cuando agenda.js inyecta la UI en <section id="agenda">
-   y también cuando se abre src/views/agenda.html standalone. */
+   y también cuando se abre src/views/agenda.html standalone.
    ══════════════════════════════════════════════════════════════════ */
 
 /* Agenda view — fullscreen sin padding (override del .view base) */
