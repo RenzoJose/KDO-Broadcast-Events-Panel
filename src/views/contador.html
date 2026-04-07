@@ -1,17 +1,13 @@
 <!--
-  contador.html — Vista Broadcast: Contador Regresivo
-  ─────────────────────────────────────────────────────────────
-  Archivo autocontenido. Puede abrirse directamente en el navegador.
-  Optimizado para pantalla LED 1920×1080 (3×2 m).
+  contador.html -- Vista Broadcast: Contador Regresivo
+  Archivo autocontenido. Optimizado para pantalla LED 1920x1080.
 -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1920" />
-  <title>KDO OPEN — Contador Regresivo</title>
-
-  <!-- Poppins: fuente principal del broadcast -->
+  <title>KDO OPEN - Contador Regresivo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -21,54 +17,60 @@
 
 <div class="ct-wrapper" id="ct-wrapper">
 
-  <!-- Badge de estado -->
-  <div class="ct-badge" id="ct-badge">LISTO</div>
-
-  <!-- Display principal del tiempo -->
-  <div class="ct-display">
-    <div class="ct-time" id="ct-time">05:00</div>
+  <!-- Anillo de progreso SVG -->
+  <div class="ct-ring-wrap" aria-hidden="true">
+    <svg class="ct-ring" viewBox="0 0 440 440">
+      <circle class="ct-ring-track" cx="220" cy="220" r="200" />
+      <circle class="ct-ring-fill"  cx="220" cy="220" r="200" id="ct-ring-fill" />
+    </svg>
   </div>
 
-  <!-- Configuración (solo visible en estado LISTO) -->
-  <div class="ct-config" id="ct-config">
-    <label for="ct-input" class="ct-config-label">Duración</label>
-    <div class="ct-config-row">
-      <input
-        type="number"
-        id="ct-input"
-        class="ct-input"
-        min="1"
-        max="99"
-        value="5"
-        aria-label="Duración en minutos"
-      />
-      <span class="ct-input-unit">min</span>
+  <!-- Bloque central -->
+  <div class="ct-center">
+
+    <div class="ct-badge" id="ct-badge">
+      <span class="ct-badge-dot" aria-hidden="true"></span>
+      <span class="ct-badge-label" id="ct-badge-label">LISTO</span>
     </div>
+
+    <div class="ct-display">
+      <div class="ct-time" id="ct-time">05:00</div>
+    </div>
+
+    <div class="ct-config" id="ct-config">
+      <label for="ct-input" class="ct-config-label">Duración en minutos</label>
+      <div class="ct-config-row">
+        <button class="ct-stepper" id="btn-menos" aria-label="Restar un minuto">−</button>
+        <input type="number" id="ct-input" class="ct-input"
+               min="1" max="99" value="5" aria-label="Duración en minutos" />
+        <button class="ct-stepper" id="btn-mas" aria-label="Sumar un minuto">+</button>
+      </div>
+    </div>
+
   </div>
 
   <!-- Controles -->
   <div class="ct-controls">
     <button class="ct-btn ct-btn--primary" id="btn-iniciar">
-      <span class="ct-btn-icon" aria-hidden="true">▶</span>
+      <span class="ct-btn-icon" aria-hidden="true">&#9654;</span>
       INICIAR
     </button>
     <button class="ct-btn ct-btn--secondary" id="btn-pausar" disabled>
-      <span class="ct-btn-icon" aria-hidden="true">⏸</span>
+      <span class="ct-btn-icon" aria-hidden="true">&#9646;&#9646;</span>
       PAUSAR
     </button>
     <button class="ct-btn ct-btn--ghost" id="btn-reiniciar">
-      <span class="ct-btn-icon" aria-hidden="true">↺</span>
+      <span class="ct-btn-icon" aria-hidden="true">&#8634;</span>
       REINICIAR
     </button>
   </div>
 
-  <!-- Atajos de teclado -->
   <div class="ct-hints" aria-hidden="true">
-    <span>Enter → Iniciar</span>
+    <span><kbd>Enter</kbd> Iniciar</span>
     <span class="ct-hints-sep">·</span>
-    <span>Espacio → Pausar</span>
+    <span><kbd>Espacio</kbd> Pausar</span>
     <span class="ct-hints-sep">·</span>
-    <span>R → Reiniciar</span>
+    <span><kbd>R</kbd> Reiniciar</span>
   </div>
 
 </div>
