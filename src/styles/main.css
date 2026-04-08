@@ -240,6 +240,7 @@ li {
 /* Stage: columna centrada que ocupa toda la vista */
 .st-stage {
   position: relative;
+}
    VISTA CONTADOR — Fullscreen broadcast override
    ══════════════════════════════════════════════════════════════════ */
 #contador.view {
