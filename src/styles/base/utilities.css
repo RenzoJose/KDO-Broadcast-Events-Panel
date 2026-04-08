@@ -1,0 +1,9 @@
+/* ══════════════════════════════════════════════════════════════════
+   utilities.css — Clases utilitarias globales
+   ══════════════════════════════════════════════════════════════════ */
+
+.text-primary  { color: var(--color-primary); }
+.text-accent   { color: var(--color-accent); }
+.text-muted    { color: var(--color-text-muted); }
+.text-center   { text-align: center; }
+.text-hero     { font-size: var(--text-hero); font-weight: 900; }

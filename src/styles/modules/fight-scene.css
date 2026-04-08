@@ -1,77 +1,5 @@
 /* ══════════════════════════════════════════════════════════════════
-   contador.css — Entrada standalone para src/views/contador.html.
-   Los componentes .ct-* compartidos viven en modules/contador-base.css.
-   Para el módulo dashboard ver src/styles/modules/contador.css.
-
-   Estados controlados via clases dinámicas en .ct-wrapper:
-     .is-running  → Contador corriendo
-     .is-paused   → Pausado
-     .is-done     → Finalizado (00:00)
-     .is-critical → Últimos 10 segundos (acompañada de .is-running)
-   ══════════════════════════════════════════════════════════════════ */
-
-@import './modules/contador-base.css';
-
-/* ── Tokens de diseño ── */
-:root {
-  --ct-bg:            #0d1823;
-  --ct-surface:       #16273d;
-  --ct-primary:       #0047a0;
-  --ct-primary-glow:  rgba(0, 71, 160, 0.5);
-  --ct-alert:         #ff3b3b;
-  --ct-alert-glow:    rgba(255, 59, 59, 0.55);
-  --ct-done:          #ff9e55;
-  --ct-done-glow:     rgba(255, 158, 85, 0.5);
-  --ct-text:          #ffffff;
-  --ct-muted:         #7a9bbf;
-  --ct-border:        rgba(255, 255, 255, 0.08);
-  --font:             'Poppins', 'Segoe UI', system-ui, sans-serif;
-}
-
-/* ── Reset ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html, body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  font-family: var(--font);
-  background: var(--ct-bg);
-  color: var(--ct-text);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ── Wrapper cubre la pantalla completa ── */
-.ct-wrapper {
-  width: 100vw;
-  height: 100vh;
-}
-
-/* ── Patrón de cuadrícula (standalone: position fixed) ── */
-.ct-wrapper::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ── Flash cubre pantalla completa en standalone ── */
-.ct-wrapper::after { position: fixed; }
-
-/* ── Overlay, partículas y logo cubren pantalla completa ── */
-.ct-bg-overlay  { position: fixed; }
-.ct-particles   { position: fixed; }
-.ct-logo-crash  { position: fixed; }
-
-/* ── Logo más grande en pantalla LED 1920×1080 ── */
-.ct-logo-crash img { width: clamp(200px, 28vw, 480px); }
-
-/* ══════════════════════════════════════════════════════════════════
-   FIGHT SCENE — Secuencia de inicio de combate (Mortal Kombat style)
-   Standalone only: tamaños más grandes, position fixed.
+   fight-scene.css — Secuencia de inicio de combate (Mortal Kombat style)
    Clases de estado aplicadas por JS:
      .is-active  → Escena visible, puños entran desde los lados
      .is-impact  → Colisión: flash + shake + texto ¡COMBATE!
@@ -79,7 +7,7 @@ html, body {
    ══════════════════════════════════════════════════════════════════ */
 
 .fight-scene {
-  position: fixed;
+  position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
@@ -100,7 +28,7 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: clamp(200px, 20vw, 360px);
+  font-size: clamp(160px, 18vw, 320px);
   line-height: 1;
   user-select: none;
   transform: translate(-9999px, -50%);
@@ -127,9 +55,6 @@ html, body {
 }
 
 .fight-scene.is-impact .fist {
-  filter: drop-shadow(0 0 60px #FF4500)
-          drop-shadow(0 0 120px rgba(255, 69, 0, 0.8))
-          brightness(1.6);
   animation: fight-fist-impact 0.35s ease-out forwards;
 }
 
@@ -167,11 +92,12 @@ html, body {
   transform: translate(-50%, -50%) scale(0.1);
   opacity: 0;
   z-index: 3;
-  font-size: clamp(100px, 13vw, 250px);
+  font-size: clamp(80px, 11vw, 210px);
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
+  font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
   color: #FFD700;
   text-shadow:
     0 0 40px #FF4500,
@@ -210,7 +136,7 @@ html, body {
   100% { transform: translate(0,     0    ); }
 }
 
-/* ── Fundido de salida (gana en cascada sobre is-impact) ── */
+/* ── Fundido de salida (gana sobre is-impact en cascada) ── */
 .fight-scene.is-fadeout {
   animation: fight-scene-fadeout 0.85s ease-out forwards;
 }
