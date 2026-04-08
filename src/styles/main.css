@@ -240,7 +240,18 @@ li {
 /* Stage: columna centrada que ocupa toda la vista */
 .st-stage {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  overflow: hidden;
+  background: var(--color-bg);
 }
+
 /* ══════════════════════════════════════════════════════════════════
    VISTA CONTADOR — Fullscreen broadcast override
    ══════════════════════════════════════════════════════════════════ */
@@ -1308,6 +1319,7 @@ li {
               transform 0.38s cubic-bezier(0.4,0,0.2,1);
 }
 .ag-panel.active { opacity: 1; transform: translateY(0); pointer-events: all; }
+#agenda.view:not(.active) .ag-panel { pointer-events: none !important; }
 
 .ag-panel-label {
   display: flex; align-items: center; gap: 10px;
