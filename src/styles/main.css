@@ -241,6 +241,7 @@ li {
 .st-stage {
   position: relative;
 }
+/* ══════════════════════════════════════════════════════════════════
    VISTA CONTADOR — Fullscreen broadcast override
    ══════════════════════════════════════════════════════════════════ */
 #contador.view {
