@@ -1,0 +1,147 @@
+/* ══════════════════════════════════════════════════════════════════
+   fight-scene.css — Secuencia de inicio de combate (Mortal Kombat style)
+   Clases de estado aplicadas por JS:
+     .is-active  → Escena visible, puños entran desde los lados
+     .is-impact  → Colisión: flash + shake + texto ¡COMBATE!
+     .is-fadeout → Fundido de salida al terminar la secuencia
+   ══════════════════════════════════════════════════════════════════ */
+
+.fight-scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 300;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fight-scene.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── Puños ── */
+.fist {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: clamp(160px, 18vw, 320px);
+  line-height: 1;
+  user-select: none;
+  transform: translate(-9999px, -50%);
+  filter: drop-shadow(0 0 50px rgba(255, 120, 0, 0.9))
+          drop-shadow(0 0 100px rgba(255, 60, 0, 0.5));
+}
+
+.fight-scene.is-active .fist--left {
+  animation: fight-fist-left 0.82s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fight-scene.is-active .fist--right {
+  animation: fight-fist-right 0.82s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fight-fist-left {
+  from { transform: translate(calc(-50vw - 400px), -50%); }
+  to   { transform: translate(-80%, -50%); }
+}
+
+@keyframes fight-fist-right {
+  from { transform: translate(calc(50vw + 100px), -50%); }
+  to   { transform: translate(-20%, -50%); }
+}
+
+.fight-scene.is-impact .fist {
+  animation: fight-fist-impact 0.35s ease-out forwards;
+}
+
+@keyframes fight-fist-impact {
+  0%   { filter: brightness(3) drop-shadow(0 0 80px #FFD700); }
+  50%  { filter: brightness(1.4) drop-shadow(0 0 50px #FF4500); }
+  100% { filter: brightness(1) drop-shadow(0 0 40px rgba(255, 120, 0, 0.7)); }
+}
+
+/* ── Flash blanco de impacto ── */
+.fight-flash {
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fight-scene.is-impact .fight-flash {
+  animation: fight-flash-anim 0.45s ease-out forwards;
+}
+
+@keyframes fight-flash-anim {
+  0%   { opacity: 0.98; }
+  35%  { opacity: 0.6; }
+  100% { opacity: 0; }
+}
+
+/* ── Texto ¡COMBATE! ── */
+.fight-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  opacity: 0;
+  z-index: 3;
+  font-size: clamp(80px, 11vw, 210px);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  color: #FFD700;
+  text-shadow:
+    0 0 40px #FF4500,
+    0 0 90px rgba(255, 69, 0, 0.65),
+    5px 5px 0 #8B0000,
+    10px 10px 0 rgba(0, 0, 0, 0.45);
+  -webkit-text-stroke: 2px rgba(255, 140, 0, 0.5);
+}
+
+.fight-scene.is-impact .fight-text {
+  animation: fight-text-appear 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.07s forwards;
+}
+
+@keyframes fight-text-appear {
+  0%   { transform: translate(-50%, -50%) scale(0.1);  opacity: 0; }
+  55%  { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
+  75%  { transform: translate(-50%, -50%) scale(0.96); }
+  90%  { transform: translate(-50%, -50%) scale(1.03); }
+  100% { transform: translate(-50%, -50%) scale(1);    opacity: 1; }
+}
+
+/* ── Camera shake en impacto ── */
+.fight-scene.is-impact {
+  animation: fight-scene-shake 0.52s ease-out;
+}
+
+@keyframes fight-scene-shake {
+  0%   { transform: translate(0,     0    ); }
+  12%  { transform: translate(-22px, -14px); }
+  26%  { transform: translate( 22px,  14px); }
+  40%  { transform: translate(-16px,  9px ); }
+  54%  { transform: translate( 16px, -9px ); }
+  66%  { transform: translate( -8px,  5px ); }
+  80%  { transform: translate(  8px, -5px ); }
+  90%  { transform: translate( -4px,  2px ); }
+  100% { transform: translate(0,     0    ); }
+}
+
+/* ── Fundido de salida (gana sobre is-impact en cascada) ── */
+.fight-scene.is-fadeout {
+  animation: fight-scene-fadeout 0.85s ease-out forwards;
+}
+
+@keyframes fight-scene-fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
