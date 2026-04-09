@@ -101,7 +101,7 @@ export function renderSorteo() {
 
       <!-- Encabezado -->
       <div class="st-header">
-        <img class="st-kdo-logo" src="src/logo/KDO-08.png" alt="KDO">
+        <img class="st-kdo-logo" src="public/assets/logo/KDO-08.png" alt="KDO">
         <div class="st-titles">
           <span class="st-title" id="st-title">${MODE_CFG[_mode].title}</span>
         </div>
