@@ -88,7 +88,7 @@ export function renderContador() {
           <span class="ct-input-unit">min</span>
         </div>
       </div>
-      <div class="ct-controls">
+      <div class="ct-controls" aria-label="Controles del contador">
         <button class="ct-btn ct-btn--primary" id="btn-iniciar">
           <span class="ct-btn-icon" aria-hidden="true">▶</span>
           INICIAR
@@ -101,13 +101,6 @@ export function renderContador() {
           <span class="ct-btn-icon" aria-hidden="true">↺</span>
           REINICIAR
         </button>
-      </div>
-      <div class="ct-hints" aria-hidden="true">
-        <span>Enter → Iniciar</span>
-        <span class="ct-hints-sep">·</span>
-        <span>Espacio → Pausar</span>
-        <span class="ct-hints-sep">·</span>
-        <span>R → Reiniciar</span>
       </div>
       <div class="fight-scene" id="fight-scene" aria-hidden="true">
         <div class="fist fist--left" aria-hidden="true">🤜</div>
@@ -166,7 +159,7 @@ function bindControls() {
   function triggerLogoCrash() {
     const el = document.createElement('div');
     el.className = 'ct-logo-crash';
-    el.innerHTML = '<img src="src/logo/KDO-08.png" alt="KDO" />';
+    el.innerHTML = '<img src="public/assets/logo/KDO-08.png" alt="KDO" />';
     wrapper.appendChild(el);
     setTimeout(() => el.remove(), 8300);
   }
@@ -286,6 +279,16 @@ function bindControls() {
     timeEl.textContent = formatTime(secs);
     applyState(STATE.LISTO);
   }
+
+  // ── Ocultar controles y cursor por inactividad ────────────────
+  let _hideTimer = null;
+  function showControls() {
+    wrapper.classList.add('is-active-mouse');
+    clearTimeout(_hideTimer);
+    _hideTimer = setTimeout(() => wrapper.classList.remove('is-active-mouse'), 2500);
+  }
+  wrapper.addEventListener('mousemove', showControls);
+  showControls();
 
   btnIniciar.addEventListener('click', () => {
     if (_currentState === STATE.PAUSED) reanudar();

@@ -258,7 +258,7 @@ function spawnParticles() {
 function triggerLogoCrash() {
   const el = document.createElement('div');
   el.className = 'ct-logo-crash';
-  el.innerHTML = '<img src="../logo/KDO-08.png" alt="KDO" />';
+  el.innerHTML = '<img src="../../public/assets/logo/KDO-08.png" alt="KDO" />';
   wrapper.appendChild(el);
   setTimeout(() => el.remove(), 8300);
 }
