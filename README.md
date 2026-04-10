@@ -46,15 +46,19 @@ Aplicación web estática — HTML, CSS y JavaScript puro (sin frameworks).
         ├── app.js                  # Inicialización global
         ├── agenda-view.js          # Bootstrap de la vista standalone Agenda
         ├── contador-view.js        # Bootstrap de la vista standalone Contador
+        ├── api/
+        │   └── sorteo-api.js       # Capa HTTP del sorteo (fetch, prizes, winners)
         ├── core/
         │   ├── router.js           # Sistema de vistas (cambiarVista)
         │   └── state.js            # Estado compartido entre módulos
         └── modules/
             ├── agenda.js           # Lógica de la vista Agenda
-            ├── sorteo.js           # Lógica de la vista Sorteo
-            ├── resultados.js       # Lógica de la vista Resultados
             ├── contador.js         # Lógica de la vista Contador
-            └── sorteo.js
+            ├── medallero.js        # Lógica de la vista Medallero
+            ├── resultados.js       # Lógica de la vista Resultados
+            ├── sorteo.js           # Orquestación del sorteo (render + animación)
+            ├── sorteo-prize.js     # UI de premios (sección, formulario modal, auto-hide)
+            └── sound-controller.js # Audio del sorteo (countdown MP3, card flick, aplausos)
 ```
 
 ---
