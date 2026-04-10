@@ -9,6 +9,7 @@ import { initAgenda } from './modules/agenda.js';
 import { initSorteo } from './modules/sorteo.js';
 import { initContador } from './modules/contador.js';
 import { initResultados, renderResultados } from './modules/resultados.js';
+import { initMedallero } from './modules/medallero.js';
 
 /**
  * Función principal. Se ejecuta cuando el DOM está listo.
@@ -27,6 +28,9 @@ function init() {
 
   // Dev 3: resultados
   initResultados();
+
+  // Medallero
+  initMedallero();
 
   // ── Inicializar router ───────────────────────────────────────
   // Activa la vista por defecto ('agenda') al cargar
