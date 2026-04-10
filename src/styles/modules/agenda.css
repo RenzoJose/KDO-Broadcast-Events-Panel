@@ -1,0 +1,50 @@
+/* ══════════════════════════════════════════════════════════════════
+   agenda.css (módulo dashboard) — Overrides del dashboard para la
+   vista Agenda. Los componentes .ag-* viven en agenda-base.css.
+   ══════════════════════════════════════════════════════════════════ */
+
+@import './agenda-base.css';
+
+/* ── Design tokens (scoped al contexto del dashboard) ── */
+#agenda {
+  --ag-primary:       #0047a0;
+  --ag-primary-glow:  rgba(0, 71, 160, 0.45);
+  --ag-accent:        #c62c55;
+  --ag-accent-glow:   rgba(198, 44, 85, 0.35);
+  --ag-orange:        #ff9e55;
+  --ag-orange-glow:   rgba(255, 158, 85, 0.3);
+  --ag-text:          #ffffff;
+  --ag-muted:         #c6c6c6;
+  --ag-border:        rgba(255, 255, 255, 0.07);
+  --ag-card:          rgba(255, 255, 255, 0.04);
+  --ag-card-special:  rgba(0, 71, 160, 0.18);
+  --ag-card-receso:   rgba(255, 158, 85, 0.12);
+  --ag-card-clausura: rgba(198, 44, 85, 0.14);
+}
+
+/* ── Override: fullscreen sin padding (anula .view base) ── */
+#agenda.view {
+  padding: 0;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+/* Ocultar sidebar cuando agenda está activa (broadcast fullscreen) */
+.dashboard:has(#agenda.view.active) .sidebar {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Deshabilitar pointer-events de paneles cuando la vista está inactiva */
+#agenda.view:not(.active) .ag-panel { pointer-events: none !important; }
+
+/* .ag-wrapper en el dashboard ocupa el contenedor de la vista, no la ventana */
+#agenda .ag-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+/* El patrón de cuadrícula usa position:absolute en el dashboard (no fixed) */
+#agenda .ag-wrapper::before {
+  position: absolute;
+}

@@ -1,161 +1,317 @@
 /* ═══════════════════════════════════════════════════════════════
-   contador.js — Módulo del Contador / Marcador
-   Responsabilidad: cronómetro de combate y marcador de puntos.
-   Desarrollador asignado: Dev 1
+   contador.js — Módulo del Contador Regresivo (dashboard)
+   Inyecta la UI broadcast en <section id="contador">.
+   Los estilos .ct-* viven en main.css.
    ═══════════════════════════════════════════════════════════════ */
 
 import { getState, setState } from '../core/state.js';
 
-// Referencia al intervalo del temporizador para poder cancelarlo
-let _intervalo = null;
+const STATE = Object.freeze({
+  LISTO:   'listo',
+  RUNNING: 'running',
+  PAUSED:  'paused',
+  DONE:    'done',
+});
 
-/**
- * Inicializa el módulo del contador:
- * 1. Renderiza los controles y el marcador
- * 2. Conecta los botones de control
- */
+const BADGE_LABEL = {
+  [STATE.LISTO]:   'LISTO',
+  [STATE.RUNNING]: 'EN CURSO',
+  [STATE.PAUSED]:  'PAUSADO',
+  [STATE.DONE]:    'TIEMPO TERMINADO',
+};
+
+let _intervalo    = null;
+let _currentState = STATE.LISTO;
+
+// ── Audio MP3 ────────────────────────────────────────────────────
+const _sndCountdown = new Audio('../../public/assets/sounds/Countdown Timer 10 sec with Sound effects and Voice HD.mp3');
+_sndCountdown.preload = 'auto';
+
+const _sndFight = new Audio('../../public/assets/sounds/Fight - Mortal Kombat Efecto de Sonido.mp3');
+_sndFight.preload = 'auto';
+
+function playFightSound() {
+  _sndFight.currentTime = 0;
+  _sndFight.play().catch(() => {});
+}
+
+// _fightScheduled evita disparos dobles si reiniciar() se llama durante la secuencia
+let _fightScheduled = false;
+
+function startCountdownAudio() {
+  _sndCountdown.currentTime = 0;
+  _sndCountdown.play().catch(() => {});
+}
+
+function resumeCountdownAudio(remaining) {
+  // El MP3 se disparó en remaining=15, ya pasaron (15 - remaining) segundos
+  _sndCountdown.currentTime = Math.max(0, 15 - remaining);
+  _sndCountdown.play().catch(() => {});
+}
+
+function stopCountdownAudio() {
+  _sndCountdown.pause();
+  _sndCountdown.currentTime = 0;
+}
+
+function formatTime(secs) {
+  const m = Math.floor(secs / 60).toString().padStart(2, '0');
+  const s = (secs % 60).toString().padStart(2, '0');
+  return `${m}:${s}`;
+}
+
 export function initContador() {
   renderContador();
   console.log('[contador] Módulo inicializado.');
 }
 
-/**
- * Renderiza el marcador de combate completo en el DOM.
- * Se llama al inicio y cada vez que el tiempo cambia.
- */
 export function renderContador() {
   const contenedor = document.getElementById('contador');
   if (!contenedor) return;
 
-  const { tiempo, corriendo, puntos } = getState().contador;
+  const { tiempo } = getState().contador;
 
   contenedor.innerHTML = `
-    <!-- Marcador de puntos -->
-    <div class="marcador">
-      <div class="marcador-lado marcador-rojo">
-        <span class="marcador-puntos" id="puntos-rojo">${puntos.rojo}</span>
-        <span class="marcador-label">ROJO</span>
-        <div class="marcador-controles">
-          <button class="btn-punto" data-lado="rojo" data-delta="1">+</button>
-          <button class="btn-punto" data-lado="rojo" data-delta="-1">−</button>
+    <div class="ct-wrapper" id="ct-wrapper">
+      <div class="ct-bg-overlay" aria-hidden="true"></div>
+      <div class="ct-particles" id="ct-particles" aria-hidden="true"></div>
+      <div class="ct-badge" id="ct-badge">LISTO</div>
+      <div class="ct-display">
+        <div class="ct-time" id="ct-time">${formatTime(tiempo)}</div>
+      </div>
+      <div class="ct-config" id="ct-config">
+        <label for="ct-input" class="ct-config-label">Duración</label>
+        <div class="ct-config-row">
+          <input type="number" id="ct-input" class="ct-input"
+                 min="1" max="99" value="${Math.round(tiempo / 60)}"
+                 aria-label="Duración en minutos" />
+          <span class="ct-input-unit">min</span>
         </div>
       </div>
-
-      <!-- Tiempo central -->
-      <div class="marcador-tiempo">
-        <span id="display-tiempo" class="tiempo-display ${tiempo <= 30 ? 'tiempo-critico' : ''}">
-          ${formatearTiempo(tiempo)}
-        </span>
-        <div class="tiempo-controles">
-          <button id="btn-toggle">${corriendo ? 'PAUSA' : 'INICIAR'}</button>
-          <button id="btn-reset">RESET</button>
-        </div>
+      <div class="ct-controls" aria-label="Controles del contador">
+        <button class="ct-btn ct-btn--primary" id="btn-iniciar">
+          <span class="ct-btn-icon" aria-hidden="true">▶</span>
+          INICIAR
+        </button>
+        <button class="ct-btn ct-btn--secondary" id="btn-pausar" disabled>
+          <span class="ct-btn-icon" aria-hidden="true">⏸</span>
+          PAUSAR
+        </button>
+        <button class="ct-btn ct-btn--ghost" id="btn-reiniciar">
+          <span class="ct-btn-icon" aria-hidden="true">↺</span>
+          REINICIAR
+        </button>
       </div>
-
-      <div class="marcador-lado marcador-azul">
-        <span class="marcador-puntos" id="puntos-azul">${puntos.azul}</span>
-        <span class="marcador-label">AZUL</span>
-        <div class="marcador-controles">
-          <button class="btn-punto" data-lado="azul" data-delta="1">+</button>
-          <button class="btn-punto" data-lado="azul" data-delta="-1">−</button>
-        </div>
+      <div class="fight-scene" id="fight-scene" aria-hidden="true">
+        <div class="fist fist--left" aria-hidden="true">🤜</div>
+        <div class="fist fist--right" aria-hidden="true">🤛</div>
+        <div class="fight-flash"></div>
+        <div class="fight-text">¡COMBATE!</div>
       </div>
     </div>
   `;
 
-  // Conectar controles después de renderizar
-  document.getElementById('btn-toggle')?.addEventListener('click', toggleCronometro);
-  document.getElementById('btn-reset')?.addEventListener('click', resetContador);
-  document.querySelectorAll('.btn-punto').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const lado  = btn.dataset.lado;
-      const delta = parseInt(btn.dataset.delta, 10);
-      actualizarPuntos(lado, delta);
-    });
-  });
+  _currentState = STATE.LISTO;
+  bindControls();
 }
 
-// ── Cronómetro ───────────────────────────────────────────────────
+function bindControls() {
+  const wrapper      = document.getElementById('ct-wrapper');
+  const timeEl       = document.getElementById('ct-time');
+  const badgeEl      = document.getElementById('ct-badge');
+  const inputEl      = document.getElementById('ct-input');
+  const btnIniciar   = document.getElementById('btn-iniciar');
+  const btnPausar    = document.getElementById('btn-pausar');
+  const btnReiniciar = document.getElementById('btn-reiniciar');
 
-function toggleCronometro() {
-  const { corriendo } = getState().contador;
-  if (corriendo) {
-    pausarCronometro();
-  } else {
-    iniciarCronometro();
+  function getConfigSecs() {
+    return Math.max(1, Math.min(99, parseInt(inputEl.value, 10) || 1)) * 60;
   }
-}
 
-function iniciarCronometro() {
-  if (_intervalo) return;
+  function triggerSlam() {
+    wrapper.classList.remove('is-slam');
+    void wrapper.offsetWidth;
+    wrapper.classList.add('is-slam');
+    setTimeout(() => wrapper.classList.remove('is-slam'), 500);
+  }
 
-  setState({ contador: { ...getState().contador, corriendo: true } });
-  renderContador();
+  function spawnParticles() {
+    const container = document.getElementById('ct-particles');
+    if (!container) return;
+    container.innerHTML = '';
+    const colors = ['#ff3b3b', '#ff9e55', '#ffffff', '#ffdd57', '#ff6b6b', '#ff8c42'];
+    for (let i = 0; i < 60; i++) {
+      const p = document.createElement('div');
+      p.className = 'ct-particle';
+      const angle = Math.random() * 2 * Math.PI;
+      const dist  = 180 + Math.random() * 380;
+      p.style.setProperty('--dx',       `${Math.cos(angle) * dist}px`);
+      p.style.setProperty('--dy',       `${Math.sin(angle) * dist}px`);
+      p.style.setProperty('--size',     `${6 + Math.random() * 14}px`);
+      p.style.setProperty('--color',    colors[Math.floor(Math.random() * colors.length)]);
+      p.style.setProperty('--duration', `${0.9 + Math.random() * 0.8}s`);
+      p.style.setProperty('--delay',    `${Math.random() * 0.35}s`);
+      container.appendChild(p);
+    }
+    setTimeout(() => { container.innerHTML = ''; }, 2200);
+  }
 
-  _intervalo = setInterval(() => {
+  function triggerLogoCrash() {
+    const el = document.createElement('div');
+    el.className = 'ct-logo-crash';
+    el.innerHTML = '<img src="public/assets/logo/KDO-08.png" alt="KDO" />';
+    wrapper.appendChild(el);
+    setTimeout(() => el.remove(), 8300);
+  }
+
+  // ── Fight Sequence ────────────────────────────────────────────
+  const fightScene = document.getElementById('fight-scene');
+  let fightTimers  = [];
+
+  function resetFightScene() {
+    fightTimers.forEach(id => clearTimeout(id));
+    fightTimers = [];
+    fightScene.classList.remove('is-active', 'is-impact', 'is-fadeout');
+    void fightScene.offsetWidth;
+  }
+
+  function startFightSequence() {
+    resetFightScene();
+    fightScene.classList.add('is-active');
+
+    const t1 = setTimeout(() => {
+      fightScene.classList.add('is-impact');
+      playFightSound();
+    }, 820);
+    fightTimers.push(t1);
+
+    // Puños y ¡COMBATE! permanecen en pantalla hasta que se reinicia
+  }
+
+  function applyState(state) {
+    _currentState = state;
+    wrapper.classList.remove('is-running', 'is-paused', 'is-done', 'is-critical', 'is-warning');
+    if (state === STATE.RUNNING) wrapper.classList.add('is-running');
+    if (state === STATE.PAUSED)  wrapper.classList.add('is-paused');
+    if (state === STATE.DONE)    wrapper.classList.add('is-done');
+    badgeEl.textContent = BADGE_LABEL[state];
+    btnIniciar.disabled = state === STATE.RUNNING || state === STATE.DONE;
+    btnPausar.disabled  = state !== STATE.RUNNING;
+    if (state === STATE.PAUSED) {
+      btnIniciar.querySelector('.ct-btn-icon').textContent = '▶';
+      btnIniciar.childNodes[2].textContent = ' REANUDAR';
+    } else {
+      btnIniciar.querySelector('.ct-btn-icon').textContent = '▶';
+      btnIniciar.childNodes[2].textContent = ' INICIAR';
+    }
+    // Oculta config cuando no está en LISTO
+    if (state !== STATE.LISTO) {
+      wrapper.querySelector('.ct-config').style.opacity = '0';
+      wrapper.querySelector('.ct-config').style.pointerEvents = 'none';
+    } else {
+      wrapper.querySelector('.ct-config').style.opacity = '';
+      wrapper.querySelector('.ct-config').style.pointerEvents = '';
+    }
+  }
+
+  function tick() {
     const { tiempo } = getState().contador;
+    const next = tiempo - 1;
+    setState({ contador: { ...getState().contador, tiempo: next } });
+    timeEl.textContent = formatTime(next);
 
-    if (tiempo <= 0) {
-      pausarCronometro();
+    if (next <= 30 && next > 0) {
+      wrapper.classList.add('is-warning');
+    }
+    // Arrancar MP3 en remaining=15 → voz dice "10" cuando remaining llega a 10
+    if (next === 15) {
+      startCountdownAudio();
+    }
+    if (next <= 10 && next > 0) {
+      wrapper.classList.add('is-critical');
+      triggerSlam();
+    }
+    if (next <= 0) {
+      clearInterval(_intervalo); _intervalo = null;
+      wrapper.classList.remove('is-critical');
+      applyState(STATE.DONE);
+      spawnParticles();
+      triggerLogoCrash();
+      wrapper.classList.add('is-flash');
+      wrapper.addEventListener('animationend', () => wrapper.classList.remove('is-flash'), { once: true });
+      // Fists travel 820ms → start at (logoDuration - 820ms) so they ARRIVE exactly when logo explodes
+      fightTimers.push(setTimeout(() => startFightSequence(), 7380));
+    }
+  }
+
+  function iniciar() {
+    const secs = getConfigSecs();
+    setState({ contador: { ...getState().contador, tiempo: secs, corriendo: true } });
+    timeEl.textContent = formatTime(secs);
+    applyState(STATE.RUNNING);
+    _intervalo = setInterval(tick, 1000);
+  }
+
+  function reanudar() {
+    setState({ contador: { ...getState().contador, corriendo: true } });
+    applyState(STATE.RUNNING);
+    const t = getState().contador.tiempo;
+    if (t <= 30) wrapper.classList.add('is-warning');
+    if (t <= 10) wrapper.classList.add('is-critical');
+    if (t <= 15 && t > 0) resumeCountdownAudio(t);
+    _intervalo = setInterval(tick, 1000);
+  }
+
+  function pausar() {
+    clearInterval(_intervalo); _intervalo = null;
+    _sndCountdown.pause();
+    setState({ contador: { ...getState().contador, corriendo: false } });
+    applyState(STATE.PAUSED);
+  }
+
+  function reiniciar() {
+    clearInterval(_intervalo); _intervalo = null;
+    stopCountdownAudio();
+    _fightScheduled = false;
+    resetFightScene();
+    const secs = getConfigSecs();
+    setState({ contador: { tiempo: secs, corriendo: false, puntos: { rojo: 0, azul: 0 } } });
+    timeEl.textContent = formatTime(secs);
+    applyState(STATE.LISTO);
+  }
+
+  // ── Ocultar controles y cursor por inactividad ────────────────
+  let _hideTimer = null;
+  function showControls() {
+    wrapper.classList.add('is-active-mouse');
+    clearTimeout(_hideTimer);
+    _hideTimer = setTimeout(() => wrapper.classList.remove('is-active-mouse'), 2500);
+  }
+  wrapper.addEventListener('mousemove', showControls);
+  showControls();
+
+  btnIniciar.addEventListener('click', () => {
+    if (_currentState === STATE.PAUSED) reanudar();
+    else if (_currentState === STATE.LISTO) iniciar();
+  });
+  btnPausar.addEventListener('click', () => { if (_currentState === STATE.RUNNING) pausar(); });
+  btnReiniciar.addEventListener('click', reiniciar);
+  inputEl.addEventListener('input', () => {
+    if (_currentState !== STATE.LISTO) return;
+    timeEl.textContent = formatTime(getConfigSecs());
+  });
+
+  document.addEventListener('keydown', function ctKeys(e) {
+    // Solo activo cuando esta vista está visible
+    if (!document.getElementById('ct-wrapper')) {
+      document.removeEventListener('keydown', ctKeys);
       return;
     }
-
-    setState({ contador: { ...getState().contador, tiempo: tiempo - 1 } });
-    // Actualizar solo el display numérico, sin re-renderizar todo
-    const display = document.getElementById('display-tiempo');
-    if (display) {
-      display.textContent = formatearTiempo(getState().contador.tiempo);
-      display.classList.toggle('tiempo-critico', getState().contador.tiempo <= 30);
-    }
-  }, 1000);
-}
-
-function pausarCronometro() {
-  clearInterval(_intervalo);
-  _intervalo = null;
-  setState({ contador: { ...getState().contador, corriendo: false } });
-  renderContador();
-}
-
-function resetContador() {
-  pausarCronometro();
-  setState({
-    contador: {
-      tiempo: 120,
-      corriendo: false,
-      puntos: { rojo: 0, azul: 0 },
-    },
+    if (document.activeElement === inputEl) return;
+    if (e.code === 'Enter') { e.preventDefault(); if (_currentState === STATE.PAUSED) reanudar(); else if (_currentState === STATE.LISTO) iniciar(); }
+    if (e.code === 'Space') { e.preventDefault(); if (_currentState === STATE.RUNNING) pausar(); }
+    if (e.code === 'KeyR')  { e.preventDefault(); reiniciar(); }
   });
-  renderContador();
 }
 
-// ── Puntos ───────────────────────────────────────────────────────
 
-function actualizarPuntos(lado, delta) {
-  const { puntos } = getState().contador;
-  const nuevoValor = Math.max(0, (puntos[lado] || 0) + delta);
-
-  setState({
-    contador: {
-      ...getState().contador,
-      puntos: { ...puntos, [lado]: nuevoValor },
-    },
-  });
-
-  // Actualizar solo el display del lado afectado
-  const el = document.getElementById(`puntos-${lado}`);
-  if (el) el.textContent = nuevoValor;
-}
-
-// ── Helpers ──────────────────────────────────────────────────────
-
-/**
- * Convierte segundos a formato MM:SS.
- * @param {number} segundos
- * @returns {string}
- */
-function formatearTiempo(segundos) {
-  const m = Math.floor(segundos / 60).toString().padStart(2, '0');
-  const s = (segundos % 60).toString().padStart(2, '0');
-  return `${m}:${s}`;
-}

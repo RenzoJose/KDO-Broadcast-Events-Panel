@@ -1,0 +1,63 @@
+/* ══════════════════════════════════════════════════════════════════
+   modules/contador.css — Dashboard overrides para la vista Contador.
+   Los componentes .ct-* compartidos viven en contador-base.css.
+   Para la vista standalone ver src/styles/contador.css.
+   ══════════════════════════════════════════════════════════════════ */
+
+@import './contador-base.css';
+
+/* ── Vista override ── */
+#contador.view {
+  padding: 0;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+/* Ocultar sidebar cuando el contador está activo */
+.dashboard:has(#contador.view.active) .sidebar {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* ── Tokens scoped al módulo dashboard ── */
+#contador {
+  --ct-bg:           #0d1823;
+  --ct-surface:      #16273d;
+  --ct-primary:      #0047a0;
+  --ct-primary-glow: rgba(0, 71, 160, 0.5);
+  --ct-alert:        #ff3b3b;
+  --ct-alert-glow:   rgba(255, 59, 59, 0.55);
+  --ct-done:         #ff9e55;
+  --ct-done-glow:    rgba(255, 158, 85, 0.5);
+  --ct-text:         #ffffff;
+  --ct-muted:        #7a9bbf;
+  --ct-border:       rgba(255, 255, 255, 0.08);
+}
+
+/* ── Wrapper ocupa toda la vista ── */
+#contador .ct-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ── Patrón de cuadrícula sutil (position absolute en dashboard) ── */
+#contador .ct-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ── Flash cubre la vista (no la pantalla completa) ── */
+#contador .ct-wrapper::after { position: absolute; }
+
+/* ── Posicionados absolute dentro del wrapper del dashboard ── */
+#contador .ct-bg-overlay  { position: absolute; }
+#contador .ct-particles   { position: absolute; }
+#contador .ct-logo-crash  { position: absolute; }
+
+/* ── Logo tamaño dashboard ── */
+#contador .ct-logo-crash img { width: clamp(160px, 22vw, 380px); }

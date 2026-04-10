@@ -1,0 +1,117 @@
+/* ══════════════════════════════════════════════════════════════════
+   dashboard.css — Layout principal: sidebar + panel
+   ══════════════════════════════════════════════════════════════════ */
+
+.dashboard {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 8px;
+  flex-shrink: 0;
+  height: 100vh;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 2px 0 24px rgba(0, 71, 160, 0.08);
+  z-index: 10;
+  transition: width 0.25s ease;
+  cursor: pointer;
+}
+
+.sidebar:hover {
+  width: var(--sidebar-width);
+  cursor: default;
+}
+
+.sidebar-logo {
+  padding: 18px 14px 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar-logo img {
+  width: 100%;
+  max-height: 38px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 10px 8px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.sidebar-nav::-webkit-scrollbar { display: none; }
+
+.sidebar-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ── Navegación ── */
+.nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--color-text-muted);
+  font-size: 12.5px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  text-align: left;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.nav-btn:hover {
+  background: rgba(0, 71, 160, 0.25);
+  color: var(--color-text);
+}
+
+.nav-btn.active {
+  background: rgba(0, 71, 160, 0.4);
+  color: #7ab8ff;
+  font-weight: 700;
+}
+
+.nav-icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Panel principal ── */
+.panel-main {
+  flex: 1;
+  position: relative;
+  background: radial-gradient(ellipse at 80% 0%, rgba(0, 71, 160, 0.2) 0%, #0e1c2e 50%);
+  overflow: hidden;
+}

@@ -1,0 +1,52 @@
+/* ══════════════════════════════════════════════════════════════════
+   agenda.css — Vista standalone: Agenda Broadcast
+   Cargado por src/views/agenda.html.
+   Los componentes .ag-* viven en modules/agenda-base.css.
+   ══════════════════════════════════════════════════════════════════ */
+
+@import '../styles/modules/agenda-base.css';
+
+/* ── Design tokens ── */
+:root {
+  --ag-primary:       #0047a0;
+  --ag-primary-glow:  rgba(0, 71, 160, 0.45);
+  --ag-bg:            #243d5b;
+  --ag-deep:          #0d1823;
+  --ag-accent:        #c62c55;
+  --ag-accent-glow:   rgba(198, 44, 85, 0.35);
+  --ag-orange:        #ff9e55;
+  --ag-orange-glow:   rgba(255, 158, 85, 0.3);
+  --ag-text:          #ffffff;
+  --ag-muted:         #c6c6c6;
+  --ag-border:        rgba(255, 255, 255, 0.07);
+  --ag-card:          rgba(255, 255, 255, 0.04);
+  --ag-card-special:  rgba(0, 71, 160, 0.18);
+  --ag-card-receso:   rgba(255, 158, 85, 0.12);
+  --ag-card-clausura: rgba(198, 44, 85, 0.14);
+  --font:             'Poppins', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: var(--font);
+  background: var(--ag-deep);
+  color: var(--ag-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Standalone: wrapper ocupa la ventana completa ── */
+.ag-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* El patrón de cuadrícula usa position:fixed en standalone para cubrir toda la ventana */
+.ag-wrapper::before {
+  position: fixed;
+}
+
