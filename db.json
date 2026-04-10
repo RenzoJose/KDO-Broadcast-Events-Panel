@@ -1,251 +1,1744 @@
 {
   "athletes": [
     {
-      "id": "1",
-      "name": "Kim Jae-won",
-      "school": "Dojang Seoul",
-      "logo": "https://ui-avatars.com/api/?name=Kim+Jae-won&background=0047a0&color=fff&size=128&bold=true"
+      "id": "495f3d5c-b197-44b6-9a92-3a4946bde18d",
+      "name": "Victor   Aceituno Pasten",
+      "school": "Creeser",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/052d2fb0-0638-4fee-9965-4989f37b05fd/logo-1775330345669.jpg"
     },
     {
-      "id": "2",
-      "name": "Silva Rodrigo",
-      "school": "Academia SP",
-      "logo": "https://ui-avatars.com/api/?name=Silva+Rodrigo&background=c62c55&color=fff&size=128&bold=true"
+      "id": "06a510d6-a8d1-4f8d-84c9-a239229c589d",
+      "name": "Violeta  Inostroza Hernández",
+      "school": "Creeser",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/052d2fb0-0638-4fee-9965-4989f37b05fd/logo-1775330345669.jpg"
     },
     {
-      "id": "3",
-      "name": "Park Min-su",
-      "school": "Busan Tigers",
-      "logo": "https://ui-avatars.com/api/?name=Park+Min-su&background=170fdd&color=fff&size=128&bold=true"
+      "id": "8189eeff-bcbb-40da-b53e-8bff1d84e452",
+      "name": "Francisca Adriazola Siva",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
     },
     {
-      "id": "4",
-      "name": "Garcia Luis",
-      "school": "Club Olimpia",
-      "logo": "https://ui-avatars.com/api/?name=Garcia+Luis&background=243d5b&color=fff&size=128&bold=true"
+      "id": "044c95c1-1af4-450b-b4d8-f935f7a4a161",
+      "name": "Christian Albornoz Lastra",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
     },
     {
-      "id": "5",
-      "name": "Tanaka Yuki",
-      "school": "Tokyo Taekwondo",
-      "logo": "https://ui-avatars.com/api/?name=Tanaka+Yuki&background=0047a0&color=fff&size=128&bold=true"
+      "id": "ade394e3-1d7b-411a-b7fc-0ea5b6323685",
+      "name": "Matías Albornoz Lastra (parataekwondo)",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
     },
     {
-      "id": "6",
-      "name": "Okafor Emeka",
-      "school": "Lagos Warriors",
-      "logo": "https://ui-avatars.com/api/?name=Okafor+Emeka&background=c62c55&color=fff&size=128&bold=true"
+      "id": "868aca08-cdbb-482d-9e0d-ab3dd33c3811",
+      "name": "Cristian Albornoz Oliva",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
     },
     {
-      "id": "7",
-      "name": "Fernandez Ana",
-      "school": "Escuela Madrid",
-      "logo": "https://ui-avatars.com/api/?name=Fernandez+Ana&background=170fdd&color=fff&size=128&bold=true"
+      "id": "e9041383-afff-430b-be4a-0e2b53e2a0e7",
+      "name": "Carlos Amaro",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
     },
     {
-      "id": "8",
-      "name": "Chen Wei",
-      "school": "Beijing Academy",
-      "logo": "https://ui-avatars.com/api/?name=Chen+Wei&background=243d5b&color=fff&size=128&bold=true"
+      "id": "713ad46a-6fef-4a44-9534-ff9005adb5f7",
+      "name": "Isidora  Amaro",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
     },
     {
-      "id": "9",
-      "name": "Muller Hans",
-      "school": "Berlin Dojo",
-      "logo": "https://ui-avatars.com/api/?name=Muller+Hans&background=0047a0&color=fff&size=128&bold=true"
+      "id": "0ec1c8ef-a8c6-410e-b918-15f106b13590",
+      "name": "Samantha Naitsabes Andrade Veracierta",
+      "school": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg"
     },
     {
-      "id": "10",
-      "name": "Patel Arjun",
-      "school": "Mumbai Kicks",
-      "logo": "https://ui-avatars.com/api/?name=Patel+Arjun&background=c62c55&color=fff&size=128&bold=true"
+      "id": "a25a34c1-06c9-4517-9527-2d0b52925c95",
+      "name": "Samuel Angulo",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
     },
     {
-      "id": "11",
-      "name": "Santos Diego",
-      "school": "Copa Brasil TKD",
-      "logo": "https://ui-avatars.com/api/?name=Santos+Diego&background=170fdd&color=fff&size=128&bold=true"
+      "id": "ccba8c4d-9e03-427e-8f25-5bea5e899e66",
+      "name": "Sofia Arango",
+      "school": "Demo Team Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7/logo-1775084618961.png"
     },
     {
-      "id": "12",
-      "name": "Nguyen Minh",
-      "school": "Saigon Tigers",
-      "logo": "https://ui-avatars.com/api/?name=Nguyen+Minh&background=243d5b&color=fff&size=128&bold=true"
+      "id": "013a8204-7f8f-462d-94ce-4beecdebd07a",
+      "name": "Jose Manuel Aravena Huenchocoi",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
     },
     {
-      "id": "13",
-      "name": "Ivanov Alexei",
-      "school": "Moscow Dojang",
-      "logo": "https://ui-avatars.com/api/?name=Ivanov+Alexei&background=0047a0&color=fff&size=128&bold=true"
+      "id": "c09d5ecf-1e65-45b5-85c8-b2775e6bc199",
+      "name": "Iker Arriagada",
+      "school": "Demo Team Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7/logo-1775084618961.png"
     },
     {
-      "id": "14",
-      "name": "Osei Kwame",
-      "school": "Accra Elite",
-      "logo": "https://ui-avatars.com/api/?name=Osei+Kwame&background=c62c55&color=fff&size=128&bold=true"
+      "id": "902dbc61-14d7-4100-ad84-3048aa103570",
+      "name": "Karla Valentina Barrraza Gallardo",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
     },
     {
-      "id": "15",
-      "name": "Lopez Camila",
-      "school": "Tegucigalpa TKD",
-      "logo": "https://ui-avatars.com/api/?name=Lopez+Camila&background=170fdd&color=fff&size=128&bold=true"
+      "id": "4d96da89-09aa-4f80-aba2-1255aef333b9",
+      "name": "Eliseo Bastías Mendieta",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
     },
     {
-      "id": "16",
-      "name": "Rashid Omar",
-      "school": "Cairo Warriors",
-      "logo": "https://ui-avatars.com/api/?name=Rashid+Omar&background=243d5b&color=fff&size=128&bold=true"
+      "id": "cf1d1de3-36cb-41a7-b752-6eb5056ff456",
+      "name": "Mariapaz Beltrán Sepúlveda",
+      "school": " Mugung Taekwondo",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2596b77b-6a71-4449-bd4d-b02cc5504703/logo-1775151006599.jpeg"
     },
     {
-      "id": "17",
-      "name": "Park Ji-yeon",
-      "school": "Incheon United",
-      "logo": "https://ui-avatars.com/api/?name=Park+Ji-yeon&background=0047a0&color=fff&size=128&bold=true"
+      "id": "97cdefd9-63d1-48ac-876e-60dadb326cbd",
+      "name": "Vicente Benavides Duarte",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
     },
     {
-      "id": "18",
-      "name": "Martinez Javier",
-      "school": "Medellin TKD",
-      "logo": "https://ui-avatars.com/api/?name=Martinez+Javier&background=c62c55&color=fff&size=128&bold=true"
+      "id": "d0d59eea-d35f-4c39-938c-a33734f49ce2",
+      "name": "Victoria Catalina  Benavides Matamala",
+      "school": "Taedo Generation",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c4de1313-e6f5-40b4-b36d-67ad9505c560/logo-1775054465968.png"
     },
     {
-      "id": "19",
-      "name": "Johansson Erik",
-      "school": "Stockholm Kicks",
-      "logo": "https://ui-avatars.com/api/?name=Johansson+Erik&background=170fdd&color=fff&size=128&bold=true"
+      "id": "3b28cc54-2a29-44bc-8bdd-0fdda14d0eee",
+      "name": "Anaximandro Borquez",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
     },
     {
-      "id": "20",
-      "name": "Abubakar Fatima",
-      "school": "Abuja Academy",
-      "logo": "https://ui-avatars.com/api/?name=Abubakar+Fatima&background=243d5b&color=fff&size=128&bold=true"
+      "id": "e715985e-6941-4c9f-b008-1a446dd3b5e0",
+      "name": "Elismar Bracamontes Peñarabda",
+      "school": "Um Yang Guitard",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/bcb8542b-39c4-4fed-827c-8ecce6b43a50/logo-1775154695075.jpeg"
+    },
+    {
+      "id": "8ce21c7b-86ce-4541-9931-0fa85a49be2c",
+      "name": "Florencia Bravo",
+      "school": "Team Hyun Su",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "b82dfe4a-0bf7-4949-b558-411228808528",
+      "name": "Maximiliano Briones",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "c6d5ad9d-35a7-4fb1-842b-0d0f24c32f75",
+      "name": "Renato Briones Bucarey",
+      "school": " Mugung Taekwondo",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2596b77b-6a71-4449-bd4d-b02cc5504703/logo-1775151006599.jpeg"
+    },
+    {
+      "id": "10c694fc-9963-4608-b5a2-73f6ac0acd81",
+      "name": "Mario Briones Correa",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "ab844044-071b-4e66-b077-a7f6d782c5f2",
+      "name": "Florencia  Bustamante Calzadilla",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "700e8a79-e2c6-4569-9578-d5061bf37c28",
+      "name": "Maximo Akiles Bustamante Farias",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "44cdd463-df5d-4471-9243-840488c0c2fc",
+      "name": "Yesenia  Caballero Muñoz",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "5ef02cf5-2a0d-45aa-bfff-b586ccc49edd",
+      "name": "Martina Cabezas",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "fa18c28b-2dd8-4514-8db6-e06ef5c85db4",
+      "name": "Tomas Ricardo Cabrera Arenas",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "fe57302c-ff08-4ce6-b12d-e9fad1d42b3f",
+      "name": "Catalina Cáceres",
+      "school": "Demo Team Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7/logo-1775084618961.png"
+    },
+    {
+      "id": "cc22528d-9c80-4f7a-b98b-41cb1fa6a9cc",
+      "name": "Jasmin Dandelayan Caceres Quiroz",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "5fcf5b7b-e4f9-477a-9fc2-d5f8cdd8ed10",
+      "name": "Isidora  Caceres Quiroz",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "79b84f8c-a0c2-41b9-8fc7-8f8aabc79668",
+      "name": "Luis Campos Farias",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "0f9ff481-1761-4afa-bb9a-4d7baedf8bbe",
+      "name": "Valentina  Carrasco Velis",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "d058da10-957e-4de1-9990-bd3947f437e1",
+      "name": "Franco Castillo",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "75ff8480-fd74-4bcd-a949-2788c6e8560e",
+      "name": "Rocio Castillo Artiagus",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "18b560bb-e731-4282-88c0-901932de2f58",
+      "name": "ISABELLA CASTILLO MU�'OZ",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "33239af7-c490-4f9d-be28-e4f85c8e5c19",
+      "name": "Fabian Pablo Andres Castro Cabrera",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "7e6bbcb8-ad31-45ed-b18c-9f51997e407d",
+      "name": "Fiorela Casusol Sánchez",
+      "school": "Legión Futuro",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "063a9085-841d-4c4d-bd91-97dc134f2e08",
+      "name": "Polet Cayunao Rapimán",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
+    },
+    {
+      "id": "da5d3714-5c07-4b86-9109-f510c4a77c2f",
+      "name": "LAURA CAYUPAN BRAVO",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "d69cb896-cc0b-4841-a0ad-f0ff15946846",
+      "name": "ISIDORA CAYUPI LEIVA",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "19ed4ebe-8e60-47c7-9bf0-3f9cbbd7c408",
+      "name": "Jhonsley Cenat Joseph",
+      "school": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg"
+    },
+    {
+      "id": "0a914536-b1a5-4553-a9b0-9e4c32013413",
+      "name": "JOSEFA CHÁVEZ WEITZEL",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "d829fc20-1523-4e2b-b88c-1045a30b3f85",
+      "name": "Juanpablo Jesus Cifuentes Alarcon",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "5cf98017-e09d-4caa-a41c-e0112a08b14e",
+      "name": "Benjamin  Cifuentes Reyes",
+      "school": "Dragon Negro",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2ac4bf05-a861-4b23-9636-2e82e401bab8/logo-1775437040034.jpg"
+    },
+    {
+      "id": "058cb7fb-97d3-4ddc-8c47-f7194aac285b",
+      "name": "Constanza Contreras",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "34ffc52f-9161-45d2-adc8-562322283cc0",
+      "name": "Mia Contreras",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "daaf0dac-d45a-4bdc-8825-e6ae57679229",
+      "name": "Benjamin Contreras  Barriga",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "10f13434-8326-479b-acf4-f27cdf450dff",
+      "name": "Camila  Contreras Barrientos",
+      "school": "Dragon Negro",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2ac4bf05-a861-4b23-9636-2e82e401bab8/logo-1775437040034.jpg"
+    },
+    {
+      "id": "bc7e5a32-c7b2-4f14-b2ac-b1a4adc732f6",
+      "name": "Felipe Contreras Romero",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "e54f05ac-72aa-4dbc-ad78-e609ae45f7a6",
+      "name": "Claudio Cornejo",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "15fb9df6-37d6-499f-bdd5-aa719f183902",
+      "name": "Guillermo Cortes Rios",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "5644f1aa-2354-4481-b4e8-083a277e6d3a",
+      "name": "Hector Cortes Rios",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "713b1ec4-7bef-4393-a27c-1a986ed5e559",
+      "name": "Nathaly Dayanara Cortez Chue",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "6a025429-ed00-4d46-bbba-6c1fc709b592",
+      "name": "Pietro  Cruz Sigcha",
+      "school": "Creeser",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/052d2fb0-0638-4fee-9965-4989f37b05fd/logo-1775330345669.jpg"
+    },
+    {
+      "id": "44d0699d-933a-498b-8b69-f9489ab32386",
+      "name": "Maria Eugenia Cuevas Jara",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "545d1d9e-ed8c-4439-89a5-9b3e733b337c",
+      "name": "Lucciana De Gregorio Leal",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "123af58b-8fc2-4a1e-9d71-862b79e3aa81",
+      "name": "Renato Delgado",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "afb8fc8d-710d-4ae8-8335-8ba099c1de66",
+      "name": "Cristian Diaz",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "9c782073-85ca-495a-be93-aedf752aa2cd",
+      "name": "Daniela Díaz Navarrete",
+      "school": "Legión Futuro",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "e493f0f8-7cd6-4311-83a1-371864336f6b",
+      "name": "Julian Amaro Diaz Pérez",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "796118c2-efb1-4043-8758-88e1676a4ec1",
+      "name": "Manuel Alberto Díaz Varas",
+      "school": "Díaz kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "bcddca1d-f3da-452d-a895-4fb373a6c08b",
+      "name": "Ignacio Donoso Vargas",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "544d97ad-42e3-4899-aa0c-a7f00072c9d5",
+      "name": "Johannes Duque",
+      "school": "Legión Futuro",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "cfbd61f1-945a-41ae-a742-7197402ddedf",
+      "name": "Anya  Duque Jancew",
+      "school": "Legión Futuro",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "7a39ea90-0cfe-4081-831d-9a019990bc9d",
+      "name": "Augusto Echeverria",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "11939b07-6df2-4b58-b848-ca0e785da5bc",
+      "name": "Cristian Echeverria",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "9564f122-1eb8-44bd-afda-30485169b21e",
+      "name": "Dominga Echeverria",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "4cc585ac-d7a1-4a03-98e1-9253c7fe3264",
+      "name": "Agustina  Escobar Gaete",
+      "school": "Jeon-sa Fénix",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/19975916-8c36-484b-9c71-6f607f877edb/logo-1775445047738.png"
+    },
+    {
+      "id": "bef9e1b2-c45e-4b0d-8c16-e7f13f819e1d",
+      "name": "Emilia  Escobar Gaete",
+      "school": "Jeon-sa Fénix",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/19975916-8c36-484b-9c71-6f607f877edb/logo-1775445047738.png"
+    },
+    {
+      "id": "09fc90da-cd40-477e-a879-2332340a958e",
+      "name": "Arnaldo Espina Guerrero",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "6664d971-a332-48ae-b90e-4f73bfd32492",
+      "name": "Leonor Espina Mella",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "4165649e-8f83-4b7a-8dc3-d51f64e6abb8",
+      "name": "Oscar Espindola Nuñez",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "95d36ae2-5a9b-4bf3-976d-91b16fac8471",
+      "name": "Josefina Espinoza Balduzzi",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "c59973ce-9f1a-4546-800c-97e99ce92681",
+      "name": "Vicente Javier Espinoza Carrasco",
+      "school": "Taekwondo Kitsune",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "ba0e5f4c-2d0c-4c0e-b874-47582b49a4fb",
+      "name": "Josefa Espinoza Gallardo",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "08852668-cd9a-4ebe-90fd-400c5fd341ad",
+      "name": "Roberto Andrés  Femenias Aguilar",
+      "school": "Díaz kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "9d1ba3db-dd5f-4e98-96eb-85cdbac8f8d5",
+      "name": "Isabela Fernandez",
+      "school": "Demo Team Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7/logo-1775084618961.png"
+    },
+    {
+      "id": "5ea81b34-09c3-4c03-a748-ae543e3ebbf3",
+      "name": "Edwin Junior Fernández Paz",
+      "school": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg"
+    },
+    {
+      "id": "758f25ac-8ea9-4cc8-b63f-20cb57a0654c",
+      "name": "Lukas Fernández Rojas",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "d51eb7e5-5844-43d0-8e35-693835ddbd5e",
+      "name": "Gaspar  Fierro Jerra",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "6316eaa9-449a-4b7c-b6d5-6cb6e482fe25",
+      "name": "Jaime Fierro Navarro",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "6b4119dd-e374-4636-90ac-d08c5632c755",
+      "name": "Juan Luis Figuera Finol",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "fc3412dc-2ecb-436c-a3f8-034e8da89129",
+      "name": "Rodrigo Figueroa",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "43950c3f-6f75-4126-b4c7-4e8c3efc941c",
+      "name": "HERMAN FLORES CHANDÍA",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "2216369d-6a2c-4bea-9185-bd193e03d905",
+      "name": "Mauricio Flores Gonzalez",
+      "school": "Magnus",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "1f1d3def-6b19-47fb-a6ed-d5ffb7d596cd",
+      "name": "Matias Florez Valenzuela",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "3d24b6c7-b8c2-4d1c-87da-6e8b1573ac24",
+      "name": "Maximiliano Garcia",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "98c4f100-4bac-4944-9c30-27febc97e6ff",
+      "name": "Pascale Garrido Montecinos",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "cfa004b1-944d-43bc-a411-57fe010b7d74",
+      "name": "Rafal Gomez Soto",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "6debf9e1-0c02-406a-ae83-5c580c59d5a7",
+      "name": "Lucas Gonzalez",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "7251d136-7dda-4d8b-8711-797cbc426810",
+      "name": "Thomas Gonzalez Aranda",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "57ae369b-d88d-4b3d-beeb-25b0ba7f18c5",
+      "name": "Carlos González Lema",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
+    },
+    {
+      "id": "bf72a851-666d-48ef-ab41-faea304074b1",
+      "name": "Gabriel Guajardo",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "bccaf2d7-6b59-4425-9e8c-eafc7b45325f",
+      "name": "Matilde Guitard Opazo",
+      "school": "Um Yang Guitard",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/bcb8542b-39c4-4fed-827c-8ecce6b43a50/logo-1775154695075.jpeg"
+    },
+    {
+      "id": "f33b28da-15c3-413b-aff7-fe8e2f483993",
+      "name": "Isabella Guitierrez Grez",
+      "school": "Um Yang Guitard",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/bcb8542b-39c4-4fed-827c-8ecce6b43a50/logo-1775154695075.jpeg"
+    },
+    {
+      "id": "d169ff4e-bbaf-42cb-b8cc-a62ab882575a",
+      "name": "Ignacio Alonso Gutierrez Gonzalez",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "5e7454eb-1e7b-4d9b-8572-01a34c044f07",
+      "name": "Ignacio Gutiérrez Peréz",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "d205ab1e-877d-46ba-a002-e2861870065f",
+      "name": "Emilia Guzman Avila",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "5e32220c-879e-471d-b184-1dd8d273d69e",
+      "name": "Anna Hernandez Caceres",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "f71711aa-0715-4548-8eaa-b112c97b36ea",
+      "name": "Barbara Hernandez Caceres",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "d8b6f75b-1f3c-41a5-95d3-ff94e6d77b23",
+      "name": "Dariel  Hernandez Sardiñas",
+      "school": "Creeser",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/052d2fb0-0638-4fee-9965-4989f37b05fd/logo-1775330345669.jpg"
+    },
+    {
+      "id": "abbb3713-1a10-447e-9a4b-8de8f5572e68",
+      "name": "Trinidad Herrera Figueroa",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "3a6d1fc9-3e8d-426d-924f-5ce8c2459a05",
+      "name": "Fernanda Herrera Vinet",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "dc40f340-0485-4c2b-8939-a36a89078d4f",
+      "name": "Maximiliano  Huerta Soto",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "13384c29-f113-4896-af72-5bd8907091b6",
+      "name": "Rayen Inostroza",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "956f1fa4-8805-45c6-928b-946b60cdce88",
+      "name": "Tracy Inzunza",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "cdbff406-0681-46d0-9559-760ccfaf1981",
+      "name": "Mayra Inzunza Espinoza",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "12ecc69b-cdaa-4373-bf09-e673eb79bf53",
+      "name": "Pablo Jara",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "aca1a313-b51c-47aa-a756-729df1a1917a",
+      "name": "Moises Paulo Jara San Martín",
+      "school": " Mugung Taekwondo",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2596b77b-6a71-4449-bd4d-b02cc5504703/logo-1775151006599.jpeg"
+    },
+    {
+      "id": "b92da0ed-3cbb-4369-8fd6-94a562210b5b",
+      "name": "Alexander Jimenez",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "78dbff64-40d5-427e-9c5b-7a646d9d2096",
+      "name": "TRINIDAD JUACIDA ORREGO",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "99124804-9bce-465b-95c4-303235a3f055",
+      "name": "AMELIE KOLSTER TAPIA",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "23948939-d555-4e9f-bca1-dde65d45c71d",
+      "name": "Dann  La Rosa",
+      "school": "Team Hyun Su",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "0fde998c-359c-48a8-945d-b1433d840da7",
+      "name": "Arantza Lazcano Riquelme",
+      "school": "Creeser",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/052d2fb0-0638-4fee-9965-4989f37b05fd/logo-1775330345669.jpg"
+    },
+    {
+      "id": "fb15b7bd-68d3-458e-9f16-9ddd72dcf251",
+      "name": "Tomas  Lazcano Riquelme",
+      "school": "Creeser",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/052d2fb0-0638-4fee-9965-4989f37b05fd/logo-1775330345669.jpg"
+    },
+    {
+      "id": "7b0216b5-49e1-43bc-a528-e933733e2665",
+      "name": "Victoria  Lepe Abad",
+      "school": "Academia Taekwondo Oríón",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/b2ced107-6d38-471c-a5bf-48a2cae3df64/logo-1775596294809.jpg"
+    },
+    {
+      "id": "6ab79353-d00d-4650-a834-3a6816e5cbb4",
+      "name": "Angel  Linares Araque",
+      "school": "Dragon Negro",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2ac4bf05-a861-4b23-9636-2e82e401bab8/logo-1775437040034.jpg"
+    },
+    {
+      "id": "2ce436af-e513-4219-a1e9-f819ee2ce513",
+      "name": "Victoria Lindarte",
+      "school": "Demo Team Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7/logo-1775084618961.png"
+    },
+    {
+      "id": "067183be-2646-4a14-8a61-39a5fa41664d",
+      "name": "DANTE LIZAMA RAMOS",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "8f430d55-0181-4836-a3aa-99a6d1fb718a",
+      "name": "PABLO LIZAMA RAMOS",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "98ec628d-d0b5-4410-a990-9db0f57de242",
+      "name": "MARIANO LLANQUILEO Z�s�'IGA",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "bc0e1881-2319-4056-bdc2-e3e2faf6d7ac",
+      "name": "Fernanda Lobos Araya",
+      "school": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg"
+    },
+    {
+      "id": "7cf0936d-b920-48f1-91ba-4975740c5988",
+      "name": "Ymara López",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "63862493-543b-4e1f-81e5-9649b7b486e7",
+      "name": "Valentino Luna Vilches",
+      "school": "Um Yang Guitard",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/bcb8542b-39c4-4fed-827c-8ecce6b43a50/logo-1775154695075.jpeg"
+    },
+    {
+      "id": "498d6c1e-d742-47d0-9a2a-1e59af8e580a",
+      "name": "Paula Mancilla",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "1cd0b2a0-6686-4c8c-a905-f11f7de1c3c2",
+      "name": "Carolina Marin Bejar",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "c6fa3f6c-4eef-45f0-9cd7-587226704a87",
+      "name": "Gabriel  Marquez Reyes",
+      "school": "Um Yang Guitard",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/bcb8542b-39c4-4fed-827c-8ecce6b43a50/logo-1775154695075.jpeg"
+    },
+    {
+      "id": "b1531b8d-67bf-4693-aef4-d5fc9f94c499",
+      "name": "Lucy Martínez Díaz",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
+    },
+    {
+      "id": "afc56547-b32c-457d-8217-81d59cc6ec29",
+      "name": "Eduardo  Martínez Faundes",
+      "school": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg"
+    },
+    {
+      "id": "a77b77fa-82ed-4fad-9bd5-979b58c3cfbc",
+      "name": "Francisca Antonia  Martinez Grandon",
+      "school": "Taekwondo Kitsune",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "4a85595f-83db-4fcd-bce7-3015ea47df6e",
+      "name": "Belen Francisca Martinez Leon",
+      "school": "Taekwondo Kitsune",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "c4a5dd69-7258-4a42-b301-7d7ff657ab61",
+      "name": "Diego Alejandro Massini Varas",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "a2f3c8ab-c075-4ae7-955b-3ae96bc18ba2",
+      "name": "Julieta  Medina",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "260e979b-9346-4451-941c-87de84af7d9a",
+      "name": "AMELIA MEDINA DEL CAMPO",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "75c0fe67-c124-4d25-8972-f12eb12afb07",
+      "name": "Valentin Ignacio Mejias Valenzuela",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "ff86aea1-440d-4382-8d6b-3143f74b6085",
+      "name": "Aleniis Mellado",
+      "school": "Team Hyun Su",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "82dc42d4-5d9a-46f2-82a9-36b27382806c",
+      "name": "Jesús Leonardo Monsalve Guerra",
+      "school": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg"
+    },
+    {
+      "id": "bbad1827-a285-46c3-ac5c-d1c38d000d34",
+      "name": "Nicole Isabella Monsalve Madriz",
+      "school": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg"
+    },
+    {
+      "id": "96378c64-1911-461a-9b06-733b4a7377e4",
+      "name": "Yubely Isabella Monsalve Madriz",
+      "school": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg"
+    },
+    {
+      "id": "d33b27fb-e32b-420d-ae41-c051c8647d8e",
+      "name": "Emilia Morales",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "d1e30f2a-67cc-41fc-bfb3-208d399d793c",
+      "name": "Juan Cristobal Morales",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "4c02a018-25ad-4fdd-b002-460d65334870",
+      "name": "IGNACIA MORALES LOPEZ",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "9c4ed443-a085-45ed-bff1-0297214814c4",
+      "name": "Daniel Fernando Morales Manzano",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "a1ab71ab-307a-414d-99aa-c25e2dcf6657",
+      "name": "DAMIAN MORALES ROMÁN",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "cee8dd33-09a2-4788-af12-940dc2647e25",
+      "name": "Alonso Raúl Moscoso Mura",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "da6e9d32-9bb1-4c62-87c3-d3e8ebeb0e33",
+      "name": "Magdalena Moscoso Mura",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "0837bbb4-325d-4eb1-8189-dbae6d189ddc",
+      "name": "Constanza Moya",
+      "school": "Demo Team Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7/logo-1775084618961.png"
+    },
+    {
+      "id": "bbb656da-a08f-4558-b489-8fcdcf2cab86",
+      "name": "Katalina Mulsow",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
+    },
+    {
+      "id": "7b58907d-6232-4bd9-b4a2-46b9bb2d3d9a",
+      "name": "David Muñoz",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "0ddcecec-973d-49f5-837c-286d88ba4502",
+      "name": "Francisco Javier Muñoz",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "a99495f7-2f10-421e-afcd-33917916f3fc",
+      "name": "Monserrat  Farach Muñoz Godoy",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "97e4c05e-a7b9-4d1c-93c0-4c01fffeb28f",
+      "name": "Camila Muñoz Huircán",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
+    },
+    {
+      "id": "fc5af667-1e28-4cc8-8c7d-79b07f7f7eec",
+      "name": "Joaquín  Muñoz Palma",
+      "school": "Dragon Negro",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2ac4bf05-a861-4b23-9636-2e82e401bab8/logo-1775437040034.jpg"
+    },
+    {
+      "id": "3d4edbb3-957f-4498-9300-5a653b5cd1a0",
+      "name": "Ignacio Muñoz Toloza",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "4767bc31-2129-4c74-93ae-a34c9aba772b",
+      "name": "Karim Muza",
+      "school": "Demo Team Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7/logo-1775084618961.png"
+    },
+    {
+      "id": "fc7e7917-04a9-4313-bb07-cf2f4972a5bd",
+      "name": "Orlando Navarrete Saldias",
+      "school": "Legión Futuro",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "18bf2dfb-704a-49e9-89b4-ff49bd78e25a",
+      "name": "LUCIANO NAVARRO MONTENEGRO",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "cf9bb4a4-8c7f-4b00-b0f3-6b8b3f040433",
+      "name": "Marcelo Negrete Perez",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "2a48ec46-d7f8-4d52-b675-a7d4efd844d7",
+      "name": "Yusef Boulos Nessrallah Nesrallah",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "86942570-b1f5-43ef-86a2-8782e6e91d02",
+      "name": "ESTEBAN NUNEZ ARAVENA",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "65646fe7-8d51-46f0-ae28-a311b2885620",
+      "name": "Dafne Nuñez Herrera",
+      "school": "Um Yang Guitard",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/bcb8542b-39c4-4fed-827c-8ecce6b43a50/logo-1775154695075.jpeg"
+    },
+    {
+      "id": "4874868a-e5fa-4876-9a3f-c3812472f226",
+      "name": "Cristobal Guillermo Nuñez Weber",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "03f6a052-b053-4c62-9c0b-0e2802d84238",
+      "name": "COLOMBA OLAVE Z�s�'IGA",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "3c0293b9-c9ad-4e1c-87fa-2db86c736b5a",
+      "name": "Contanza  Olivarez Gonzalez",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "2a1677ec-8b2b-4a73-8a14-5a76b168145a",
+      "name": "Pablo Olivarez Gonzalez",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "5c61d058-c907-4131-b75b-da87172ceb01",
+      "name": "Mauricio Olvares Rieloff",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "9f504d6c-d0cb-4024-941f-72cc6c4b5da1",
+      "name": "Antonella Danae Oñate Saavedra",
+      "school": "Díaz kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "65345791-ffca-4436-884a-d02a8cc41619",
+      "name": "Macarena Ortega",
+      "school": "Demo Team Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7/logo-1775084618961.png"
+    },
+    {
+      "id": "d4873155-22f6-4574-b6a8-d64d6d360eab",
+      "name": "Luna Ortiz Hernández",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "fe33902b-ae11-40c1-a4aa-cfa7d77cf3cc",
+      "name": "Jhosber Adair  Ortiz Montaño",
+      "school": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg"
+    },
+    {
+      "id": "bac759a2-533a-4d62-8ec1-3f78dfe33c5b",
+      "name": "Nicolas Oyola",
+      "school": "Team Hyun Su",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "419ec79c-53fa-47f9-a3cd-56463d578ffa",
+      "name": "Christopher  Palma Palacios",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "0918b444-c6d0-49e7-81b8-8bf2437cc815",
+      "name": "Gabriel  Palominos",
+      "school": "Team Hyun Su",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "32d601c4-802f-4a82-b0d1-bd640e5c6cf3",
+      "name": "Francisca Parraguez Castañeda",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "cca27103-cd5f-435f-aa3c-210c8f2d1990",
+      "name": "Valentina Patiño",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "d5d92051-fd18-46b4-ac70-19a47ef08967",
+      "name": "Axl Pavez Ruiz",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "ac5e5dd2-1582-4fe0-95b8-a8425b5891ec",
+      "name": "Emilia Peña",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "6a781690-9838-4e85-b25f-06e5238a808e",
+      "name": "Martina Peña",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "94160275-4447-4646-8cd7-755e3ac82f7f",
+      "name": "Keylimar Mileidy Peñaloza Moran",
+      "school": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg"
+    },
+    {
+      "id": "93df7e5d-fd31-45bb-a044-dcf880e95896",
+      "name": "Maria Angelica Perez",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "d0aacb88-c2b1-48bc-90f0-f3a81308329b",
+      "name": "Mayckel Pérez Jiménez",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "3559288e-cc9a-4d9e-8336-8a1f2b47eb0f",
+      "name": "Lucas Peroso",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "10e80c79-891c-45fd-a7ff-ceb0227cd128",
+      "name": "Luis Petit Reina",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "7efd8e95-65ed-4cd1-8ce0-5bca29fe38cf",
+      "name": "Eduardo Pincheira Gonzalez",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "c7658474-d0ee-4938-ae8f-0acf21ff59d8",
+      "name": "Alexander  Pincheira Guarda",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "940924fe-1bdd-4ac9-8779-58842fd3a73c",
+      "name": "Salome Pizarro Contreras",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "ecd2831f-e0e9-4faa-97fc-f9baba1fd03c",
+      "name": "Franco  Ponce Rivera",
+      "school": "Creeser",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/052d2fb0-0638-4fee-9965-4989f37b05fd/logo-1775330345669.jpg"
+    },
+    {
+      "id": "3826d1f8-6509-4075-8602-1acf59cf31f0",
+      "name": "Isidora Pozo",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "eb6970d2-8971-465c-ab3a-6e3501b39b74",
+      "name": "Fernando Prado Cornejo",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "8a7fdb3a-7691-42e4-a2b3-aadde6451c6d",
+      "name": "Josefina Priale Blandford",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "088d98b5-f62f-4876-acc9-ccfe2a4bd24d",
+      "name": "Claudio Antonio Puentes Manquilef",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "56a568ae-0ad9-48f0-ace3-f6d877e3e6b8",
+      "name": "Bruno Amaro Pulgar Vergara",
+      "school": "Díaz kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "34574234-672e-4ae4-ad09-c1ba8bd1cd1d",
+      "name": "Fabián Raimán Orellana",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
+    },
+    {
+      "id": "42d0e6c9-c93d-4d91-b814-4cc1ab144f83",
+      "name": "Josefina Ramírez",
+      "school": "Legión Futuro",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "916190e4-ca91-4f2b-b22a-06b8a3415f49",
+      "name": "Santiago Ariel Ramirez Arancibia",
+      "school": " Mugung Taekwondo",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2596b77b-6a71-4449-bd4d-b02cc5504703/logo-1775151006599.jpeg"
+    },
+    {
+      "id": "2a65c3f2-1f0d-48a8-a172-a230c9ad3825",
+      "name": "Sebastián Mateo Ramirez Arancibia",
+      "school": " Mugung Taekwondo",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2596b77b-6a71-4449-bd4d-b02cc5504703/logo-1775151006599.jpeg"
+    },
+    {
+      "id": "70538065-0efe-4509-88b7-7ac83f1199b8",
+      "name": "Leonardo Ramírez Valdés",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
+    },
+    {
+      "id": "64ed2685-e4e7-44a0-a41e-776e26e74012",
+      "name": "Facundo  Rey Gajardo",
+      "school": "Um Yang Guitard",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/bcb8542b-39c4-4fed-827c-8ecce6b43a50/logo-1775154695075.jpeg"
+    },
+    {
+      "id": "3bfcffac-99c4-472f-960f-7caf058c54b0",
+      "name": "Benjamín Reyes Contreras",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
+    },
+    {
+      "id": "63a188df-5f9e-4df8-a9eb-8b8588efc18f",
+      "name": "Catalina Reyes Contreras",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
+    },
+    {
+      "id": "4e87f0ab-5722-4082-98a1-fea4a410d757",
+      "name": "Leonardo Camilo Reyes Cornejo",
+      "school": " Mugung Taekwondo",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2596b77b-6a71-4449-bd4d-b02cc5504703/logo-1775151006599.jpeg"
+    },
+    {
+      "id": "0d889d92-eb48-426e-83f6-ccabd85780e4",
+      "name": "Vicente Reyes Peralta",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "8d1e18ad-e229-40b3-a5c4-2c976aa40dbc",
+      "name": "Maximo  Reyes Romero",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "f7540c1b-207f-455d-9795-23aab5a08ec6",
+      "name": "Hector Risco Martinez",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "116abfd1-5238-46a6-858b-5e41439c769a",
+      "name": "Sayen Rivas Valdebenito",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
+    },
+    {
+      "id": "9753567c-9bab-4ddf-8792-29e6527644db",
+      "name": "Fabián Rodríguez Rojas",
+      "school": "Legión Futuro",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "1417a807-5310-478e-b41f-3e9aa0f7dde6",
+      "name": "Laura Isabella Rojas Adones",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "0dc9bc6b-d95f-409a-b604-751da85ad148",
+      "name": "Maite Isidora Rojas Flores",
+      "school": "Díaz kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "a0f4b0e2-9847-4a6a-af4b-ff3570caaf89",
+      "name": "Amanda Violeta Rojas Yañez",
+      "school": "Taedo Generation",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c4de1313-e6f5-40b4-b36d-67ad9505c560/logo-1775054465968.png"
+    },
+    {
+      "id": "85059f92-b42e-4bb0-bc40-0e664ebf2c42",
+      "name": "Cristobal Romo",
+      "school": "Demo Team Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7/logo-1775084618961.png"
+    },
+    {
+      "id": "159e9e3d-936f-436e-a63c-684517c15a9b",
+      "name": "Mariana Pascal Saavedra Montoya",
+      "school": "Taedo Generation",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c4de1313-e6f5-40b4-b36d-67ad9505c560/logo-1775054465968.png"
+    },
+    {
+      "id": "cc085185-4127-4c34-8398-b8c20fd94fb2",
+      "name": "Benjamin Alejandro Salazar Castro",
+      "school": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "0539d495-b71b-440b-bae6-9114cf26e492",
+      "name": "Emilia Salinas Castillo",
+      "school": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg"
+    },
+    {
+      "id": "bb21b362-5c17-4630-b7a3-28e01c739b91",
+      "name": "Bruna Octavia Santoro Aguila",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "a18f944f-cce9-46d1-b98a-f17ae897136e",
+      "name": "Rafaella Schader Sánchez",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "68eb03d4-ba48-4daf-85b0-fd96104b3521",
+      "name": "Bruno Silva",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "90ea9ef8-07da-461a-b88b-2c7270c791b8",
+      "name": "Marcos Eduardo Silva Martorell",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "87695d47-cac4-45d1-81f1-dc411c6de3fc",
+      "name": "Matías Silva Rigo Righi",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "da6752e2-18cc-44ac-800e-f141adfb0f8b",
+      "name": "Ariel Solar",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "89221dd9-eef5-4483-94bc-fcddfceefe43",
+      "name": "Benjamin Soto Marfull",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "454eb359-e104-4bc8-b132-a2d496bda0b1",
+      "name": "Klingerth Tapia Scythe",
+      "school": "Legión Futuro",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "a74f912d-c32c-4864-9d10-ea0f81fa0ef4",
+      "name": "Mía Torrejón Ibáñez",
+      "school": "Legión Futuro",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "f8db0367-0300-4100-b9e3-8f29c53b0978",
+      "name": "Valentina  Torres Aceituno",
+      "school": "Jeon-sa Fénix",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/19975916-8c36-484b-9c71-6f607f877edb/logo-1775445047738.png"
+    },
+    {
+      "id": "a394c9be-98f3-425e-b78f-7fc26077bcc9",
+      "name": "Javiera  Torres Hernandez",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "23006f6b-64df-4160-860a-9e9015a42a86",
+      "name": "Mariangel Torres Méndez",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "5ed0500f-ca21-44d3-86f1-226c292036cd",
+      "name": "Danitza Torres Perez",
+      "school": "Academia Taekwondo Oríón",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/b2ced107-6d38-471c-a5bf-48a2cae3df64/logo-1775596294809.jpg"
+    },
+    {
+      "id": "7e1d054f-5493-4d33-949f-5ad0474a7343",
+      "name": "NICOLE TORRES P�?REZ",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "98c56353-d650-4e88-beec-0fa69406f08e",
+      "name": "MAGDALENA ULLOA ARREDONDO",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "c9eeae9c-cc56-4496-825b-b8edc40962c9",
+      "name": "Facundo  Uribe Castillo",
+      "school": "Um Yang Guitard",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/bcb8542b-39c4-4fed-827c-8ecce6b43a50/logo-1775154695075.jpeg"
+    },
+    {
+      "id": "9ca9d002-85e5-4339-8027-dcd836562140",
+      "name": "Genesis Vaca Gutierrez",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "58c9a04f-5e64-4a18-a205-a03cf4fdd09a",
+      "name": "Vicente  Valenzuela",
+      "school": "Creeser",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/052d2fb0-0638-4fee-9965-4989f37b05fd/logo-1775330345669.jpg"
+    },
+    {
+      "id": "6f60c10d-383d-448e-a4b2-5b846d594fe3",
+      "name": "Maximo  Valenzuela Ramirez",
+      "school": "Dragon Negro",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2ac4bf05-a861-4b23-9636-2e82e401bab8/logo-1775437040034.jpg"
+    },
+    {
+      "id": "b88c9eae-33fc-4648-bd11-7993f6fdcf07",
+      "name": "Nicolas Valeria Navarrete",
+      "school": "Academia Taekwondo Oríón",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/b2ced107-6d38-471c-a5bf-48a2cae3df64/logo-1775596294809.jpg"
+    },
+    {
+      "id": "a0a9fee3-7041-4dde-b5eb-5277f3d875e0",
+      "name": "Agustina Ignacia  Vargas Castillo",
+      "school": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg"
+    },
+    {
+      "id": "a4efb93d-8fba-4c8f-9448-64874f614ed7",
+      "name": "Cristopher Vargas Ramírez",
+      "school": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "73357d7b-9dae-4d5b-930c-68a25ea41181",
+      "name": "Denisse Vasquez",
+      "school": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "1f860a4d-d69c-4d80-a7bb-52d1f62c4e6c",
+      "name": "Franco  Vasquez",
+      "school": "Team Hyun Su",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "0a7599bc-2aa7-4e23-82e5-817087b4b49b",
+      "name": "Mauricio  Velasco Velez",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "a4b22222-8a41-4c21-8880-777cbb630239",
+      "name": "Vanessa Velasquez Castro",
+      "school": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "471c4862-2558-45ea-996b-b18429a59b84",
+      "name": "Elea Diella Veliz Avello",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "54999953-cd1d-498e-aee7-1b67c22e50ce",
+      "name": "Valentín Andrés  Venegas Rojas",
+      "school": "Díaz kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "5c2cd7f0-9f0a-4f5a-93ae-7cf2d7aadf61",
+      "name": "VICENTE VERAS RIQUELME",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "e2c66df1-c06b-41b6-9b34-92ceb6a68fe5",
+      "name": "Valentina Vila Velozo",
+      "school": "Creeser",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/052d2fb0-0638-4fee-9965-4989f37b05fd/logo-1775330345669.jpg"
+    },
+    {
+      "id": "1b85d075-3510-40b6-b56c-4f06451fe873",
+      "name": "Belén Villagra",
+      "school": "Demo Team Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7/logo-1775084618961.png"
+    },
+    {
+      "id": "dc25452e-5099-436c-b650-5ab764a3cc81",
+      "name": "Nicole Tais Villalobos Alvarado",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "98eb9bcd-4e49-4cc6-8f07-2df49c2f0bd8",
+      "name": "ISIDORA VILLALOBOS CARRILLO",
+      "school": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "a05144c5-57b1-435c-bf07-b951e7d5b4e5",
+      "name": "Maite  Viña Cifuentes",
+      "school": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg"
+    },
+    {
+      "id": "ea208e09-705f-4667-a755-d1f853d636a7",
+      "name": "Javiera Ignacia  Zavala Arenas",
+      "school": "Taedo Generation",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c4de1313-e6f5-40b4-b36d-67ad9505c560/logo-1775054465968.png"
+    },
+    {
+      "id": "58e971cf-0581-4e21-93c2-26798f09763e",
+      "name": "Simon Augusto Zavala Arenas",
+      "school": "Taedo Generation",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c4de1313-e6f5-40b4-b36d-67ad9505c560/logo-1775054465968.png"
+    },
+    {
+      "id": "4128d604-c07e-4950-887e-e60f1a664371",
+      "name": "Karen Elizabeth Zegarra Cortés",
+      "school": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
+    },
+    {
+      "id": "ee90916e-bd41-435c-b372-990452fe5aa2",
+      "name": "Martin Ignacio  Zenteno García",
+      "school": "Taekwondo Kitsune",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp"
     }
   ],
   "schools": [
     {
-      "id": "sc1",
-      "name": "Dojang Seoul",
-      "city": "Seoul, Corea",
-      "logo": "https://ui-avatars.com/api/?name=DS&background=0047a0&color=fff&size=128&bold=true"
+      "id": "010aefc6-8bf1-46e7-9ee7-d6a5fff91010",
+      "name": " Academia Cortes Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
     },
     {
-      "id": "sc2",
-      "name": "Academia SP",
-      "city": "Sao Paulo, Brasil",
-      "logo": "https://ui-avatars.com/api/?name=AS&background=c62c55&color=fff&size=128&bold=true"
+      "id": "2596b77b-6a71-4449-bd4d-b02cc5504703",
+      "name": " Mugung Taekwondo",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2596b77b-6a71-4449-bd4d-b02cc5504703/logo-1775151006599.jpeg",
+      "city": "Talca"
     },
     {
-      "id": "sc3",
-      "name": "Busan Tigers",
-      "city": "Busan, Corea",
-      "logo": "https://ui-avatars.com/api/?name=BT&background=170fdd&color=fff&size=128&bold=true"
+      "id": "b2ced107-6d38-471c-a5bf-48a2cae3df64",
+      "name": "Academia Taekwondo Oríón",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/b2ced107-6d38-471c-a5bf-48a2cae3df64/logo-1775596294809.jpg",
+      "city": "Santiago"
     },
     {
-      "id": "sc4",
-      "name": "Club Olimpia",
-      "city": "Ciudad de Mexico",
-      "logo": "https://ui-avatars.com/api/?name=CO&background=243d5b&color=fff&size=128&bold=true"
+      "id": "3f2ddaf0-6d4e-4a16-8bb3-956c13eb3821",
+      "name": "Bulsajopro",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/3f2ddaf0-6d4e-4a16-8bb3-956c13eb3821/logo-1775406933058.jpg",
+      "city": "Santiago"
     },
     {
-      "id": "sc5",
-      "name": "Tokyo Taekwondo",
-      "city": "Tokio, Japon",
-      "logo": "https://ui-avatars.com/api/?name=TT&background=0047a0&color=fff&size=128&bold=true"
+      "id": "052d2fb0-0638-4fee-9965-4989f37b05fd",
+      "name": "Creeser",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/052d2fb0-0638-4fee-9965-4989f37b05fd/logo-1775330345669.jpg",
+      "city": "Santiago"
     },
     {
-      "id": "sc6",
-      "name": "Lagos Warriors",
-      "city": "Lagos, Nigeria",
-      "logo": "https://ui-avatars.com/api/?name=LW&background=c62c55&color=fff&size=128&bold=true"
+      "id": "c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7",
+      "name": "Demo Team Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c9d9fb81-b7fe-44f7-8c0a-f0e0cdd5dce7/logo-1775084618961.png",
+      "city": "Santiago"
     },
     {
-      "id": "sc7",
-      "name": "Escuela Madrid",
-      "city": "Madrid, Espana",
-      "logo": "https://ui-avatars.com/api/?name=EM&background=170fdd&color=fff&size=128&bold=true"
+      "id": "d62c5249-68d3-45c1-bd73-5eaa08704175",
+      "name": "Díaz kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
     },
     {
-      "id": "sc8",
-      "name": "Beijing Academy",
-      "city": "Pekin, China",
-      "logo": "https://ui-avatars.com/api/?name=BA&background=243d5b&color=fff&size=128&bold=true"
+      "id": "2ac4bf05-a861-4b23-9636-2e82e401bab8",
+      "name": "Dragon Negro",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/2ac4bf05-a861-4b23-9636-2e82e401bab8/logo-1775437040034.jpg",
+      "city": "Santiago"
     },
     {
-      "id": "sc9",
-      "name": "Berlin Dojo",
-      "city": "Berlin, Alemania",
-      "logo": "https://ui-avatars.com/api/?name=BD&background=0047a0&color=fff&size=128&bold=true"
+      "id": "d5c8d50a-658f-41ee-839e-e5a8d16b0fbc",
+      "name": "Escuela de prueba 1",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
     },
     {
-      "id": "sc10",
-      "name": "Mumbai Kicks",
-      "city": "Mumbai, India",
-      "logo": "https://ui-avatars.com/api/?name=MK&background=c62c55&color=fff&size=128&bold=true"
+      "id": "bfd6d1de-4eca-41d2-bdae-c879ff585ad8",
+      "name": "Escuela de prueba 34",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "cdac70a2-4ed9-4417-b5eb-1465cf1d4872",
+      "name": "Escuela GeumSek Cerro Navia",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "300659d1-f245-42e3-bbc5-9a7ab63cb178",
+      "name": "Escuela GeumSek San Bernardo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "95253d17-f97b-4a18-ae43-f8f73f358f94",
+      "name": "Himdo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "d841f6d7-fb62-4975-9ff3-2bc5387b1956",
+      "name": "Hwangso Kim",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "19975916-8c36-484b-9c71-6f607f877edb",
+      "name": "Jeon-sa Fénix",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/19975916-8c36-484b-9c71-6f607f877edb/logo-1775445047738.png",
+      "city": "O Higgings"
+    },
+    {
+      "id": "37f948fe-33ae-499c-a678-92abdaec7219",
+      "name": "KDO Taekwondo Academy",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "4fe21af5-1f85-43ba-99b7-611134fe2865",
+      "name": "KIDO WT",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "4c959a51-d277-4019-89b1-6dc8b770aba3",
+      "name": "Legión Futuro",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "santiago"
+    },
+    {
+      "id": "cc368373-02c4-43f6-bb88-a2265798556d",
+      "name": "Magnus",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "1a9c998c-cd90-41f9-ab3d-97cb28344940",
+      "name": "Manseh Taekwondo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "c15dc21d-7495-4e83-9996-0ce90781c7e7",
+      "name": "Meneses Lee",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "34128d02-c8ea-482c-8a9a-830dc92a0ea6",
+      "name": "MOOGA",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Puente Alto "
+    },
+    {
+      "id": "5190dd2d-791e-4e5c-9680-75e2a941d852",
+      "name": "Mooga LF",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "518eb4e5-04c9-4518-80cb-1ec2e6beb2ce",
+      "name": "Organización Jairo Gutierrez",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg",
+      "city": "Santiago"
+    },
+    {
+      "id": "b1ccc8b2-a261-4b7b-9049-311f57eb0c23",
+      "name": "San Saja",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "71dc3a3d-e000-4ff2-84a2-598020b9cb91",
+      "name": "Seong jin ",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/71dc3a3d-e000-4ff2-84a2-598020b9cb91/logo-1775662954282.jpg",
+      "city": "Santiago"
+    },
+    {
+      "id": "dd261235-52aa-4304-913d-5039c7e1cf46",
+      "name": "Sol Naciente",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "96de0a47-cde4-4125-b100-f9bf82991681",
+      "name": "Taedo",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "c4de1313-e6f5-40b4-b36d-67ad9505c560",
+      "name": "Taedo Generation",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c4de1313-e6f5-40b4-b36d-67ad9505c560/logo-1775054465968.png",
+      "city": "Santiago"
+    },
+    {
+      "id": "522a7450-4947-4143-906d-b9b06fb4629f",
+      "name": "Taekwondo Bennu Chile",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg",
+      "city": "Santiago"
+    },
+    {
+      "id": "2b4b7adb-2520-4351-b3d7-b34813a2dc11",
+      "name": "Taekwondo Kitsune",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "67d04df4-8eb1-4f0b-a930-28e4505b5ce9",
+      "name": "Taekwondo Monsalve Guerra",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg",
+      "city": "Santiago"
+    },
+    {
+      "id": "cf4ae6e6-031a-4c03-8ee5-5d593fd66bb4",
+      "name": "Tan gung TKD",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "9aed3448-259f-4447-9db6-9ab466cbf6e1",
+      "name": "Team Hyun Su",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
+    },
+    {
+      "id": "bcb8542b-39c4-4fed-827c-8ecce6b43a50",
+      "name": "Um Yang Guitard",
+      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/bcb8542b-39c4-4fed-827c-8ecce6b43a50/logo-1775154695075.jpeg",
+      "city": "Santiago"
+    },
+    {
+      "id": "cd2ee3c8-5f81-4e98-9ab4-ced25307e405",
+      "name": "Zuca TKD",
+      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
+      "city": "Santiago"
     }
   ],
-  "athleteWinners": [
-    {
-      "participantId": "12",
-      "name": "Nguyen Minh",
-      "subtitle": "Saigon Tigers",
-      "logo": "https://ui-avatars.com/api/?name=Nguyen+Minh&background=243d5b&color=fff&size=128&bold=true",
-      "type": "athletes",
-      "wonAt": "2026-04-07T18:55:27.159Z",
-      "prize": null,
-      "id": "pRNqDSGFm0s"
-    },
-    {
-      "participantId": "7",
-      "name": "Fernandez Ana",
-      "subtitle": "Escuela Madrid",
-      "logo": "https://ui-avatars.com/api/?name=Fernandez+Ana&background=170fdd&color=fff&size=128&bold=true",
-      "type": "athletes",
-      "wonAt": "2026-04-07T19:19:33.325Z",
-      "prize": null,
-      "id": "Q-1aL2EF5wI"
-    },
-    {
-      "participantId": "15",
-      "name": "Lopez Camila",
-      "subtitle": "Tegucigalpa TKD",
-      "logo": "https://ui-avatars.com/api/?name=Lopez+Camila&background=170fdd&color=fff&size=128&bold=true",
-      "type": "athletes",
-      "wonAt": "2026-04-07T19:21:57.269Z",
-      "prize": null,
-      "id": "pHaDl5rfIh8"
-    },
-    {
-      "participantId": "5",
-      "name": "Tanaka Yuki",
-      "subtitle": "Tokyo Taekwondo",
-      "logo": "https://ui-avatars.com/api/?name=Tanaka+Yuki&background=0047a0&color=fff&size=128&bold=true",
-      "type": "athletes",
-      "wonAt": "2026-04-07T19:22:16.797Z",
-      "prize": null,
-      "id": "XZsag5aBPNs"
-    }
-  ],
+  "athleteWinners": [],
   "schoolWinners": [
-    {
-      "participantId": "sc3",
-      "name": "Busan Tigers",
-      "subtitle": "Busan, Corea",
-      "logo": "https://ui-avatars.com/api/?name=BT&background=170fdd&color=fff&size=128&bold=true",
-      "type": "schools",
-      "wonAt": "2026-04-07T18:55:47.931Z",
-      "prize": null,
-      "id": "amVi7Gd3wJg"
-    },
-    {
-      "participantId": "sc8",
-      "name": "Beijing Academy",
-      "subtitle": "Pekin, China",
-      "logo": "https://ui-avatars.com/api/?name=BA&background=243d5b&color=fff&size=128&bold=true",
-      "type": "schools",
-      "wonAt": "2026-04-07T19:08:12.926Z",
-      "prize": null,
-      "id": "AfYBL0RgE4E"
-    }
   ],
   "prizes": [],
   "$schema": "./node_modules/json-server/schema.json"
