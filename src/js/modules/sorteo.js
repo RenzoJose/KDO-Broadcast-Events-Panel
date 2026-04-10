@@ -6,6 +6,7 @@
    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 import { getState, setState } from '../core/state.js';
+import { SoundController } from './sound-controller.js';
 
 const API_BASE = 'http://localhost:3001';
 
@@ -119,6 +120,7 @@ async function deletePrize(id) {
 let _busy = false;
 let _mode = 'athletes'; // 'athletes' | 'schools'
 let _currentPrize = null;  // objeto prize activo o null
+const _sound = new SoundController();
 
 // â”€â”€ Entrada pÃºblica â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export function initSorteo() {
@@ -131,6 +133,7 @@ export function renderSorteo() {
   const root = document.getElementById('sorteo');
   if (!root) return;
   _busy = false;
+  _sound.reset();
 
   root.innerHTML = `
     <div class="st-stage" id="st-stage">
@@ -261,9 +264,15 @@ async function _load() {
     _setCard(eligible[Math.floor(Math.random() * eligible.length)]);
 
     if (btn) {
-      btn.disabled = false;
-      btn.innerHTML = '<span>Iniciar Sorteo</span>';
-      btn.onclick = () => _spin(eligible, mode);
+      if (!_currentPrize) {
+        btn.disabled = true;
+        btn.innerHTML = '<span>Iniciar SORTEO</span>';
+        btn.onclick = null;
+      } else {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Iniciar Sorteo</span>';
+        btn.onclick = () => _spin(eligible, mode);
+      }
     }
 
   } catch (err) {
@@ -304,6 +313,8 @@ function _spin(eligible, mode) {
   const btn = document.getElementById('st-btn');
   if (btn) btn.disabled = true;
 
+  _sound.start();
+
   const winner = eligible[Math.floor(Math.random() * eligible.length)];
   const pool = eligible.filter(p => p.id !== winner.id);
   const rotPool = pool.length ? pool : eligible;
@@ -318,9 +329,11 @@ function _spin(eligible, mode) {
     setTimeout(() => card.classList.remove('st-card--flash'), 60);
 
     if (i < delays.length) {
+      _sound.update(delays[i]);
       _setCard(rotPool[Math.floor(Math.random() * rotPool.length)]);
       setTimeout(tick, delays[i++]);
     } else {
+      _sound.playImpact();
       _setCard(winner);
       setTimeout(() => _revealWinner(winner, mode), 700);
     }
@@ -444,7 +457,7 @@ function _renderPrizeSection(prize) {
       if (btn) btn.disabled = true;
       await deletePrize(prize.id);
       _currentPrize = null;
-      _renderPrizeSection(null);
+      _load();
     });
   } else {
     section.innerHTML = `
@@ -529,8 +542,8 @@ function _showPrizeForm(existingPrize) {
     }
 
     _currentPrize = saved;
-    _renderPrizeSection(saved);
     _closeModal();
+    _load();
   });
 
   // Cerrar con Escape

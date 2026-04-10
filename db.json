@@ -1575,171 +1575,302 @@
       "city": "Santiago"
     },
     {
-      "id": "bfd6d1de-4eca-41d2-bdae-c879ff585ad8",
-      "name": "Escuela de prueba 34",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "id": "sc10",
+      "name": "Mumbai Kicks",
+      "city": "Mumbai, India",
+      "logo": "https://ui-avatars.com/api/?name=MK&background=c62c55&color=fff&size=128&bold=true"
+    }
+  ],
+  "athleteWinners": [
+    {
+      "participantId": "12",
+      "name": "Nguyen Minh",
+      "subtitle": "Saigon Tigers",
+      "logo": "https://ui-avatars.com/api/?name=Nguyen+Minh&background=243d5b&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-07T18:55:27.159Z",
+      "prize": null,
+      "id": "pRNqDSGFm0s"
     },
     {
-      "id": "cdac70a2-4ed9-4417-b5eb-1465cf1d4872",
-      "name": "Escuela GeumSek Cerro Navia",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "7",
+      "name": "Fernandez Ana",
+      "subtitle": "Escuela Madrid",
+      "logo": "https://ui-avatars.com/api/?name=Fernandez+Ana&background=170fdd&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-07T19:19:33.325Z",
+      "prize": null,
+      "id": "Q-1aL2EF5wI"
     },
     {
-      "id": "300659d1-f245-42e3-bbc5-9a7ab63cb178",
-      "name": "Escuela GeumSek San Bernardo",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "15",
+      "name": "Lopez Camila",
+      "subtitle": "Tegucigalpa TKD",
+      "logo": "https://ui-avatars.com/api/?name=Lopez+Camila&background=170fdd&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-07T19:21:57.269Z",
+      "prize": null,
+      "id": "pHaDl5rfIh8"
     },
     {
-      "id": "95253d17-f97b-4a18-ae43-f8f73f358f94",
-      "name": "Himdo",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "5",
+      "name": "Tanaka Yuki",
+      "subtitle": "Tokyo Taekwondo",
+      "logo": "https://ui-avatars.com/api/?name=Tanaka+Yuki&background=0047a0&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-07T19:22:16.797Z",
+      "prize": null,
+      "id": "XZsag5aBPNs"
     },
     {
-      "id": "d841f6d7-fb62-4975-9ff3-2bc5387b1956",
-      "name": "Hwangso Kim",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "14",
+      "name": "Osei Kwame",
+      "subtitle": "Accra Elite",
+      "logo": "https://ui-avatars.com/api/?name=Osei+Kwame&background=c62c55&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T05:47:01.067Z",
+      "prize": null,
+      "id": "gvnLA_S84VA"
     },
     {
-      "id": "19975916-8c36-484b-9c71-6f607f877edb",
-      "name": "Jeon-sa Fénix",
-      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/19975916-8c36-484b-9c71-6f607f877edb/logo-1775445047738.png",
-      "city": "O Higgings"
+      "participantId": "19",
+      "name": "Johansson Erik",
+      "subtitle": "Stockholm Kicks",
+      "logo": "https://ui-avatars.com/api/?name=Johansson+Erik&background=170fdd&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T05:47:54.709Z",
+      "prize": {
+        "name": "Gorras",
+        "description": "KDO"
+      },
+      "id": "gk1XZoHmujA"
     },
     {
-      "id": "37f948fe-33ae-499c-a678-92abdaec7219",
-      "name": "KDO Taekwondo Academy",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "13",
+      "name": "Ivanov Alexei",
+      "subtitle": "Moscow Dojang",
+      "logo": "https://ui-avatars.com/api/?name=Ivanov+Alexei&background=0047a0&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T05:51:10.791Z",
+      "prize": {
+        "name": "Gorras",
+        "description": "KDO"
+      },
+      "id": "kXFDLtmGuII"
     },
     {
-      "id": "4fe21af5-1f85-43ba-99b7-611134fe2865",
-      "name": "KIDO WT",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "17",
+      "name": "Park Ji-yeon",
+      "subtitle": "Incheon United",
+      "logo": "https://ui-avatars.com/api/?name=Park+Ji-yeon&background=0047a0&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T05:54:20.558Z",
+      "prize": {
+        "name": "Gorras",
+        "description": "KDO"
+      },
+      "id": "5ZISGwlF5GI"
     },
     {
-      "id": "4c959a51-d277-4019-89b1-6dc8b770aba3",
-      "name": "Legión Futuro",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "santiago"
+      "participantId": "3",
+      "name": "Park Min-su",
+      "subtitle": "Busan Tigers",
+      "logo": "https://ui-avatars.com/api/?name=Park+Min-su&background=170fdd&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T05:54:34.648Z",
+      "prize": {
+        "name": "Gorras",
+        "description": "KDO"
+      },
+      "id": "eliuPM8L6v4"
     },
     {
-      "id": "cc368373-02c4-43f6-bb88-a2265798556d",
-      "name": "Magnus",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "6",
+      "name": "Okafor Emeka",
+      "subtitle": "Lagos Warriors",
+      "logo": "https://ui-avatars.com/api/?name=Okafor+Emeka&background=c62c55&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T06:27:21.600Z",
+      "prize": {
+        "name": "TROFEO DE CAMPEONES DEL CIELO",
+        "description": ""
+      },
+      "id": "g3Qou0CDEXU"
     },
     {
-      "id": "1a9c998c-cd90-41f9-ab3d-97cb28344940",
-      "name": "Manseh Taekwondo",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "9",
+      "name": "Muller Hans",
+      "subtitle": "Berlin Dojo",
+      "logo": "https://ui-avatars.com/api/?name=Muller+Hans&background=0047a0&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T07:13:53.517Z",
+      "prize": {
+        "name": "CARROS",
+        "description": "2"
+      },
+      "id": "9Kt47maV_jE"
     },
     {
-      "id": "c15dc21d-7495-4e83-9996-0ce90781c7e7",
-      "name": "Meneses Lee",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "2",
+      "name": "Silva Rodrigo",
+      "subtitle": "Academia SP",
+      "logo": "https://ui-avatars.com/api/?name=Silva+Rodrigo&background=c62c55&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T07:50:44.293Z",
+      "prize": {
+        "name": "carro",
+        "description": ""
+      },
+      "id": "-B3WTWq6UoM"
     },
     {
-      "id": "34128d02-c8ea-482c-8a9a-830dc92a0ea6",
-      "name": "MOOGA",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Puente Alto "
+      "participantId": "11",
+      "name": "Santos Diego",
+      "subtitle": "Copa Brasil TKD",
+      "logo": "https://ui-avatars.com/api/?name=Santos+Diego&background=170fdd&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T07:54:37.880Z",
+      "prize": {
+        "name": "carro",
+        "description": ""
+      },
+      "id": "Uljj5WL28i4"
     },
     {
-      "id": "5190dd2d-791e-4e5c-9680-75e2a941d852",
-      "name": "Mooga LF",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "8",
+      "name": "Chen Wei",
+      "subtitle": "Beijing Academy",
+      "logo": "https://ui-avatars.com/api/?name=Chen+Wei&background=243d5b&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T08:43:50.515Z",
+      "prize": {
+        "name": "cards news",
+        "description": "gorras"
+      },
+      "id": "5dXStzyle18"
     },
     {
-      "id": "518eb4e5-04c9-4518-80cb-1ec2e6beb2ce",
-      "name": "Organización Jairo Gutierrez",
-      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/518eb4e5-04c9-4518-80cb-1ec2e6beb2ce/logo-1775801029793.jpg",
-      "city": "Santiago"
+      "participantId": "18",
+      "name": "Martinez Javier",
+      "subtitle": "Medellin TKD",
+      "logo": "https://ui-avatars.com/api/?name=Martinez+Javier&background=c62c55&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T08:44:10.306Z",
+      "prize": {
+        "name": "cards news",
+        "description": "gorras"
+      },
+      "id": "jykziG1jEnQ"
     },
     {
-      "id": "b1ccc8b2-a261-4b7b-9049-311f57eb0c23",
-      "name": "San Saja",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "10",
+      "name": "Patel Arjun",
+      "subtitle": "Mumbai Kicks",
+      "logo": "https://ui-avatars.com/api/?name=Patel+Arjun&background=c62c55&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T08:44:33.432Z",
+      "prize": {
+        "name": "cards news",
+        "description": "gorras"
+      },
+      "id": "stH20J4Eq7g"
     },
     {
-      "id": "71dc3a3d-e000-4ff2-84a2-598020b9cb91",
-      "name": "Seong jin ",
-      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/71dc3a3d-e000-4ff2-84a2-598020b9cb91/logo-1775662954282.jpg",
-      "city": "Santiago"
+      "participantId": "20",
+      "name": "Abubakar Fatima",
+      "subtitle": "Abuja Academy",
+      "logo": "https://ui-avatars.com/api/?name=Abubakar+Fatima&background=243d5b&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T08:50:16.916Z",
+      "prize": {
+        "name": "cards news",
+        "description": "gorras"
+      },
+      "id": "MwZNoA3yAi4"
     },
     {
-      "id": "dd261235-52aa-4304-913d-5039c7e1cf46",
-      "name": "Sol Naciente",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "16",
+      "name": "Rashid Omar",
+      "subtitle": "Cairo Warriors",
+      "logo": "https://ui-avatars.com/api/?name=Rashid+Omar&background=243d5b&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T08:50:35.241Z",
+      "prize": {
+        "name": "cards news",
+        "description": "gorras"
+      },
+      "id": "pk5tBBhmvjE"
     },
     {
-      "id": "96de0a47-cde4-4125-b100-f9bf82991681",
-      "name": "Taedo",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
-    },
-    {
-      "id": "c4de1313-e6f5-40b4-b36d-67ad9505c560",
-      "name": "Taedo Generation",
-      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/c4de1313-e6f5-40b4-b36d-67ad9505c560/logo-1775054465968.png",
-      "city": "Santiago"
-    },
-    {
-      "id": "522a7450-4947-4143-906d-b9b06fb4629f",
-      "name": "Taekwondo Bennu Chile",
-      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/522a7450-4947-4143-906d-b9b06fb4629f/logo-1775173312681.jpeg",
-      "city": "Santiago"
-    },
-    {
-      "id": "2b4b7adb-2520-4351-b3d7-b34813a2dc11",
-      "name": "Taekwondo Kitsune",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
-    },
-    {
-      "id": "67d04df4-8eb1-4f0b-a930-28e4505b5ce9",
-      "name": "Taekwondo Monsalve Guerra",
-      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/67d04df4-8eb1-4f0b-a930-28e4505b5ce9/logo-1775246831086.jpg",
-      "city": "Santiago"
-    },
-    {
-      "id": "cf4ae6e6-031a-4c03-8ee5-5d593fd66bb4",
-      "name": "Tan gung TKD",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
-    },
-    {
-      "id": "9aed3448-259f-4447-9db6-9ab466cbf6e1",
-      "name": "Team Hyun Su",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
-    },
-    {
-      "id": "bcb8542b-39c4-4fed-827c-8ecce6b43a50",
-      "name": "Um Yang Guitard",
-      "logo": "https://begvvlswdssihwfgnhxk.supabase.co/storage/v1/object/public/school-logos/bcb8542b-39c4-4fed-827c-8ecce6b43a50/logo-1775154695075.jpeg",
-      "city": "Santiago"
-    },
-    {
-      "id": "cd2ee3c8-5f81-4e98-9ab4-ced25307e405",
-      "name": "Zuca TKD",
-      "logo": "https://i.ibb.co/zHQGxhtC/pegatina-redonda-yin-yang-azul-rojo-r58d29f50b3fc4065ba52607e6e91a984-zg2qos-644.webp",
-      "city": "Santiago"
+      "participantId": "1",
+      "name": "Kim Jae-won",
+      "subtitle": "Dojang Seoul",
+      "logo": "https://ui-avatars.com/api/?name=Kim+Jae-won&background=0047a0&color=fff&size=128&bold=true",
+      "type": "athletes",
+      "wonAt": "2026-04-10T08:55:25.396Z",
+      "prize": {
+        "name": "auto",
+        "description": ""
+      },
+      "id": "XrnQ6E1tYuM"
     }
   ],
   "athleteWinners": [],
   "schoolWinners": [
+    {
+      "participantId": "sc3",
+      "name": "Busan Tigers",
+      "subtitle": "Busan, Corea",
+      "logo": "https://ui-avatars.com/api/?name=BT&background=170fdd&color=fff&size=128&bold=true",
+      "type": "schools",
+      "wonAt": "2026-04-07T18:55:47.931Z",
+      "prize": null,
+      "id": "amVi7Gd3wJg"
+    },
+    {
+      "participantId": "sc8",
+      "name": "Beijing Academy",
+      "subtitle": "Pekin, China",
+      "logo": "https://ui-avatars.com/api/?name=BA&background=243d5b&color=fff&size=128&bold=true",
+      "type": "schools",
+      "wonAt": "2026-04-07T19:08:12.926Z",
+      "prize": null,
+      "id": "AfYBL0RgE4E"
+    },
+    {
+      "participantId": "sc7",
+      "name": "Escuela Madrid",
+      "subtitle": "Madrid, Espana",
+      "logo": "https://ui-avatars.com/api/?name=EM&background=170fdd&color=fff&size=128&bold=true",
+      "type": "schools",
+      "wonAt": "2026-04-10T05:48:50.192Z",
+      "prize": {
+        "name": "Gorras",
+        "description": "KDO"
+      },
+      "id": "lbCSmnK28Ks"
+    },
+    {
+      "participantId": "sc2",
+      "name": "Academia SP",
+      "subtitle": "Sao Paulo, Brasil",
+      "logo": "https://ui-avatars.com/api/?name=AS&background=c62c55&color=fff&size=128&bold=true",
+      "type": "schools",
+      "wonAt": "2026-04-10T05:50:08.713Z",
+      "prize": {
+        "name": "Gorras",
+        "description": "KDO"
+      },
+      "id": "l9BLsahnQ2Q"
+    }
   ],
-  "prizes": [],
+  "prizes": [
+    {
+      "name": "auto",
+      "description": "",
+      "createdAt": "2026-04-10T08:55:12.544Z",
+      "id": "kedBJ8SXxkA"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
