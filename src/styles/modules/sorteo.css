@@ -558,7 +558,7 @@
 
 .st-prize-actions {
   position: absolute;
-  right: -1rem;
+  right: 0.6rem;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
