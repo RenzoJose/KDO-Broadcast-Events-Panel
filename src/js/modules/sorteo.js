@@ -171,10 +171,7 @@ export function renderSorteo() {
         <div class="st-line st-line--r"></div>
       </div>
 
-      <!-- Info -->
-      <p class="st-meta" id="st-meta"></p>
-
-      <!-- BotÃ³n -->
+      <!-- Botón -->
       <button class="st-btn" id="st-btn" disabled>
         <span>Iniciar Sorteo</span>
       </button>
@@ -212,9 +209,7 @@ export function renderSorteo() {
       document.getElementById('st-title').textContent = MODE_CFG[_mode].title;
 
       // Reset UI y recargar datos
-      _setCard({ name: 'â€”', subtitle: 'Cargandoâ€¦', logo: '' });
-      const meta = document.getElementById('st-meta');
-      if (meta) meta.textContent = '';
+      _setCard({ name: '\u2014', subtitle: 'Cargando…', logo: '' });
       const btn2 = document.getElementById('st-btn');
       if (btn2) { btn2.disabled = true; btn2.innerHTML = '<span>Iniciar Sorteo</span>'; }
 
@@ -223,13 +218,13 @@ export function renderSorteo() {
   });
 
   _load();
+  _setupPrizeVisibility();
 }
 
 // â”€â”€ Carga datos y activa el botÃ³n â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function _load() {
   const btn = document.getElementById('st-btn');
-  const meta = document.getElementById('st-meta');
-  const mode = _mode; // captura el modo actual (evita race conditions)
+  const mode = _mode;
   const cfg = MODE_CFG[mode];
 
   try {
@@ -249,15 +244,13 @@ async function _load() {
     // Caso: todos ya ganaron
     if (eligible.length === 0) {
       _setCard({ name: `${cfg.title} Completo`, subtitle: `${winners.length} ganadores registrados`, logo: '' });
-      if (meta) meta.textContent = `Todos los ${cfg.plural} ya participaron`;
       if (btn) {
         btn.innerHTML = '<span>Reiniciar</span>';
         btn.disabled = false;
         btn.onclick = async () => {
           btn.disabled = true;
           await clearWinners(mode);
-          _setCard({ name: 'â€”', subtitle: 'Cargandoâ€¦', logo: '' });
-          if (meta) meta.textContent = '';
+          _setCard({ name: '\u2014', subtitle: 'Cargando…', logo: '' });
           _load();
         };
       }
@@ -267,12 +260,6 @@ async function _load() {
     // Preview aleatorio
     _setCard(eligible[Math.floor(Math.random() * eligible.length)]);
 
-    if (meta) {
-      meta.textContent =
-        `${eligible.length} ${eligible.length !== 1 ? cfg.plural : cfg.singular} disponibles` +
-        (winners.length ? ` Â· ${winners.length} ya ganaron` : '');
-    }
-
     if (btn) {
       btn.disabled = false;
       btn.innerHTML = '<span>Iniciar Sorteo</span>';
@@ -281,8 +268,7 @@ async function _load() {
 
   } catch (err) {
     if (_mode !== mode) return;
-    _setCard({ name: 'Sin conexiÃ³n', subtitle: 'Ejecuta: npm run mock', logo: '' });
-    if (meta) meta.textContent = 'âš  No se pudo conectar a json-server (:3001)';
+    _setCard({ name: 'Sin conexi\u00f3n', subtitle: 'Ejecuta: npm run mock', logo: '' });
     console.error('[sorteo]', err);
   }
 }
@@ -389,6 +375,42 @@ async function _revealWinner(winner, mode) {
   });
 }
 
+// ── Auto-hide botones de premio ───────────────────────────────────
+function _setupPrizeVisibility() {
+  const stage = document.getElementById('st-stage');
+  if (!stage) return;
+
+  let hideTimer;
+
+  function _showBtns() {
+    stage.querySelectorAll('.st-prize-actions').forEach(el =>
+      el.classList.add('st-prize-actions--visible')
+    );
+    stage.querySelectorAll('.st-prize-btn--add').forEach(el =>
+      el.classList.add('st-prize-btn--visible')
+    );
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(_hideBtns, 3000);
+  }
+
+  function _hideBtns() {
+    stage.querySelectorAll('.st-prize-actions').forEach(el =>
+      el.classList.remove('st-prize-actions--visible')
+    );
+    stage.querySelectorAll('.st-prize-btn--add').forEach(el =>
+      el.classList.remove('st-prize-btn--visible')
+    );
+  }
+
+  stage.addEventListener('mousemove', _showBtns);
+
+  // Cuando hay re-render de la sección, los nuevos botones heredan el estado
+  const section = document.getElementById('st-prize-section');
+  if (section) {
+    new MutationObserver(_showBtns).observe(section, { childList: true, subtree: true });
+  }
+}
+
 // ── Sección de premio (render) ────────────────────────────────────
 function _renderPrizeSection(prize) {
   const section = document.getElementById('st-prize-section');
@@ -405,8 +427,8 @@ function _renderPrizeSection(prize) {
           </div>
         </div>
         <div class="st-prize-actions">
-          <button class="st-prize-btn st-prize-btn--edit" id="st-pr-edit">✏ Editar</button>
-          <button class="st-prize-btn st-prize-btn--delete" id="st-pr-delete">🗑 Eliminar</button>
+          <button class="st-prize-btn st-prize-btn--edit" id="st-pr-edit">✏</button>
+          <button class="st-prize-btn st-prize-btn--delete" id="st-pr-delete">🗑</button>
         </div>
       </div>`;
 
@@ -428,7 +450,7 @@ function _renderPrizeSection(prize) {
     section.innerHTML = `
       <div class="st-prize-empty">
         <span class="st-prize-empty__label">Sin premio configurado</span>
-        <button class="st-prize-btn st-prize-btn--add" id="st-pr-add">＋ Agregar Premio</button>
+        <button class="st-prize-btn st-prize-btn--add" id="st-pr-add">＋</button>
       </div>`;
     document.getElementById('st-pr-add')?.addEventListener('click', () => _showPrizeForm(null));
   }
@@ -436,20 +458,29 @@ function _renderPrizeSection(prize) {
 
 // ── Formulario inline de premio ───────────────────────────────────
 function _showPrizeForm(existingPrize) {
-  const section = document.getElementById('st-prize-section');
-  if (!section) return;
+  // Crear modal sobre el stage sin tocar el layout
+  const stage = document.getElementById('st-stage');
+  if (!stage) return;
 
-  section.innerHTML = `
-    <div class="st-prize-form">
+  // Eliminar modal previo si existe
+  document.getElementById('st-prize-modal')?.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'st-prize-modal';
+  modal.className = 'st-prize-modal';
+  modal.innerHTML = `
+    <div class="st-prize-modal__backdrop"></div>
+    <div class="st-prize-modal__box">
+      <p class="st-prize-modal__title">${existingPrize ? 'Editar Premio' : 'Nuevo Premio'}</p>
       <div class="st-prize-form__field">
         <label class="st-prize-form__label">Nombre del Premio</label>
         <input class="st-prize-input" id="st-pr-input-name" type="text"
-               placeholder="Ej: Trofeo KDO 2026" maxlength="80">
+               placeholder="Ej: Trofeo KDO 2026" maxlength="80" autocomplete="off">
       </div>
       <div class="st-prize-form__field">
         <label class="st-prize-form__label">Descripción (opcional)</label>
         <input class="st-prize-input" id="st-pr-input-desc" type="text"
-               placeholder="Ej: Premio principal del evento" maxlength="160">
+               placeholder="Ej: Premio principal del evento" maxlength="160" autocomplete="off">
       </div>
       <div class="st-prize-form__actions">
         <button class="st-prize-btn st-prize-btn--cancel" id="st-pr-cancel">Cancelar</button>
@@ -457,29 +488,39 @@ function _showPrizeForm(existingPrize) {
       </div>
     </div>`;
 
+  stage.appendChild(modal);
+
+  // Bloquear propagación de teclas desde el modal
+  // para que listeners globales (contador, etc.) no las intercepten
+  modal.addEventListener('keydown', e => e.stopPropagation());
+
   // Pre-rellenar si es edición
+  const nameInput = document.getElementById('st-pr-input-name');
+  const descInput = document.getElementById('st-pr-input-desc');
   if (existingPrize) {
-    const nameInput = document.getElementById('st-pr-input-name');
-    const descInput = document.getElementById('st-pr-input-desc');
     if (nameInput) nameInput.value = existingPrize.name;
     if (descInput) descInput.value = existingPrize.description || '';
   }
+  nameInput?.focus();
 
-  document.getElementById('st-pr-cancel')?.addEventListener('click', () => {
-    _renderPrizeSection(_currentPrize);
-  });
+  function _closeModal() {
+    modal.classList.add('st-prize-modal--closing');
+    setTimeout(() => modal.remove(), 200);
+  }
+
+  // Cerrar al click en backdrop
+  modal.querySelector('.st-prize-modal__backdrop')?.addEventListener('click', _closeModal);
+
+  document.getElementById('st-pr-cancel')?.addEventListener('click', _closeModal);
 
   document.getElementById('st-pr-save')?.addEventListener('click', async () => {
-    const nameInput = document.getElementById('st-pr-input-name');
-    const descInput = document.getElementById('st-pr-input-desc');
     const name = nameInput?.value.trim();
-    if (!name) { if (nameInput) nameInput.focus(); return; }
+    if (!name) { nameInput?.focus(); return; }
 
     const saveBtn = document.getElementById('st-pr-save');
     if (saveBtn) saveBtn.disabled = true;
 
     const data = { name, description: descInput?.value.trim() || '' };
-
     let saved;
     if (existingPrize) {
       saved = await updatePrize(existingPrize.id, { ...existingPrize, ...data });
@@ -489,5 +530,12 @@ function _showPrizeForm(existingPrize) {
 
     _currentPrize = saved;
     _renderPrizeSection(saved);
+    _closeModal();
   });
+
+  // Cerrar con Escape
+  function _onKey(e) {
+    if (e.key === 'Escape') { _closeModal(); document.removeEventListener('keydown', _onKey); }
+  }
+  document.addEventListener('keydown', _onKey);
 }
