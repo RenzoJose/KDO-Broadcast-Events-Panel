@@ -69,6 +69,9 @@ async function postWinner(p, mode) {
       logo: p.logo,
       type: mode,
       wonAt: new Date().toISOString(),
+      prize: _currentPrize
+        ? { name: _currentPrize.name, description: _currentPrize.description || '' }
+        : null,
     }),
   });
 }
@@ -80,9 +83,42 @@ async function clearWinners(mode) {
   );
 }
 
+// ── Prize API ──────────────────────────────────────────────────────
+async function fetchPrize() {
+  try {
+    const r = await fetch(`${API_BASE}/prizes`);
+    if (!r.ok) return null;
+    const list = await r.json();
+    return list.length ? list[list.length - 1] : null;
+  } catch { return null; }
+}
+
+async function createPrize(data) {
+  const r = await fetch(`${API_BASE}/prizes`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ...data, createdAt: new Date().toISOString() }),
+  });
+  return r.ok ? r.json() : null;
+}
+
+async function updatePrize(id, data) {
+  const r = await fetch(`${API_BASE}/prizes/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  return r.ok ? r.json() : null;
+}
+
+async function deletePrize(id) {
+  await fetch(`${API_BASE}/prizes/${id}`, { method: 'DELETE' });
+}
+
 // â”€â”€ Estado local â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 let _busy = false;
 let _mode = 'athletes'; // 'athletes' | 'schools'
+let _currentPrize = null;  // objeto prize activo o null
 
 // â”€â”€ Entrada pÃºblica â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export function initSorteo() {
@@ -106,6 +142,9 @@ export function renderSorteo() {
           <span class="st-title" id="st-title">${MODE_CFG[_mode].title}</span>
         </div>
       </div>
+
+      <!-- Sección de premio -->
+      <div id="st-prize-section" class="st-prize-section"></div>
 
       <!-- Switch de modo -->
       <div class="st-switch" id="st-switch">
@@ -147,6 +186,10 @@ export function renderSorteo() {
           <div class="st-winner__logo-box" id="st-w-logo"></div>
           <span class="st-winner__name"   id="st-w-name"></span>
           <span class="st-winner__school" id="st-w-school"></span>
+          <div id="st-winner-prize-box" class="st-winner__prize-box" style="display:none">
+            <span class="st-winner__prize-name" id="st-w-prize-name"></span>
+            <span class="st-winner__prize-desc" id="st-w-prize-desc"></span>
+          </div>
           <div class="st-winner__actions">
             <button class="st-btn-outline" id="st-btn-nuevo">Nuevo Sorteo</button>
             <button class="st-btn-accent"  id="st-btn-resultados">Ver Resultados</button>
@@ -190,10 +233,13 @@ async function _load() {
   const cfg = MODE_CFG[mode];
 
   try {
-    const [all, winners] = await Promise.all([fetchData(mode), fetchWinners(mode)]);
+    const [all, winners, prize] = await Promise.all([fetchData(mode), fetchWinners(mode), fetchPrize()]);
 
     // Si el modo cambiÃ³ mientras cargaba, ignorar
     if (_mode !== mode) return;
+
+    _currentPrize = prize;
+    _renderPrizeSection(prize);
 
     const wonIds = new Set(winners.map(w => w.participantId));
     const eligible = all
@@ -318,6 +364,19 @@ async function _revealWinner(winner, mode) {
            onerror="this.style.display='none'">`
     : `<span class="st-winner__initials">${initials}</span>`;
 
+  // Mostrar u ocultar caja del premio
+  const prizeBox = document.getElementById('st-winner-prize-box');
+  if (prizeBox) {
+    if (_currentPrize) {
+      document.getElementById('st-w-prize-name').textContent = `🏆  ${_currentPrize.name}`;
+      const descEl = document.getElementById('st-w-prize-desc');
+      if (descEl) descEl.textContent = _currentPrize.description || '';
+      prizeBox.style.display = 'flex';
+    } else {
+      prizeBox.style.display = 'none';
+    }
+  }
+
   overlay.classList.add('st-winner--show');
 
   document.getElementById('st-btn-nuevo')?.addEventListener('click', () => {
@@ -327,5 +386,108 @@ async function _revealWinner(winner, mode) {
 
   document.getElementById('st-btn-resultados')?.addEventListener('click', () => {
     window.cambiarVista('resultados');
+  });
+}
+
+// ── Sección de premio (render) ────────────────────────────────────
+function _renderPrizeSection(prize) {
+  const section = document.getElementById('st-prize-section');
+  if (!section) return;
+
+  if (prize) {
+    section.innerHTML = `
+      <div class="st-prize-display">
+        <div class="st-prize-card">
+          <span class="st-prize-card__icon">🏆</span>
+          <div class="st-prize-card__info">
+            <span class="st-prize-card__name" id="st-pr-name"></span>
+            <span class="st-prize-card__desc" id="st-pr-desc"></span>
+          </div>
+        </div>
+        <div class="st-prize-actions">
+          <button class="st-prize-btn st-prize-btn--edit" id="st-pr-edit">✏ Editar</button>
+          <button class="st-prize-btn st-prize-btn--delete" id="st-pr-delete">🗑 Eliminar</button>
+        </div>
+      </div>`;
+
+    // Usar textContent para evitar XSS
+    const nameEl = document.getElementById('st-pr-name');
+    const descEl = document.getElementById('st-pr-desc');
+    if (nameEl) nameEl.textContent = prize.name;
+    if (descEl) descEl.textContent = prize.description || '';
+
+    document.getElementById('st-pr-edit')?.addEventListener('click', () => _showPrizeForm(prize));
+    document.getElementById('st-pr-delete')?.addEventListener('click', async () => {
+      const btn = document.getElementById('st-pr-delete');
+      if (btn) btn.disabled = true;
+      await deletePrize(prize.id);
+      _currentPrize = null;
+      _renderPrizeSection(null);
+    });
+  } else {
+    section.innerHTML = `
+      <div class="st-prize-empty">
+        <span class="st-prize-empty__label">Sin premio configurado</span>
+        <button class="st-prize-btn st-prize-btn--add" id="st-pr-add">＋ Agregar Premio</button>
+      </div>`;
+    document.getElementById('st-pr-add')?.addEventListener('click', () => _showPrizeForm(null));
+  }
+}
+
+// ── Formulario inline de premio ───────────────────────────────────
+function _showPrizeForm(existingPrize) {
+  const section = document.getElementById('st-prize-section');
+  if (!section) return;
+
+  section.innerHTML = `
+    <div class="st-prize-form">
+      <div class="st-prize-form__field">
+        <label class="st-prize-form__label">Nombre del Premio</label>
+        <input class="st-prize-input" id="st-pr-input-name" type="text"
+               placeholder="Ej: Trofeo KDO 2026" maxlength="80">
+      </div>
+      <div class="st-prize-form__field">
+        <label class="st-prize-form__label">Descripción (opcional)</label>
+        <input class="st-prize-input" id="st-pr-input-desc" type="text"
+               placeholder="Ej: Premio principal del evento" maxlength="160">
+      </div>
+      <div class="st-prize-form__actions">
+        <button class="st-prize-btn st-prize-btn--cancel" id="st-pr-cancel">Cancelar</button>
+        <button class="st-prize-btn st-prize-btn--save"   id="st-pr-save">Guardar ✓</button>
+      </div>
+    </div>`;
+
+  // Pre-rellenar si es edición
+  if (existingPrize) {
+    const nameInput = document.getElementById('st-pr-input-name');
+    const descInput = document.getElementById('st-pr-input-desc');
+    if (nameInput) nameInput.value = existingPrize.name;
+    if (descInput) descInput.value = existingPrize.description || '';
+  }
+
+  document.getElementById('st-pr-cancel')?.addEventListener('click', () => {
+    _renderPrizeSection(_currentPrize);
+  });
+
+  document.getElementById('st-pr-save')?.addEventListener('click', async () => {
+    const nameInput = document.getElementById('st-pr-input-name');
+    const descInput = document.getElementById('st-pr-input-desc');
+    const name = nameInput?.value.trim();
+    if (!name) { if (nameInput) nameInput.focus(); return; }
+
+    const saveBtn = document.getElementById('st-pr-save');
+    if (saveBtn) saveBtn.disabled = true;
+
+    const data = { name, description: descInput?.value.trim() || '' };
+
+    let saved;
+    if (existingPrize) {
+      saved = await updatePrize(existingPrize.id, { ...existingPrize, ...data });
+    } else {
+      saved = await createPrize(data);
+    }
+
+    _currentPrize = saved;
+    _renderPrizeSection(saved);
   });
 }

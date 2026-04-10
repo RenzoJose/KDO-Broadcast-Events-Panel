@@ -191,6 +191,7 @@
       "logo": "https://ui-avatars.com/api/?name=Nguyen+Minh&background=243d5b&color=fff&size=128&bold=true",
       "type": "athletes",
       "wonAt": "2026-04-07T18:55:27.159Z",
+      "prize": null,
       "id": "pRNqDSGFm0s"
     },
     {
@@ -200,6 +201,7 @@
       "logo": "https://ui-avatars.com/api/?name=Fernandez+Ana&background=170fdd&color=fff&size=128&bold=true",
       "type": "athletes",
       "wonAt": "2026-04-07T19:19:33.325Z",
+      "prize": null,
       "id": "Q-1aL2EF5wI"
     },
     {
@@ -209,6 +211,7 @@
       "logo": "https://ui-avatars.com/api/?name=Lopez+Camila&background=170fdd&color=fff&size=128&bold=true",
       "type": "athletes",
       "wonAt": "2026-04-07T19:21:57.269Z",
+      "prize": null,
       "id": "pHaDl5rfIh8"
     },
     {
@@ -218,6 +221,7 @@
       "logo": "https://ui-avatars.com/api/?name=Tanaka+Yuki&background=0047a0&color=fff&size=128&bold=true",
       "type": "athletes",
       "wonAt": "2026-04-07T19:22:16.797Z",
+      "prize": null,
       "id": "XZsag5aBPNs"
     }
   ],
@@ -229,6 +233,7 @@
       "logo": "https://ui-avatars.com/api/?name=BT&background=170fdd&color=fff&size=128&bold=true",
       "type": "schools",
       "wonAt": "2026-04-07T18:55:47.931Z",
+      "prize": null,
       "id": "amVi7Gd3wJg"
     },
     {
@@ -238,8 +243,10 @@
       "logo": "https://ui-avatars.com/api/?name=BA&background=243d5b&color=fff&size=128&bold=true",
       "type": "schools",
       "wonAt": "2026-04-07T19:08:12.926Z",
+      "prize": null,
       "id": "AfYBL0RgE4E"
     }
   ],
+  "prizes": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

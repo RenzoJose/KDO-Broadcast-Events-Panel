@@ -1,4 +1,4 @@
-/* resultados.js */
+/* resultados.js — Wall of Winners */
 const API_BASE = 'http://localhost:3001';
 
 let _tab = 'athletes';
@@ -64,7 +64,7 @@ export async function renderResultados() {
       </div>
 
       <div id="rsl-content">
-        ${winners.length === 0 ? _emptyState() : _contentHTML(winners)}
+        ${winners.length === 0 ? _emptyState() : _wallHTML(winners)}
       </div>
     </div>
   `;
@@ -86,69 +86,90 @@ export async function renderResultados() {
             if (statNums[0]) statNums[0].textContent = w.length;
             if (statNums[1]) statNums[1].textContent = t;
             if (statLabels[1]) statLabels[1].textContent = LABELS[_tab];
-            if (content) content.innerHTML = w.length === 0 ? _emptyState() : _contentHTML(w);
+            if (content) content.innerHTML = w.length === 0 ? _emptyState() : _wallHTML(w);
         });
     });
 }
 
 function _emptyState() {
     return `<div class="rsl-empty">
-    <div class="rsl-empty__icon">&#127942;</div>
-    <p class="rsl-empty__text">Aun no hay ganadores</p>
-    <p class="rsl-empty__sub">Inicia un sorteo para ver los resultados aqui</p>
+    <div class="rsl-empty__icon">&#9889;</div>
+    <p class="rsl-empty__text">Aún no hay ganadores</p>
+    <p class="rsl-empty__sub">Inicia un sorteo para ver los resultados aquí</p>
   </div>`;
 }
 
 function _avatar(p, size) {
     const initials = p.name.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
     if (p.logo) {
-        return `<img class="rsl-avatar rsl-avatar--${size}" src="${p.logo}" alt="${p.name}" onerror="this.style.display='none'">`;
+        return `<img class="rsl-avatar rsl-avatar--${size}" src="${p.logo}" alt="" onerror="this.style.display='none'">`;
     }
     return `<span class="rsl-avatar rsl-avatar--${size} rsl-avatar--text">${initials}</span>`;
 }
 
-function _contentHTML(winners) {
-    const [first, second, third, ...rest] = winners;
+// ── Wall of Winners ─────────────────────────────────────────────
+function _wallHTML(winners) {
+    // El más reciente como hero, el resto en grid (orden cronológico invertido)
+    const sorted = [...winners].sort((a, b) => new Date(b.wonAt) - new Date(a.wonAt));
+    const [hero, ...rest] = sorted;
     return `
-    <div class="rsl-podium">
-      ${second ? _podiumCard(second, 2) : '<div class="rsl-podium__gap"></div>'}
-      ${_podiumCard(first, 1)}
-      ${third ? _podiumCard(third, 3) : '<div class="rsl-podium__gap"></div>'}
-    </div>
-    ${rest.length > 0 ? _listHTML(rest, 4) : ''}
-  `;
+    <div class="rsl-wall">
+      ${_heroCard(hero)}
+      ${rest.length > 0 ? `<div class="rsl-grid">${rest.map(_winnerCard).join('')}</div>` : ''}
+    </div>`;
 }
 
-function _podiumCard(w, pos) {
-    const BADGE = { 1: 'CAMPEON', 2: 'PLATA', 3: 'BRONCE' };
+function _heroCard(w) {
     const time = new Date(w.wonAt).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' });
-    const sz = pos === 1 ? 'lg' : 'md';
+    const subtitle = w.subtitle || w.school || w.city || '';
+    const prizeBadge = w.prize?.name
+        ? `<div class="rsl-hero__prize">
+             <span class="rsl-hero__prize-name">🏆 ${_esc(w.prize.name)}</span>
+             ${w.prize.description ? `<span class="rsl-hero__prize-desc">${_esc(w.prize.description)}</span>` : ''}
+           </div>`
+        : '';
     return `
-    <div class="rsl-podium__card rsl-podium__card--${pos}">
-      <span class="rsl-badge rsl-badge--${pos}">${BADGE[pos]}</span>
-      <div class="rsl-podium__avatar">${_avatar(w, sz)}</div>
-      <span class="rsl-podium__name">${w.name}</span>
-      <span class="rsl-podium__school">${w.subtitle || w.school || w.city || ''}</span>
-      <span class="rsl-podium__time">${time}</span>
-    </div>
-  `;
+    <div class="rsl-hero">
+      <div class="rsl-hero__organizer">
+        <img src="public/assets/logo/KDO-08.png" alt="KDO" class="rsl-hero__org-logo">
+        <span class="rsl-hero__org-text">Organizado por</span>
+      </div>
+      <div class="rsl-hero__badge-wrap">
+        <span class="rsl-hero__eyebrow">⚡ Último Ganador</span>
+      </div>
+      <div class="rsl-hero__content">
+        ${_avatar(w, 'hero')}
+        <div class="rsl-hero__info">
+          <span class="rsl-hero__name">${_esc(w.name)}</span>
+          <span class="rsl-hero__school">${_esc(subtitle)}</span>
+          ${prizeBadge}
+          <span class="rsl-hero__time">${time}</span>
+        </div>
+      </div>
+    </div>`;
 }
 
-function _listHTML(items, startPos) {
-    const rows = items.map((w, i) => {
-        const pos = startPos + i;
-        const time = new Date(w.wonAt).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' });
-        return `
-      <div class="rsl-row">
-        <span class="rsl-row__pos">${pos}</span>
-        ${_avatar(w, 'sm')}
-        <div class="rsl-row__info">
-          <span class="rsl-row__name">${w.name}</span>
-          <span class="rsl-row__school">${w.subtitle || w.school || w.city || ''}</span>
-        </div>
-        <span class="rsl-row__time">${time}</span>
-      </div>
-    `;
-    }).join('');
-    return `<div class="rsl-list">${rows}</div>`;
+function _winnerCard(w) {
+    const time = new Date(w.wonAt).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' });
+    const subtitle = w.subtitle || w.school || w.city || '';
+    const prizeBadge = w.prize?.name
+        ? `<span class="rsl-card__prize">🏆 ${_esc(w.prize.name)}</span>`
+        : '';
+    return `
+    <div class="rsl-card">
+      ${_avatar(w, 'card')}
+      <span class="rsl-card__name">${_esc(w.name)}</span>
+      <span class="rsl-card__school">${_esc(subtitle)}</span>
+      ${prizeBadge}
+      <span class="rsl-card__time">${time}</span>
+    </div>`;
+}
+
+// Escapa texto antes de interpolarlo en HTML
+function _esc(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
 }
